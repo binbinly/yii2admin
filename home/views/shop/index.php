@@ -1,0 +1,189 @@
+<?php
+/* @var $this yii\web\View */
+?>
+
+
+
+<div class="w_1200">
+    <ol class="breadcrumb">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">商城</a></li>
+      <li class="active">客房</li>
+    </ol>
+    <!--客房-->
+</div>
+
+<div class="bann01">
+    <div class="bann02"><img src="/bootstrap/images/zx01.jpg"></div>
+    <div class="bann03">
+        <ul>
+            <li><img src="/bootstrap/images/zx01.jpg"></li>
+            <li><img src="/bootstrap/images/zx01.jpg"></li>
+            <li><img src="/bootstrap/images/zx01.jpg"></li>
+            <li><img src="/bootstrap/images/zx01.jpg"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="w_1200 sailing01">
+    <ul role="tablist" class="nav nav-tabs" id="myTabs">
+        <li class="active" role="presentation"><a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">客房预订</a></li>
+        <li role="presentation" class=""><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="false">预订须知</a></li>
+    </ul>
+    <div class="tab-content shop_kefang" id="myTabContent">
+        <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+            <ul>
+
+                <?php foreach ($list as $key => $v) :?>
+                <li class="items <?=$key%2==1?'bg_f3ede2':''?>" goodid="<?=$v['id']?>">
+                    <div class="w_260_1">
+                        <img src="<?=$v['cover']?>" class="shop_kefang_img">
+                        <p><?=$v['title']?></p>
+                        <i><img src="/bootstrap/images/shuanren.png"> </i>
+                        <i><img src="/bootstrap/images/diannao.png"> </i>
+                        <i><img src="/bootstrap/images/wifi.png"> </i>
+                        <a href=""><img src="/bootstrap/images/jiaru.png"></a>
+                    </div>
+                    <div class="w_215"><?=$v['description']?></div>
+                    <div class="w_295">
+                        <div class="store_shop_text05">
+                            <div class="w_295_bott">
+                                <span>入住日期</span>
+                                <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                                    <div class="border">
+                                        <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d')?>">
+                                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div >
+                                <span>退房日期</span>
+                                <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                                    <div class="border">
+                                        <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d')?>">
+                                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="shijian">共<i>0</i> 天</span>
+                        </div>
+                    </div>
+                    <div class="w_235">
+                        <div class="amount">
+                            <span>房间数量</span>
+                            <input name="num" value="0">
+                            <img class="jian" src="/bootstrap/images/jian.png">
+                            <img class="jia" src="/bootstrap/images/jia.png">
+                        </div>
+                    </div>
+                    <div class="w_125">
+                        <p class="w_125_p ">¥ <span class="price"><?=$v['price']?></span></p>
+                    </div>
+                    <div class="shop_kefang_xian"></div>
+                    <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1"></a>
+                    <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
+                        <?php foreach ($v['images'] as $img) :?>
+                        <span><img src="<?=$img?>"></span>
+                        <?php endforeach; ?>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+
+
+            </ul>
+        </div>
+        <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+            <div class="explain">我是说明</div>
+        </div>
+    </div>
+</div>
+<div class="w_1200 store1_bottom">
+    <p>服务热线: <i>4008888888</i>工作日: 00:00 - 22:00</p>
+    <div class="goumai">
+        合计：
+        <i>¥ <span id="total">0</span></i>
+        <a href="javascript:;" class="goumai01">放入购物车</a>
+        <a href="javascript:;" class="goumai02">立即购买</a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        /* 加减数量 */
+        $('.amount').on('click','.jia',function(){
+            var ipt = $(this).siblings('input');
+            var num = parseInt(ipt.val());
+            ipt.val(num+1);
+            total();//更新总价格
+        });
+        $('.amount').on('click','.jian',function(){
+            var ipt = $(this).siblings('input');
+            var num = parseInt(ipt.val());
+            if(num<1){
+                return;
+            }
+            ipt.val(num-1);
+            total()//更新总价格
+        });
+        /* 时间差 */
+        $('.stime,.etime').change(function () {
+            var item = $(this).parents('.items');
+            var stime = item.find('.stime').val();
+            stime = new Date(stime.replace(/-/g, "/"));
+            var etime = item.find('.etime').val();
+            etime = new Date(etime.replace(/-/g, "/"));
+            var days = etime.getTime() - stime.getTime();
+            days = parseInt(days / (1000 * 60 * 60 * 24));
+            if(days<0){
+                return;
+            }
+            item.find('.shijian i').text(days);
+            total()//更新总价格
+        });
+        /* 加入购物车 */
+        $('.goumai01').click(function () {
+            addCart();
+        });
+        $('.goumai02').click(function () {
+            addCart();
+            window.location.href = '/order';
+        });
+    });
+    /* 更新总价 */
+    function total(){
+        var t = 0, items = $('.items');
+        items.each( function(k, item){
+            var time  = parseInt($(item).find('.shijian i').text());
+            var num   = parseInt($(item).find('.amount input').val());
+            var price = parseInt($(item).find('.price').text());
+            t += time * num * price;
+            console.log(t);
+        });
+        $('#total').html(t);
+    }
+    /* 添加或修改购物车 */
+    function addCart() {
+        var items = $('.items');
+        items.each( function(k, item){
+            var id  = parseInt($(item).attr('goodid'));
+            var stime  = $(item).find('.stime').val();
+            var etime  = $(item).find('.etime').val();
+            var price = parseInt($(item).find('.price').text());
+            var num   = parseInt($(item).find('.amount input').val());
+            var time  = parseInt($(item).find('.shijian i').text());
+            if(num > 0 && time > 0){
+                $.ajax({
+                    type: "GET",
+                    url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
+                    data: {tye:"shop",aid:id,stime:stime,etime:etime,num:num},
+                    success: function(data){
+                        if(data == 0){
+                            alert('订单数据错误');
+                        }
+                    }
+                });
+            }
+        });
+    }
+</script>
