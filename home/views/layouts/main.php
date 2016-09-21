@@ -66,6 +66,7 @@ use yii\helpers\Url;
                     </div>
                     <a class="btn btn-danger" href="<?=Url::to('/user/login/logout')?>">注销</a>
                     <a class="btn btn-info" href="<?=Url::to('/user')?>">会员中心</a>
+                    <a class="btn btn-primary" href="<?=Url::to('/order/view')?>">购物车</a>
                 </div>
                 <?php else: ?>
                 <form role="search" method="post" class="navbar-form navbar-left login">

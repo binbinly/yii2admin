@@ -50,7 +50,7 @@
                     <li class="items <?=$i%2==0?'change_else_bg':''?>" goodid="<?=$v['goods']['id']?>" type="<?=$v['goods']['type']?>">
                        <div class="w_80">
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" class="" value="<?=$k;?>">
+                                <input name="key[]" type="checkbox" class="ids" value="<?=$k;?>">
                             </label>
                         </div>
                         <div class="w_140"><p><?=$v['goods']['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
@@ -82,15 +82,17 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php else: ?>
+                        <div>购物车里什么东西都没有哦！</div>
                     <?php endif;?>
-                    
+
                 </ul>
             </div>
         </div>
     </div>
     <div class="shopping_pos">
-        <a href="#" class="shopping_pos_but" >全选</a>
-        <a href="#" class="shopping_pos_but01" >删除</a>
+        <a href="#" class="shopping_pos_but checkall" >全选</a>
+        <a href="#" class="shopping_pos_but01 delete" >删除</a>
     </div>
 </div>
 
@@ -135,6 +137,31 @@
             }
             item.find('.shijian i').text(days);
             total()//更新总价格
+        });
+        /* 全选 */
+        $('.checkall').click(function () {
+            $(".ids").prop("checked", true);
+        });
+        /* 删除 */
+        $('.delete').click(function () {
+            var option = $(".ids");console.log(option);
+            option.each(function(i, item){
+                var that = $(item);
+                if(item.checked){
+                    var keys = that.val();console.log(keys);
+                    $.ajax({
+                        type: "GET",
+                        url: "<?=\yii\helpers\Url::to(['order/del-cart'])?>",
+                        data: {keys:keys},
+                        success: function(data){
+                            if(data.code == 0){
+                                that.parents('.items').remove();
+                            }
+                        }
+                    });
+                }
+            });
+            //window.location.reload();
         });
         /* 立即购买，跳转到结算页 */
         $('.goumai02').click(function () {

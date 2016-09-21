@@ -29,14 +29,5 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-/home/runtime
-/backend/runtime
-/console/runtime
 
-/common/config/main-local.php
-/common/config/params-local.php
-/home/config/main-local.php
-/home/config/params-local.php
-/backend/config/main-local.php
-/backend/config/params-local.php
 

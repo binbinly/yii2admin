@@ -30,8 +30,12 @@ class OrderController extends \yii\web\Controller
                     $value['goods'] = Train::info($value['aid']);
                 }
                 /* 时间差判断 */
-                $time = ceil((strtotime($value['etime']) - strtotime($value['stime']))/(60 * 60 * 24));
-                $price['total'] += $value['num'] * $value['goods']['price'] * $time;
+                $hour = ceil((strtotime($value['etime']) - strtotime($value['stime']))/(60 * 60));
+                $days = ceil($hour/24);
+                $value['days'] = $days; // 天数
+                $value['hour'] = $hour; // 小时
+
+                $price['total'] += $value['num'] * $value['goods']['price'] * $days;
             } //var_dump($cart);exit();
         }
 
@@ -128,17 +132,17 @@ class OrderController extends \yii\web\Controller
             FuncHelper::ajaxReturn(1, '您未登录');
         }
         if (Yii::$app->request->isAjax) {
-            $data['type']  = Yii::$app->request->get('type', 'shop'); // 商品类型，默认：shop
-            $data['aid']   = Yii::$app->request->get('aid'); //商品ID
+            $keys  = Yii::$app->request->get('keys'); // shop1
+            //$data['aid']   = Yii::$app->request->get('aid'); //商品ID
 
-            if (!$data['aid']) {
+            if (!$keys) {
                 FuncHelper::ajaxReturn(1, '参数错误');
             }
             /* 获取购物车 */
             $cart = Yii::$app->session->get('cart',[]);
             /* 删除购物车 */
-            if(isset($cart[$data['type'].$data['aid']])){
-                unset($cart[$data['type'].$data['aid']]);
+            if(isset($keys)){
+                unset($cart[$keys]);
             }
             /* 保存购物车 */
             Yii::$app->session->set('cart',$cart);
