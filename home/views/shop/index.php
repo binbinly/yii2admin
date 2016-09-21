@@ -145,7 +145,9 @@
         $('.goumai01').click(function () {
             addCart();
         });
+        /* 立即购买，跳转到结算页 */
         $('.goumai02').click(function () {
+            clearCart();
             addCart();
             window.location.href = '/order';
         });
@@ -162,6 +164,17 @@
         });
         $('#total').html(t);
     }
+    /* 清空购物车 */
+    function clearCart() {
+        $.ajax({
+            async: false, //同步
+            type: "GET",
+            url: "<?=\yii\helpers\Url::to(['order/clear'])?>",
+            success: function(data){
+                
+            }
+        });
+    }
     /* 添加或修改购物车 */
     function addCart() {
         var items = $('.items');
@@ -176,10 +189,11 @@
                 $.ajax({
                     type: "GET",
                     url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
-                    data: {tye:"shop",aid:id,stime:stime,etime:etime,num:num},
+                    data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
                     success: function(data){
-                        if(data == 0){
-                            alert('订单数据错误');
+                        if(data.code != 0){
+                            layer.alert(data.msg);
+                            return;
                         }
                     }
                 });

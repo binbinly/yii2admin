@@ -65,6 +65,7 @@ class OrderSearch extends Order
             return $dataProvider;
         }
 
+        /* 基本搜索 */
         $query->andFilterWhere([
             'pay_status' => $this->pay_status,
             'uid' => $this->uid,
@@ -72,7 +73,7 @@ class OrderSearch extends Order
             'pay_source' => $this->pay_source,
         ]);
 
-        /* 某用户推荐的所有人的订单 */
+        /* 某用户推荐的人的订单 */
         if (isset($params['tuid']) && $params['tuid']) {
             $uids = User::find()->select('uid')->where(['tuid' => $params['tuid']])->asArray()->column();
             $uids = $uids?$uids:-1;
@@ -93,7 +94,6 @@ class OrderSearch extends Order
         if($this->from_date !='' && $this->to_date != '') {
             $query->andFilterWhere(['between', 'pay_time', strtotime($this->from_date), strtotime($this->to_date)]);
         }
-
 
         return $dataProvider;
     }

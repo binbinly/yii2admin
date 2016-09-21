@@ -5,10 +5,15 @@ namespace home\controllers;
 use home\models\Shop;
 use home\models\Train;
 use Yii;
+use common\helpers\FuncHelper;
 
 class OrderController extends \yii\web\Controller
 {
-    /* 显示购物车 */
+    /*
+     * ---------------------------------------
+     * 结算
+     * ---------------------------------------
+     */
     public function actionIndex()
     {
         $cart = Yii::$app->session->get('cart',[]);//Yii::$app->session->set('cart',[]);
@@ -37,6 +42,40 @@ class OrderController extends \yii\web\Controller
             'price' => $price,
         ]);
     }
+
+    /*
+     * ---------------------------------------
+     * 购物车
+     * ---------------------------------------
+     */
+    public function actionView(){
+        $price = [
+            'total' => 0,
+            'discount' => 0,
+            'price' => 0
+        ];
+        $cart = Yii::$app->session->get('cart',[]);//Yii::$app->session->set('cart',[]);
+        if ($cart) {
+            foreach ($cart as $key => &$value) {
+                if ($value['type'] == 'shop') {
+                    $value['goods'] = Shop::info($value['aid']);
+                }else{
+                    $value['goods'] = Train::info($value['aid']);
+                }
+                /* 时间差判断 */
+                $hour = ceil((strtotime($value['etime']) - strtotime($value['stime']))/(60 * 60));
+                $days = ceil($hour/24);
+                $value['days'] = $days; // 天数
+                $value['hour'] = $hour; // 小时
+
+                $price['total'] += $value['num'] * $value['goods']['price'] * $days;
+            } //var_dump($cart);exit();
+        }
+        return $this->render('view', [
+            'cart' => $cart,
+            'price' => $price,
+        ]);
+    }
     
     /*
      * ---------------------------------------
@@ -53,6 +92,10 @@ class OrderController extends \yii\web\Controller
      * ---------------------------------------
      */
     public function actionCart(){
+        /* 判断是否登录 */
+        if (Yii::$app->user->isGuest) {
+            FuncHelper::ajaxReturn(1, '您未登录');
+        }
         if (Yii::$app->request->isAjax) {
             $data['type']  = Yii::$app->request->get('type', 'shop'); // 商品类型，默认：shop
             $data['aid']   = Yii::$app->request->get('aid'); //商品ID
@@ -61,7 +104,7 @@ class OrderController extends \yii\web\Controller
             $data['etime'] = Yii::$app->request->get('etime'); //退租时间
 
             if (!$data['aid'] || !$data['stime']) {
-                exit('0');
+                FuncHelper::ajaxReturn(1, '参数错误');
             }
             /* 获取购物车 */
             $cart = Yii::$app->session->get('cart',[]);
@@ -69,8 +112,47 @@ class OrderController extends \yii\web\Controller
             $cart[$data['type'].$data['aid']] = $data;
             /* 保存购物车 */
             Yii::$app->session->set('cart',$cart);
-            exit('1');
+            FuncHelper::ajaxReturn(0, '');
         }
 
     }
+
+    /*
+     * ---------------------------------------
+     * 删除购物车
+     * ---------------------------------------
+     */
+    public function actionDelCart(){
+        /* 判断是否登录 */
+        if (Yii::$app->user->isGuest) {
+            FuncHelper::ajaxReturn(1, '您未登录');
+        }
+        if (Yii::$app->request->isAjax) {
+            $data['type']  = Yii::$app->request->get('type', 'shop'); // 商品类型，默认：shop
+            $data['aid']   = Yii::$app->request->get('aid'); //商品ID
+
+            if (!$data['aid']) {
+                FuncHelper::ajaxReturn(1, '参数错误');
+            }
+            /* 获取购物车 */
+            $cart = Yii::$app->session->get('cart',[]);
+            /* 删除购物车 */
+            if(isset($cart[$data['type'].$data['aid']])){
+                unset($cart[$data['type'].$data['aid']]);
+            }
+            /* 保存购物车 */
+            Yii::$app->session->set('cart',$cart);
+            FuncHelper::ajaxReturn(0, '');
+        }
+    }
+
+    /*
+     * ---------------------------------------
+     * 清空购物车
+     * ---------------------------------------
+     */
+    public function actionClear(){
+        Yii::$app->session->remove('cart');
+    }
+
 }

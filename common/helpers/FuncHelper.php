@@ -109,9 +109,9 @@ class FuncHelper
         }
         
         $encode='UTF-8';  //页面编码和短信内容编码为GBK。重要说明：如提交短信后收到乱码，请将GBK改为UTF-8测试。如本程序页面为编码格式为：ASCII/GB2312/GBK则该处为GBK。如本页面编码为UTF-8或需要支持繁体，阿拉伯文等Unicode，请将此处写为：UTF-8
-        $username='13421839870';  //用户名
-        $password_md5=md5('bagiyalo');//'1ADBB3178591FD5BB0C248518F39BF6D';  //32位MD5密码加密，不区分大小写
-        $apikey='c7da7cf49683a6e456d5101f3619bf97';  //apikey秘钥（请登录 http://m.5c.com.cn 短信平台-->账号管理-->我的信息 中复制apikey）
+        $username='13316922246';  //用户名
+        $password_md5=md5('asdf123');//'1ADBB3178591FD5BB0C248518F39BF6D';  //32位MD5密码加密，不区分大小写
+        $apikey='591da0c50baf40d7317feed7d118a1c8';  //apikey秘钥（请登录 http://m.5c.com.cn 短信平台-->账号管理-->我的信息 中复制apikey）
         //$mobile='18610310068';  //手机号,只发一个号码：13800000001。发多个号码：13800000001,13800000002,...N 。使用半角逗号分隔。
         $content=$content?$content:'您好，您的验证码是：12345【美联】';  //要发送的短信内容，特别注意：签名必须设置，网页验证码应用需要加添加【图形识别码】。
         //$content = iconv("GBK","UTF-8",$content);
@@ -127,7 +127,7 @@ class FuncHelper
             'content'=>$contentUrlEncode,
             'encode'=>$encode,
         );
-        $result = static::curlSMS($url,$data);
+        $result = static::curlSMS($url,$data);//echo $result;
 
         if(strpos($result,"success")>-1) {
             //提交成功
