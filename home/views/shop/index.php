@@ -144,6 +144,7 @@
         /* 加入购物车 */
         $('.goumai01').click(function () {
             addCart();
+            layer.alert('已加入购物车');
         });
         /* 立即购买，跳转到结算页 */
         $('.goumai02').click(function () {
@@ -187,6 +188,7 @@
             var time  = parseInt($(item).find('.shijian i').text());
             if(num > 0 && time > 0){
                 $.ajax({
+                    async: false, //同步
                     type: "GET",
                     url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
                     data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
