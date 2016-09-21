@@ -69,7 +69,7 @@ class LoginController extends \yii\web\Controller
             if (!isset($data['captcha']) || !Captcha::isCaptcha($data['mobile'],$data['captcha'])) {
                 FuncHelper::ajaxReturn(1, '验证码错误');
             }
-            if (isset($data['tmobile'])) {
+            if (!empty($data['tmobile'])) {
                 $u = User::findByMobile($data['tmobile']);
                 if ($u) {
                     $data['tuid'] = $u['uid'];
@@ -122,7 +122,7 @@ class LoginController extends \yii\web\Controller
         $model->generateAuthKey();
         $model->setPassword($code_num);
         if ($model->save()) {
-            $msg = '重新设置密码为：'.$code_num;
+            $msg = '您好，你的密码是：'. $code_num .'，为保证帐户安全，请在登陆后立即修改密码，谢谢！【帆海汇俱乐部】';
             FuncHelper::sendSMS($mobile,$msg);
             FuncHelper::ajaxReturn(0, '修改成功，新密码查看手机短信');
         }//var_dump($model->getErrors());exit;
@@ -150,9 +150,11 @@ class LoginController extends \yii\web\Controller
         if (empty($mobile) && !preg_match('/^1[34578]\d{9}$/', $mobile)) {
             FuncHelper::ajaxReturn(1, '手机号格式错误');
         }
-        if (FuncHelper::sendSMS($mobile)) {
+        $code_num = mt_rand(1000, 9999);
+        $msg = '欢迎加入帆海汇，你的验证码是：'.$code_num.'，请在1分钟内输入。【帆海汇俱乐部】';
+        if (FuncHelper::sendSMS($mobile, $msg)) {
             /* 获取验证码数据 */
-            $code_num = mt_rand(1000, 9999);
+            
             $time = time();
             $ip = Yii::$app->request->getUserIP();
 
