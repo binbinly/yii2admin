@@ -54,7 +54,7 @@
 
                         <?php if(!empty($lists[1])): ?>
                         <?php foreach($lists[1] as $k => $v): ?>
-                        <li  class="<?=$k%2==1?'change_else_bg':''?>">
+                        <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
@@ -62,24 +62,24 @@
                                     <span>入住日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="stime" type="text" readonly="readonly" size="16">
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <span>退房日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="etime" type="text" readonly="readonly" size="16" disabled>
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>1</i> 晚</span>
-                                    <div class="amount01">
-                                        <span>房间数量</span>
-                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:''?>">
+                                    <span class="shijian">共<i><?=isset($info['groups'][1][$v['id']]['days'])?$info['groups'][1][$v['id']]['days']:0?></i> 晚</span>
+                                    <div class="amount amount01">
+                                        <span>数量</span>
+                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
                                         <img src="/bootstrap/images/jian.png">
                                         <img src="/bootstrap/images/jia.png">
-                                        <p>¥ 666</p>
+                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
 
                         <?php if(!empty($lists[2])): ?>
                         <?php foreach($lists[2] as $k => $v): ?>
-                        <li  class="<?=$k%2==1?'change_else_bg':''?>">
+                        <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
@@ -117,30 +117,24 @@
                                     <span>起租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="stime" type="text" readonly="readonly" size="16">
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <span>退租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="etime" type="text" readonly="readonly" size="16" disabled>
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>1</i> 晚</span>
-                                    <div class="amount01">
-                                        <span>帆船数量</span>
-                                        <div class="input-append  w_120" data-picker-position="bottom-left">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <p>¥ 666</p>
+                                    <span class="shijian">共<i>0</i> 晚</span>
+                                    <div class="amount amount01">
+                                        <span>数量</span>
+                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <img src="/bootstrap/images/jian.png">
+                                        <img src="/bootstrap/images/jia.png">
+                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +161,7 @@
                     <ul>
                         <?php if(!empty($lists[3])): ?>
                         <?php foreach($lists[3] as $k => $v): ?>
-                        <li  class="<?=$k%2==1?'change_else_bg':''?>">
+                        <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
@@ -175,30 +169,24 @@
                                     <span>起租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="stime" type="text" readonly="readonly" size="16">
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <span>退租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="etime" type="text" readonly="readonly" size="16" disabled>
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>1</i> 晚</span>
-                                    <div class="amount01">
+                                    <span class="shijian">共<i>0</i> 晚</span>
+                                    <div class="amount amount01">
                                         <span>数量</span>
-                                        <div data-picker-position="bottom-left" class="input-append  w_120">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <p>¥ 666</p>
+                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <img src="/bootstrap/images/jian.png">
+                                        <img src="/bootstrap/images/jia.png">
+                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +214,7 @@
 
                         <?php if(!empty($lists[4])): ?>
                         <?php foreach($lists[4] as $k => $v): ?>
-                        <li  class="<?=$k%2==1?'change_else_bg':''?>">
+                        <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
@@ -234,30 +222,24 @@
                                     <span>起租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="stime" type="text" readonly="readonly" size="16">
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <span>退租日期</span>
                                     <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                         <div class="border">
-                                            <input type="text" readonly="readonly" size="16">
+                                            <input class="etime" type="text" readonly="readonly" size="16" disabled>
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <span class="shijian">共<i>1</i> 晚</span>
-                                    <div class="amount01">
+                                    <div class="amount amount01">
                                         <span>数量</span>
-                                        <div class="input-append  w_120" data-picker-position="bottom-left">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <p>¥ 666</p>
+                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <img src="/bootstrap/images/jian.png">
+                                        <img src="/bootstrap/images/jia.png">
+                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -276,6 +258,89 @@
 <div class="w_1200 store1_bottom">
     <p>服务热线: <i>4008888888</i>工作日: 00:00 - 22:00</p>
     <div class="goumai">
-        合计：<i>¥ 666</i><a href="" class="goumai01">放入购物车</a><a href="" class="goumai02">立即购买</a>
+        合计：<i>¥ <span id="total">0</span></i>
+        <a href="javascript:;" class="goumai01">放入购物车</a>
+        <a href="javascript:;" class="goumai02">立即购买</a>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $(function () {
+        /* 选择开始时间 */
+        $('.stime').change(function(){
+            var item = $(this).parents('.items');
+            var days = item.find('.shijian i').text();
+            var stime = item.find('.stime').val();
+            stime = new Date(stime.replace(/-/g, "/"));
+            var etime = stime.getTime() + 1000 * 60 * 60 * 24 * days;
+            var dataOBJ = new Date(etime);
+
+            var eMonth = dataOBJ.getMonth()+1;
+            etime = dataOBJ.getFullYear()+'-'+eMonth+'-'+dataOBJ.getDate();
+            item.find('.etime').val(etime);
+            console.log(etime);
+            total();//更新总价格
+        });
+        /* 加入购物车 */
+        $('.goumai01').click(function () {
+            addCart();
+            layer.alert('已加入购物车');
+        });
+        /* 立即购买，跳转到结算页 */
+        $('.goumai02').click(function () {
+            clearCart();
+            addCart();
+            window.location.href = '/order';
+        });
+    });
+    /* 更新总价 */
+    function total(){
+        var t = 0, items = $('.items');
+        items.each( function(k, item){
+            var time  = parseInt($(item).find('.shijian i').text());
+            var num   = parseInt($(item).find('.amount input').val());
+            var price = parseInt($(item).find('.price').text());
+            t += time * num * price;
+            console.log(t);
+        });
+        $('#total').html(t);
+    }
+    /* 清空购物车 */
+    function clearCart() {
+        $.ajax({
+            async: false, //同步
+            type: "GET",
+            url: "<?=\yii\helpers\Url::to(['order/clear'])?>",
+            success: function(data){
+
+            }
+        });
+    }
+    /* 添加或修改购物车 */
+    function addCart() {
+        var items = $('.items');
+        items.each( function(k, item){
+            var id  = parseInt($(item).attr('goodid'));
+            var stime  = $(item).find('.stime').val();
+            var etime  = $(item).find('.etime').val();
+            var price = parseInt($(item).find('.price').text());
+            var num   = parseInt($(item).find('.amount input').val());
+            var time  = parseInt($(item).find('.shijian i').text());
+            if(num > 0 && time > 0){
+                $.ajax({
+                    async: false, //同步
+                    type: "GET",
+                    url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
+                    data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
+                    success: function(data){
+                        if(data.code != 0){
+                            layer.alert(data.msg);
+                            return;
+                        }
+                    }
+                });
+            }
+        });
+    }
+</script>

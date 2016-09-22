@@ -36,11 +36,11 @@ class OrderController extends \yii\web\Controller
                 $value['hour'] = $hour; // 小时
 
                 $price['total'] += $value['num'] * $value['goods']['price'] * $days;
-            } //var_dump($cart);exit();
+            }
         }
 
         /*  判断套餐优惠 */
-        $price['price'] = $price['total'];
+        $price['price'] = $price['total'];//var_dump($cart);var_dump($price);exit();
         return $this->render('index',[
             'cart' => $cart,
             'price' => $price,
