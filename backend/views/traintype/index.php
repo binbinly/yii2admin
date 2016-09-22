@@ -19,7 +19,7 @@ use backend\models\Category;
     <div class="portlet-body">
         <div class="clearfix">
             <div class="btn-group">
-                <?=Html::a('添加 <i class="icon-plus"></i>',['add','type'=>Yii::$app->request->get('type',0)],['class'=>'btn green','style'=>'margin-right:10px;'])?>
+                <?=Html::a('添加 <i class="icon-plus"></i>',['edit'],['class'=>'btn green','style'=>'margin-right:10px;'])?>
                 <?=Html::a('删除 <i class="icon-remove"></i>',['delete'],['class'=>'btn green ajax-post confirm','target-form'=>'ids','style'=>'margin-right:10px;'])?>
             </div>
             <div class="btn-group pull-right">
@@ -64,15 +64,9 @@ use backend\models\Category;
                     'options' => ['width' => '50px;']
                 ],
                 [
-                    'header' => '类型',
+                    'header' => '培训分类',
+                    'attribute' => 'name',
                     'options' => ['width' => '150px;'],
-                    'content' => function($model){
-                        return \common\models\TrainType::getNameById($model['type']);
-                    }
-                ],
-                [
-                    'header' => '名称',
-                    'attribute' => 'title'
                 ],
                 [
                     'header' => '封面',
@@ -82,25 +76,22 @@ use backend\models\Category;
                     }
                 ],
                 [
-                    'header' => '总数',
-                    'attribute' => 'num',
+                    'header' => '证书',
                     'options' => ['width' => '100px;'],
-                ],
-                [
-                    'header' => '价格',
-                    'attribute' => 'price',
-                    'options' => ['width' => '100px;'],
-                ],
-                [
-                    'label' => '排序',
-                    'value' => 'sort',
-                    'options' => ['width' => '50px;'],
-                ],
-                [
-                    'label' => '状态',
-                    'options' => ['width' => '50px;'],
                     'content' => function($model){
-                        return '正常';
+                        return \common\models\TrainCertificate::getAllByIds($model['certif_ids']);
+                    }
+                ],
+                [
+                    'header' => '内容描述',
+                    'attribute' => 'description',
+                    'options' => ['width' => '200px;'],
+                ],
+                [
+                    'label' => '添加时间',
+                    'options' => ['width' => '100px;'],
+                    'content' => function($model){
+                        return date('Y-m-d', $model['ctime']);
                     }
                 ],
                 [
@@ -110,7 +101,7 @@ use backend\models\Category;
                     'options' => ['width' => '200px;'],
                     'buttons' => [
                         'edit' => function ($url, $model, $key) {
-                            return Html::a('<i class="icon-edit"></i>', ['edit','type'=>Yii::$app->request->get('type'),'id'=>$key], [
+                            return Html::a('<i class="icon-edit"></i>', ['edit','id'=>$key], [
                                 'title' => Yii::t('app', '编辑'),
                                 'class' => 'btn mini purple'
                             ]);
@@ -159,7 +150,7 @@ $this->registerJsFile('@web/static/common/js/table-managed.js');
 jQuery(document).ready(function() {
     App.init();
     TableManaged.init();
-    highlight_subnav('train/index'); //子导航高亮
+    highlight_subnav('traintype/index'); //子导航高亮
 
 });
 <?php $this->endBlock() ?>

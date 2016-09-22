@@ -49,8 +49,9 @@ use yii\helpers\Url;
                         <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">培&nbsp;&nbsp;&nbsp;训</a>
                         <ul class="dropdown-menu train">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
-                            <li class="popup01"><a href="/train/index?type=1"><img src="/bootstrap/images/02.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>帆船</p><span>说明内容说明内容说明内容</span></div></a></li>
-                            <li class="popup01"><a href="/train/index?type=2"><img src="/bootstrap/images/02.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>海钓</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <? foreach(\common\models\TrainType::getAll(0) as $item): ?>
+                            <li class="popup01"><a href="<?= Url::to(['/train/index','type'=>$item['id']])?>"><img src="<?= $item['cover']?>"><p class="popup_bg"></p><div class="popup_bg_p"><p><?= $item['name']?></p><span><?= $item['description']?></span></div></a></li>
+                            <? endforeach; ?>
                         </ul>
                     </li>
                     <li><a href="/article/index?cid=1">关于我们</a></li>

@@ -46,7 +46,6 @@ class TrainController extends BaseController
             
             $data = Yii::$app->request->post('Train');
             $data['create_time'] = time();
-            $data['type'] = Yii::$app->request->get('type',1);
             /* 表单数据加载、验证、数据库操作 */
             if ($this->addRow('\backend\models\Train', $data)) {
                 $this->success('操作成功', $this->getForward());
@@ -75,7 +74,6 @@ class TrainController extends BaseController
             $data = Yii::$app->request->post('Train');
             $data['update_time'] = time();
             $data['id'] = $id;
-            $data['type'] = Yii::$app->request->get('type',1);
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\Train', 'id', $data)) {
                 $this->success('操作成功', $this->getForward());

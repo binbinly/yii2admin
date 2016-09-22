@@ -37,7 +37,7 @@ class Train extends \common\core\BaseActiveRecord
             [['type', 'title', 'description', 'price'], 'required'],
             [['type', 'num', 'sort', 'create_time', 'update_time', 'status'], 'integer'],
             [['price'], 'number'],
-            [['title'], 'string', 'max' => 100],
+            [['title','cover'], 'string', 'max' => 100],
             [['description'], 'string', 'max' => 255]
         ];
     }
@@ -55,6 +55,7 @@ class Train extends \common\core\BaseActiveRecord
             'price' => 'Price',
             'num' => 'Num',
             'sort' => 'Sort',
+            'cover'=> 'Cover',
             'create_time' => 'Create Time',
             'update_time' => 'Update Time',
             'status' => 'Status',

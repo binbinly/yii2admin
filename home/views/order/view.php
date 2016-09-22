@@ -205,6 +205,7 @@
             var time  = parseInt($(item).find('.shijian i').text());
             if(num > 0 && time > 0){
                 $.ajax({
+                    async: false, //同步
                     type: "GET",
                     url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
                     data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
