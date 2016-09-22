@@ -17,5 +17,13 @@ class TrainType extends \common\models\TrainType
         return static::find()->where(['id'=>$type])->asArray()->one();
     }
 
+    /**
+     * 根据培训分类id获取详情
+     */
+    public static function getFieldById($id, $field='certif_ids') {
+        if(!$id) return '';
+        $info =  static::findOne($id);
+        return $info->$field;
+    }
 
 }

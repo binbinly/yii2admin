@@ -29,22 +29,12 @@ use yii\helpers\Url;
             ]
         ]); ?>
         
-        <?=$form->field($model, 'title')->textInput(['class'=>'span6 m-wrap'])->label('培训标题')->hint(' ')?>
-
-        <?=$form->field($model, 'type')->dropDownList(\common\models\TrainType::getAll(), ['class'=>'span3 chosen'])->label('培训类型')?>
+        <?=$form->field($model, 'title')->textInput(['class'=>'span6 m-wrap'])->label('证书名')->hint(' ')?>
         
-        <?=$form->field($model, 'description')->textarea(['class'=>'span4', 'rows'=>3])->label('培训描述')->hint(' ', ['style'=>'display:block;']) ?>
-        
-        <?=$form->field($model, 'num')->textInput(['class'=>'span1 m-wrap'])->label('培训总数')->hint('商品的总数量，出售数达到这个数后将停止出售')?>
-        
-        <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('价格')->hint('价格保留两位小数，例如420.12')?>
-        
-        <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
-        
-        <?=$form->field($model, 'status')->radioList(['1'=>'正常','0'=>'隐藏'])->label('状态') ?>
+        <?=$form->field($model, 'description')->textarea(['class'=>'span4', 'rows'=>3])->label('证书描述')->hint(' ', ['style'=>'display:block;']) ?>
 
         <div class="control-group">
-            <label class="control-label">类型封面</label>
+            <label class="control-label">证书图片</label>
             <div class="controls">
                 <div class="fileupload fileupload-new" data-provides="fileupload">
                     <div class="input-append">
@@ -58,7 +48,7 @@ use yii\helpers\Url;
                             <span class="fileupload-new">选择文件</span>
                             <span class="fileupload-exists">更改</span>
                             <input type="file" name="cover" class="default" id="file_but">
-                            <input type="hidden" name="Train[cover]" id="file_ipt" value="<?=$model->cover?>">
+                            <input type="hidden" name="TrainCertificate[cover]" id="file_ipt" value="<?=$model->cover?>">
                         </span>
                         <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
                         <img id="file_img" src="<?= !empty($model->cover) ? $model->cover : '/static/no_pic.jpg'; ?>" class="img-circle"  width="100px" height="100px" style="margin-left: 40px;">
@@ -66,6 +56,7 @@ use yii\helpers\Url;
                 </div>
             </div>
         </div>
+
         
         <div class="form-actions">
             <?= Html::submitButton('<i class="icon-ok"></i> 确定', ['class' => 'btn blue ajax-post','target-form'=>'form-aaa']) ?>
@@ -83,7 +74,7 @@ use yii\helpers\Url;
 <?php
 /* ===========================以下为本页配置信息================================= */
 /* 页面基本属性 */
-$this->title = ($this->context->action->id == 'add' ? '添加' : '编辑') . '培训';
+$this->title = !$model->id ? '添加' : '编辑' . '证书';
 $this->context->title_sub = '';
 
 /* 渲染其他文件 */
@@ -141,7 +132,7 @@ $(function() {
 App.init();
 FormComponents.init();
 /* 子导航高亮 */
-highlight_subnav('train/index');
+highlight_subnav('certificate/index');
 
 /* 上传单图 */
 $("#file_but").on("change", function(){
@@ -176,6 +167,7 @@ alert('服务器错误')
 });
 
 });
+
 <?php $this->endBlock() ?>
 <!-- 将数据块 注入到视图中的某个位置 -->
 <?php $this->registerJs($this->blocks['test'], \yii\web\View::POS_END); ?>
