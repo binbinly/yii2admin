@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Url;
+use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">

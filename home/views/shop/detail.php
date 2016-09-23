@@ -39,6 +39,7 @@
       <li><a href="#">套餐</a></li>
       <li class="active">套餐名称</li>
     </ol>
+    <?php if(isset($info['groups'][1])): ?>
     <!--客房-->
     <div class="store_shop_li">
         <div class="panel panel-default">
@@ -54,6 +55,7 @@
 
                         <?php if(!empty($lists[1])): ?>
                         <?php foreach($lists[1] as $k => $v): ?>
+                        <?php if(isset($info['groups'][1][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
@@ -73,17 +75,18 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i><?=isset($info['groups'][1][$v['id']]['days'])?$info['groups'][1][$v['id']]['days']:0?></i> 晚</span>
+                                    <span class="shijian">共<i><?=isset($info['groups'][1][$v['id']]['days'])?$info['groups'][1][$v['id']]['days']:0?></i> 天</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
                                         <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
                                         <img src="/bootstrap/images/jian.png">
                                         <img src="/bootstrap/images/jia.png">
-                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
+                                        <p>¥ <span class="price" style="float:none;"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <?php endif;?>
                         <?php endforeach; ?>
                         <?php endif;?>
 
@@ -94,6 +97,9 @@
             </div>
         </div>
     </div>
+    <?php endif;?>
+    
+    <?php if(isset($info['groups'][2])): ?>
     <!--帆 船-->
     <div class="store_shop_li">
         <div class="panel panel-default">
@@ -109,6 +115,7 @@
 
                         <?php if(!empty($lists[2])): ?>
                         <?php foreach($lists[2] as $k => $v): ?>
+                        <?php if(isset($info['groups'][2][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
@@ -128,17 +135,18 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>0</i> 晚</span>
+                                    <span class="shijian">共<i><?=isset($info['groups'][2][$v['id']]['days'])?$info['groups'][2][$v['id']]['days']:0?></i> 天</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
-                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <input name="num" value="<?=isset($info['groups'][2][$v['id']]['num'])?$info['groups'][2][$v['id']]['num']:0?>">
                                         <img src="/bootstrap/images/jian.png">
                                         <img src="/bootstrap/images/jia.png">
-                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
+                                        <p>¥ <span class="price" style="float:none;"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <?php endif;?>
                         <?php endforeach; ?>
                         <?php endif;?>
 
@@ -147,6 +155,9 @@
             </div>
         </div>
     </div>
+    <?php endif;?>
+    
+    <?php if(isset($info['groups'][3])): ?>
     <!--海 钓-->
     <div class="store_shop_li">
         <div class="panel panel-default">
@@ -161,6 +172,7 @@
                     <ul>
                         <?php if(!empty($lists[3])): ?>
                         <?php foreach($lists[3] as $k => $v): ?>
+                        <?php if(isset($info['groups'][3][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
@@ -180,17 +192,18 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>0</i> 晚</span>
+                                    <span class="shijian">共<i><?=isset($info['groups'][3][$v['id']]['days'])?$info['groups'][3][$v['id']]['days']:0?></i> 天</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
-                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <input name="num" value="<?=isset($info['groups'][3][$v['id']]['num'])?$info['groups'][3][$v['id']]['num']:0?>">
                                         <img src="/bootstrap/images/jian.png">
                                         <img src="/bootstrap/images/jia.png">
-                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
+                                        <p>¥ <span class="price" style="float:none;"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <?php endif;?>
                         <?php endforeach; ?>
                         <?php endif;?>
 
@@ -200,6 +213,9 @@
             </div>
         </div>
     </div>
+    <?php endif;?>
+    
+    <?php if(isset($info['groups'][4])): ?>
     <!--潜水-->
     <div class="store_shop_li">
         <div class="panel panel-default">
@@ -214,6 +230,7 @@
 
                         <?php if(!empty($lists[4])): ?>
                         <?php foreach($lists[4] as $k => $v): ?>
+                        <?php if(isset($info['groups'][4][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
                             <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
@@ -233,17 +250,18 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i>1</i> 晚</span>
+                                    <span class="shijian">共<i><?=isset($info['groups'][4][$v['id']]['days'])?$info['groups'][4][$v['id']]['days']:0?></i> 天</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
-                                        <input name="num" value="<?=isset($info['groups'][1][$v['id']]['num'])?$info['groups'][1][$v['id']]['num']:0?>">
+                                        <input name="num" value="<?=isset($info['groups'][4][$v['id']]['num'])?$info['groups'][4][$v['id']]['num']:0?>">
                                         <img src="/bootstrap/images/jian.png">
                                         <img src="/bootstrap/images/jia.png">
-                                        <p>¥ <span class="price"><?=$v['price']?></span></p>
+                                        <p>¥ <span class="price" style="float:none;"><?=$v['price']?></span></p>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <?php endif;?>
                         <?php endforeach; ?>
                         <?php endif;?>
 
@@ -254,11 +272,12 @@
             </div>
         </div>
     </div>
+    <?php endif;?>
 </div>
 <div class="w_1200 store1_bottom">
     <p>服务热线: <i>4008888888</i>工作日: 00:00 - 22:00</p>
     <div class="goumai">
-        合计：<i>¥ <span id="total">0</span></i>
+        合计：<i>¥ <span id="total"><?=$info['price']?></span></i>
         <a href="javascript:;" class="goumai01">放入购物车</a>
         <a href="javascript:;" class="goumai02">立即购买</a>
     </div>
@@ -280,7 +299,7 @@
             etime = dataOBJ.getFullYear()+'-'+eMonth+'-'+dataOBJ.getDate();
             item.find('.etime').val(etime);
             console.log(etime);
-            total();//更新总价格
+            //total();//更新总价格
         });
         /* 加入购物车 */
         $('.goumai01').click(function () {
