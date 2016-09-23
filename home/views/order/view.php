@@ -91,15 +91,15 @@
         </div>
     </div>
     <div class="shopping_pos">
-        <a href="#" class="shopping_pos_but checkall" >全选</a>
-        <a href="#" class="shopping_pos_but01 delete" >删除</a>
+        <a href="javascript:;" class="shopping_pos_but checkall" >全选</a>
+        <a href="javascript:;" class="shopping_pos_but01 delete" >删除</a>
     </div>
 </div>
 
 <div class="w_1200 store1_bottom">
     <p>服务热线: <i>4008888888</i>工作日: 00:00 - 22:00</p>
     <div class="goumai">
-        合计：<i>¥ <span id="total"><?=$price['total']?></span></i>
+        合计：<i>¥ <span id="total">0</span></i>
         <a href="javascript:;" class="shopping_jieshuan goumai02">结&nbsp;&nbsp;算</a>
     </div>
 </div>
@@ -141,6 +141,11 @@
         /* 全选 */
         $('.checkall').click(function () {
             $(".ids").prop("checked", true);
+            total()//更新总价格
+        });
+        /* 单选 */
+        $('.ids').click(function () {
+            total()//更新总价格
         });
         /* 删除 */
         $('.delete').click(function () {
@@ -174,11 +179,13 @@
     function total(){
         var t = 0, items = $('.items');
         items.each( function(k, item){
-            var time  = parseInt($(item).find('.shijian i').text());
-            var num   = parseInt($(item).find('.amount input').val());
-            var price = parseInt($(item).find('.price').text());
-            t += time * num * price;
-            console.log(t);
+            if($(item).find('.ids')[0].checked){
+                var time  = parseInt($(item).find('.shijian i').text());
+                var num   = parseInt($(item).find('.amount input').val());
+                var price = parseInt($(item).find('.price').text());
+                t += time * num * price;
+                console.log(t);
+            }
         });
         $('#total').html(t);
     }
@@ -197,25 +204,27 @@
     function addCart() {
         var items = $('.items');
         items.each( function(k, item){
-            var id  = parseInt($(item).attr('goodid'));
-            var stime  = $(item).find('.stime').val();
-            var etime  = $(item).find('.etime').val();
-            var price = parseInt($(item).find('.price').text());
-            var num   = parseInt($(item).find('.amount input').val());
-            var time  = parseInt($(item).find('.shijian i').text());
-            if(num > 0 && time > 0){
-                $.ajax({
-                    async: false, //同步
-                    type: "GET",
-                    url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
-                    data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
-                    success: function(data){
-                        if(data.code != 0){
-                            layer.alert(data.msg);
-                            return;
+            if($(item).find('.ids')[0].checked){ //当被选择的时候才进入结算
+                var id  = parseInt($(item).attr('goodid'));
+                var stime  = $(item).find('.stime').val();
+                var etime  = $(item).find('.etime').val();
+                var price = parseInt($(item).find('.price').text());
+                var num   = parseInt($(item).find('.amount input').val());
+                var time  = parseInt($(item).find('.shijian i').text());
+                if(num > 0 && time > 0){
+                    $.ajax({
+                        async: false, //同步
+                        type: "GET",
+                        url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
+                        data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
+                        success: function(data){
+                            if(data.code != 0){
+                                layer.alert(data.msg);
+                                return;
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }
