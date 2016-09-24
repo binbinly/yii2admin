@@ -58,6 +58,11 @@ use backend\models\Shop;
             </div>
         </div>
 
+        <?=$this->renderFile('@app/views/public/_image.php',[
+            'data'=>$model->images,
+            'field'=>'ShopGroup[images]'
+        ])?>
+
         <div class="control-group">
             <label class="control-label">套餐【酒店】</label>
             <?php foreach (Shop::lists(1) as $list1) :?>
@@ -188,7 +193,55 @@ $(function() {
     FormComponents.init();
     /* 子导航高亮 */
     highlight_subnav('group/index');
-    
+
+    /* ======================图集js========================= */
+    $('.fileupload-item').live('mouseover mouseout',function(e){
+        if (event.type == 'mouseover') {
+            $(this).find('span').css('display','block');
+        } else {
+            $(this).find('span').css('display','none');
+        }
+    });
+    $('.fileupload-del').live('click',function(e){
+        $(this).parent().remove();
+    });
+    $("#uploadImages").on("change", function(){
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return;
+        if (/^image/.test( files[0].type)){
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function(){
+                $.ajax({
+                    type: 'post',
+                    url: '<?=Url::to(["upload/image"])?>',
+                    data: {imgbase64:this.result},
+                    dataType: 'json',
+                    beforeSend: function(){
+                        $('.fileupload-text').html('上传中...');
+                    },
+                    success: function(json){
+                        if(json.boo){
+                            var html  = '';
+                                html += '<div class="fileupload-item thumbnail">';
+                                html += '    <img src="'+ json.data +'" />';
+                                html += '    <span class="fileupload-del">删除</span>';
+                                html += '    <input type="hidden" name="ShopGroup[images][]" value="'+json.data+'" />';
+                                html += '</div>';
+                            $('.fileupload-list').append(html);
+                            $('.fileupload-text').html('上传成功');
+                        } else {
+                            alert(json.msg);
+                        }
+                    },
+                    error: function(xhr, type){
+                        alert('服务器错误')
+                    }
+                });
+            }
+        }
+    });
+
     /* ===================上传单图======================= */
     $("#file_but").on("change", function(){
         var files = !!this.files ? this.files : [];

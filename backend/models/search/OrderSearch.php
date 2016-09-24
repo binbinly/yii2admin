@@ -92,7 +92,7 @@ class OrderSearch extends Order
             $this->to_date = $params['OrderSearch']['to_date'];
         }
         if($this->from_date !='' && $this->to_date != '') {
-            $query->andFilterWhere(['between', 'pay_time', strtotime($this->from_date), strtotime($this->to_date)]);
+            $query->andFilterWhere(['between', 'create_time', strtotime($this->from_date), strtotime($this->to_date)]);
         }
 
         return $dataProvider;

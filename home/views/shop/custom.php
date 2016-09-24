@@ -75,7 +75,7 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i type="24">0</i> 天</span>
+                                    <span class="shijian">共<i type="24">1</i> 天</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
                                         <input name="num" value="0" disabled>
@@ -115,7 +115,7 @@
                         <?php foreach($lists[2] as $k => $v): ?>
 
                         <li class="items ischeck <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">
@@ -133,7 +133,7 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i type="1">0</i> 时</span>
+                                    <span class="shijian">共<i type="1">1</i> 时</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
                                         <input name="num" value="0" disabled>
@@ -170,7 +170,7 @@
                         <?php foreach($lists[3] as $k => $v): ?>
 
                         <li class="items ischeck <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">
@@ -188,7 +188,7 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i type="1">0</i> 时</span>
+                                    <span class="shijian">共<i type="1">1</i> 时</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
                                         <input name="num" value="0" disabled>
@@ -226,7 +226,7 @@
                         <?php foreach($lists[4] as $k => $v): ?>
 
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">
@@ -244,7 +244,7 @@
                                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
-                                    <span class="shijian">共<i type="1">0</i> 时</span>
+                                    <span class="shijian">共<i type="1">1</i> 时</span>
                                     <div class="amount amount01">
                                         <span>数量</span>
                                         <input name="num" value="0" disabled>

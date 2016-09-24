@@ -28,7 +28,7 @@ use backend\models\Category;
                 <button class="btn dropdown-toggle" data-toggle="dropdown">工具 <i class="icon-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                    <li><a href="<?=\yii\helpers\Url::to(['export'])?>">导出为Excel</a></li>
+                    <li><a href="<?='http://'.$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"].'?'.$_SERVER["QUERY_STRING"].'&action=export';?>">导出为Excel</a></li>
                 </ul>
             </div>
             <form action="#" class="form-search pull-right" style="margin: 0 10px 0;">

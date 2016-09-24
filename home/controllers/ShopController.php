@@ -39,6 +39,7 @@ class ShopController extends \yii\web\Controller
         $id = Yii::$app->request->get('id', 1);
         $lists = \backend\models\Shop::lists();
         $info = ShopGroup::info($id);
+        $info['images'] = explode(',', trim($info['images'],','));
         $info['groups'] = unserialize($info['groups']);//var_dump($info['groups']);exit();
         return $this->render('detail',[
             'lists' => $lists,

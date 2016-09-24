@@ -65,7 +65,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>房间数量</p>
+                        <p>商品数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -75,7 +75,8 @@
                         </select>
                     </div>
                 </section>
-                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
+                <a href="javascript:;" class="tijiao goumai">购 买</a>
+                <a href="javascript:;" class="tijiao gouwuche" style="background:#e50014;">加入购物车</a>
             </div>
             <div class="tab-pane fade items" id="sailing">
                 <section id="demo_position">
@@ -102,7 +103,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>房间数量</p>
+                        <p>商品数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -112,7 +113,8 @@
                         </select>
                     </div>
                 </section>
-                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
+                <a href="javascript:;" class="tijiao goumai">购 买</a>
+                <a href="javascript:;" class="tijiao gouwuche" style="background:#e50014;">加入购物车</a>
             </div>
             <div class="tab-pane fade items" id="dive">
                 <section id="demo_position">
@@ -149,7 +151,8 @@
                         </select>
                     </div>
                 </section>
-                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
+                <a href="javascript:;" class="tijiao goumai">购 买</a>
+                <a href="javascript:;" class="tijiao gouwuche" style="background:#e50014;">加入购物车</a>
             </div>
             <div class="tab-pane fade items" id="sea">
                 <section id="demo_position">
@@ -186,47 +189,39 @@
                         </select>
                     </div>
                 </section>
-                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
+                <a href="javascript:;" class="tijiao goumai">购 买</a>
+                <a href="javascript:;" class="tijiao gouwuche" style="background:#e50014;">加入购物车</a>
             </div>
         </div>
     </div>
     <!--滑动-->
 
     <div id="carousel-example-captions" class="carousel slide bann_switch" data-ride="carousel">
+
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
-            <li data-target="#carousel-example-captions" data-slide-to="1" class="active"></li>
-            <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
+            <?php if($group_ppt):?>
+            <?php foreach ($group_ppt as $k => $g) :?>
+            <li data-target="#carousel-example-captions" data-slide-to="<?=$k?>" class="<?=$k==0?'active':''?>"></li>
+            <?php endforeach;?>
+            <?php endif;?>
         </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item">
-            <a href="">
-                <img src="/bootstrap/images/lunbo.jpg" data-holder-rendered="true" class="bann_switch_img">
-                <div class="carousel-caption">
-                <h3>悠长假期住宿优惠</h3>
-                <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-            </a>
-          </div>
-        </div>
-        <div class="item active">
-            <a href="">
-                <img src="/bootstrap/images/lunbo.jpg" data-holder-rendered="true" class="bann_switch_img">
-                <div class="carousel-caption">
-                <h3>悠长假期住宿优惠</h3>
-                <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-            </a>
+
+
+        <div class="carousel-inner" role="listbox">
+            <?php if($group_ppt):?>
+            <?php foreach ($group_ppt as $k => $g) :?>
+            <div class="item <?=$k==0?'active':''?>">
+                <a href="">
+                    <img src="<?=$g['cover']?>" data-holder-rendered="true" class="bann_switch_img">
+                    <div class="carousel-caption">
+                    <h3><?=$g['title']?></h3>
+                    <p><?=$g['description']?></p>
+                </a>
+              </div>
             </div>
+            <?php endforeach;?>
+            <?php endif;?>
         </div>
-        <div class="item">
-            <a href="">
-                <img src="/bootstrap/images/lunbo.jpg" data-holder-rendered="true" class="bann_switch_img">
-                <div class="carousel-caption">
-                <h3>悠长假期住宿优惠</h3>
-                <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-            </a>
-            </div>
-        </div>
-      </div>
     </div>
     <!--滑动结束-->
 </div>
@@ -424,11 +419,15 @@
 <script type="text/javascript">
     $(function () {
         /* 立即购买，跳转到结算页 */
-        $('.tijiao').click(function () {
+        $('.goumai').click(function () {
             clearCart();
-            addCart(this);
+            addCart(this,1);
         });
+        /* 加入购物车 */
+        $('.gouwuche').click(function () {
+            addCart(this,0);
 
+        });
     });
     /* 清空购物车 */
     function clearCart() {
@@ -442,7 +441,7 @@
         });
     }
     /* 添加或修改购物车 */
-    function addCart(that) {
+    function addCart(that,isjp) {
         var item = $(that).parents('.items');
 
         var id  = parseInt(item.find('.goodid').val());
@@ -461,9 +460,13 @@
                 success: function(data){
                     if(data.code != 0){
                         layer.alert(data.msg);
-                        return;
+                    } else {
+                        if(isjp == 1){
+                            window.location.href = '/order';
+                        } else {
+                            layer.alert('已加入购物车');
+                        }
                     }
-                    window.location.href = '/order';
                 }
             });
         }

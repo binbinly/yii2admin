@@ -88,7 +88,7 @@ i,em{font-style:normal}
 .jia{color:#c4a76f; cursor:pointer; }
 
 .sy_switch .tab-pane .input-append {margin-bottom:20px; }
-.tijiao{background:#c4a76f; color:#fff; border-radius: 2px; padding:4px 10px; float: right; margin-right:40px;}
+.tijiao{background:#c4a76f; color:#fff; border-radius: 2px; padding:4px 10px; float: right; margin-right:40px;margin-top: 40px;}
 
 /*时间控件*/
 .input-append p{margin-bottom:0px; color:#888888;}

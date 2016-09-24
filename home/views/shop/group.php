@@ -47,7 +47,7 @@ use yii\helpers\Url;
             <a href="<?=Url::to(['shop/custom'])?>">
                 <img src="/bootstrap/images/store.jpg" class="store_cen_img" width="1200" height="495">
                 <div class="store_cen_text01">
-                    <span><i>自定义套餐</i>自由选择</span>
+                    <span><i>自定义套餐</i></span>
                 </div>
                 <div class="store_bg"><img src="/bootstrap/images/store_bg.png"></div>
             </a>
@@ -63,7 +63,7 @@ use yii\helpers\Url;
                 </div>-->
                 <img src="<?=$v['cover']?>" class="store_cen_img" width="1200" height="495">
                 <div class="store_cen_text01">
-                    <span><i><?=$v['title']?></i><?=$v['description']?></span>
+                    <span><i><?=$v['title']?></i></span>
                 </div>
                 <div class="store_bg"><img src="/bootstrap/images/store_bg.png"></div>
             </a>

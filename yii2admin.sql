@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-09-24 07:52:53
+Date: 2016-09-24 12:47:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -828,6 +828,7 @@ CREATE TABLE `yii2_shop_group` (
   `title` varchar(50) NOT NULL COMMENT '套餐标题',
   `description` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
   `cover` varchar(255) NOT NULL DEFAULT '' COMMENT '封面图',
+  `images` text NOT NULL COMMENT '图集',
   `groups` text NOT NULL COMMENT '商品组合，数字逗号分隔',
   `price` decimal(8,2) NOT NULL COMMENT '套餐价格',
   `total` decimal(8,2) DEFAULT '0.00' COMMENT '原价',
@@ -839,10 +840,10 @@ CREATE TABLE `yii2_shop_group` (
 -- ----------------------------
 -- Records of yii2_shop_group
 -- ----------------------------
-INSERT INTO `yii2_shop_group` VALUES ('2', '阿斯顿发顺丰', '沙发沙发啊 沙发阿斯顿发是放大师傅', '/upload/image/201609/1474656443824.jpg', 'a:1:{i:1;a:1:{i:3;a:3:{s:4:\"days\";s:1:\"6\";s:3:\"num\";s:1:\"6\";s:2:\"id\";s:1:\"3\";}}}', '600.00', '15128.28', '0', '1');
-INSERT INTO `yii2_shop_group` VALUES ('4', '房1天2人潜水1天2人', '房1天2人潜水1天2人', '/upload/image/201609/1474656279610.jpg', 'a:2:{i:1;a:1:{i:1;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"1\";}}i:3;a:1:{i:5;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"5\";}}}', '998.00', '2840.24', '0', '1');
-INSERT INTO `yii2_shop_group` VALUES ('5', '节日特惠套餐', '测试酒店1,2天2人；帆船1天2人', '/upload/image/201609/1474656422700.jpg', 'a:2:{i:1;a:1:{i:1;a:3:{s:4:\"days\";s:1:\"2\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"1\";}}i:2;a:1:{i:4;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"4\";}}}', '1250.00', '2746.48', '0', '1');
-INSERT INTO `yii2_shop_group` VALUES ('6', '666666房3天2间；海钓4小时2人', '666666房3天2间；海钓4小时2人', '/upload/image/201609/1474656433378.jpg', 'a:2:{i:1;a:1:{i:6;a:3:{s:4:\"days\";s:1:\"3\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"6\";}}i:4;a:1:{i:2;a:3:{s:4:\"days\";s:1:\"4\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"2\";}}}', '5000.00', '17096.00', '0', '1');
+INSERT INTO `yii2_shop_group` VALUES ('2', '阿斯顿发顺丰', '沙发沙发啊 沙发阿斯顿发是放大师傅', '/upload/image/201609/1474656443824.jpg', '/upload/image/201609/1474685974797.jpg,/upload/image/201609/1474686306625.jpg,/upload/image/201609/1474687094803.jpg,/upload/image/201609/1474687096783.jpg,/upload/image/201609/1474687098718.jpg', 'a:1:{i:1;a:1:{i:3;a:3:{s:4:\"days\";s:1:\"6\";s:3:\"num\";s:1:\"6\";s:2:\"id\";s:1:\"3\";}}}', '600.00', '15128.28', '0', '1');
+INSERT INTO `yii2_shop_group` VALUES ('4', '房1天2人潜水1天2人', '房1天2人潜水1天2人', '/upload/image/201609/1474656279610.jpg', '', 'a:2:{i:1;a:1:{i:1;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"1\";}}i:3;a:1:{i:5;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"5\";}}}', '998.00', '2840.24', '0', '1');
+INSERT INTO `yii2_shop_group` VALUES ('5', '节日特惠套餐', '测试酒店1,2天2人；帆船1天2人', '/upload/image/201609/1474656422700.jpg', '', 'a:2:{i:1;a:1:{i:1;a:3:{s:4:\"days\";s:1:\"2\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"1\";}}i:2;a:1:{i:4;a:3:{s:4:\"days\";s:1:\"1\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"4\";}}}', '1250.00', '2746.48', '0', '1');
+INSERT INTO `yii2_shop_group` VALUES ('6', '666666房3天2间；海钓4小时2人', '666666房3天2间；海钓4小时2人', '/upload/image/201609/1474656433378.jpg', '', 'a:2:{i:1;a:1:{i:6;a:3:{s:4:\"days\";s:1:\"3\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"6\";}}i:4;a:1:{i:2;a:3:{s:4:\"days\";s:1:\"4\";s:3:\"num\";s:1:\"2\";s:2:\"id\";s:1:\"2\";}}}', '5000.00', '17096.00', '0', '1');
 
 -- ----------------------------
 -- Table structure for `yii2_shop_price`

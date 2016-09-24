@@ -30,7 +30,7 @@ class OrderController extends \yii\web\Controller
             'total' => 0, //优惠前费用
             'discount' => 0, // 优惠多少元
             'price' => 0 //实际支付费用
-        ];//var_dump(Yii::$app->user->identity->getId());
+        ];//var_dump(Yii::$app->session);
         /* 普通商品 */
         if ($cart) {
             foreach ($cart as $key => &$value) {
@@ -252,7 +252,7 @@ class OrderController extends \yii\web\Controller
      * ---------------------------------------
      */
     public function actionClear(){
-        Yii::$app->session->remove('cart');
+        Yii::$app->session->set('cart',[]);
     }
 
 }

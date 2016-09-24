@@ -39,6 +39,54 @@
       <li><a href="#">套餐</a></li>
       <li class="active">套餐名称</li>
     </ol>
+
+    <div class="store_shop_li">
+        <div class="panel panel-default">
+            <h4 class="panel-title">
+                <span class="pull-left">套餐详情</span>
+            </h4>
+            <div id="collapseListGroup1" class="panel-collapse in" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
+                <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                    <div id="myTabContent" class="tab-content">
+                        <?php if($info['images']):?>
+                        <?php foreach ($info['images'] as $k => $img) :?>
+                        <?php if($k < 4):?>
+                        <div  class="tab-pane fade <?=$k == 0 ?'active in':''?>" id="home0<?=$k+1?>" >
+                            <img src="<?=$img?>" >
+                        </div>
+                        <?php endif;?>
+                        <?php endforeach; ?>
+                        <?php endif;?>
+
+                    </div>
+                    <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                        <?php if($info['images']):?>
+                        <?php foreach ($info['images'] as $k => $img) :?>
+                        <?php if($k < 4):?>
+                        <li role="presentation" class="<?=$k == 0 ?'active':''?>"><a href="#home0<?=$k+1?>"   data-toggle="tab" aria-controls="home0<?=$k+1?>"><img src="<?=$img?>" ></a></li>
+                        <?php endif;?>
+                        <?php endforeach; ?>
+                        <?php endif;?>
+                    </ul>
+                </div>
+                <div class="store_shop_li_text">
+                    <h3><?=$info['title']?><i><img src="/bootstrap/images/biaoqian.png">套餐</i><br>
+                    </h3>
+                    <br>
+                    <div class="store_shop_text03">
+                        <p>套餐说明：</p>
+                        <div class="cen_top_r"></div>
+                    </div>
+                    <p class="store_shop_text04"> <?=$info['description']?></p>
+                    <!--<div class="store_shop_text04" style="color: #e50012;font-size: 18px;">
+                        原价：<i style="text-decoration:line-through;color:#e50012;">¥ <span><?=$info['total']?></span></i>　
+                        套餐价：<i style="color:#e50012;">¥ <span id="total" ><?=$info['price']?></span></i>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php if(isset($info['groups'][1])): ?>
     <!--客房-->
     <div class="store_shop_li">
@@ -116,7 +164,7 @@
                         <?php foreach($lists[2] as $k => $v): ?>
                         <?php if(isset($info['groups'][2][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">
@@ -172,7 +220,7 @@
                         <?php foreach($lists[3] as $k => $v): ?>
                         <?php if(isset($info['groups'][3][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">
@@ -229,7 +277,7 @@
                         <?php foreach($lists[4] as $k => $v): ?>
                         <?php if(isset($info['groups'][4][$v['id']])): ?>
                         <li class="items <?=$k%2==1?'change_else_bg':''?>" goodid="<?=$v['id']?>">
-                            <div class="w_140"><p><?=$v['title']?></p><i><img src="/bootstrap/images/shuanren.png"> </i><i><img src="/bootstrap/images/diannao.png"> </i><i><img src="/bootstrap/images/wifi.png"> </i></div>
+                            <div class="w_140"><p><?=$v['title']?></p></div>
                             <div class="w_200"><p><?=$v['description']?></p></div>
                             <div class="w_660">
                                 <div class="store_shop_text05">

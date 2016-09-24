@@ -65,6 +65,11 @@ class GroupController extends BaseController
             $data['groups'] = serialize($data['groups']);
             $data['totel']  = $totel;
 
+            /* 将图组转化为字符串 */
+            if ($data['images'] && is_array($data['images'])) {
+                $data['images'] = trim(implode ( ",", $data['images']),',');
+            }
+
             /* 表单数据加载、验证、数据库操作 */
             if ($this->addRow('\backend\models\ShopGroup', $data)) {
                 $this->success('操作成功', $this->getForward());
@@ -114,6 +119,11 @@ class GroupController extends BaseController
             }
             $data['groups'] = serialize($data['groups']);
             $data['total']  = $total;
+
+            /* 将图组转化为字符串 */
+            if ($data['images'] && is_array($data['images'])) {
+                $data['images'] = trim(implode ( ",", $data['images']),',');
+            }//var_dump($data);exit();
 
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\ShopGroup', 'id', $data)) {
