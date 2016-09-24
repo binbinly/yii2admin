@@ -28,9 +28,7 @@ use backend\models\Category;
                 <button class="btn dropdown-toggle" data-toggle="dropdown">工具 <i class="icon-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                    <li><a href="#">Print</a></li>
-                    <li><a href="#">Save as PDF</a></li>
-                    <li><a href="#">导出为Excel</a></li>
+                    <li><a href="<?=\yii\helpers\Url::to(['export'])?>">导出为Excel</a></li>
                 </ul>
             </div>
             <form action="#" class="form-search pull-right" style="margin: 0 10px 0;">
@@ -75,6 +73,12 @@ use backend\models\Category;
                 [
                     'header' => '商品名',
                     'attribute' => 'title',
+                    'content' => function($model){
+                        if ($model['taocan'] > 0) {
+                            return '<span style="color:#f00;">'.$model['title'].'</span>';
+                        }
+                        return $model['title'];
+                    },
                     'filter' => Html::input('text', 'OrderSearch[title]', $searchModel->title, ['style' => 'width:100px'])
                 ],
                 [
@@ -92,6 +96,11 @@ use backend\models\Category;
                 [
                     'label' => '数量',
                     'value' => 'num',
+                    'options' => ['width' => '50px;'],
+                ],
+                [
+                    'label' => '实收',
+                    'value' => 'total',
                     'options' => ['width' => '50px;'],
                 ],
                 [

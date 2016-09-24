@@ -42,16 +42,26 @@ use yii\helpers\Url;
     </ol>
     <div class="store_cen">
     <ul>
-        
+
+        <li>
+            <a href="<?=Url::to(['shop/custom'])?>">
+                <img src="/bootstrap/images/store.jpg" class="store_cen_img" width="1200" height="495">
+                <div class="store_cen_text01">
+                    <span><i>自定义套餐</i>自由选择</span>
+                </div>
+                <div class="store_bg"><img src="/bootstrap/images/store_bg.png"></div>
+            </a>
+        </li>
+
         <?php if($lists): ?>
         <?php foreach($lists as $v): ?>
         <li>
             <a href="<?=Url::to(['shop/detail','id'=>$v['id']])?>">
-                <div class="store_cen_text">
+                <!--<div class="store_cen_text">
                     <span><?=$v['title']?></span>
                     <p><?=$v['description']?></p>
-                </div>
-                <img src="/bootstrap/images/store.jpg" class="store_cen_img">
+                </div>-->
+                <img src="<?=$v['cover']?>" class="store_cen_img" width="1200" height="495">
                 <div class="store_cen_text01">
                     <span><i><?=$v['title']?></i><?=$v['description']?></span>
                 </div>

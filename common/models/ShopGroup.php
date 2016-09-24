@@ -12,6 +12,7 @@ use Yii;
  * @property string $description
  * @property string $groups
  * @property string $price
+ * @property string $total
  * @property integer $sort
  * @property integer $status
  */
@@ -32,10 +33,11 @@ class ShopGroup extends \common\core\BaseActiveRecord
     {
         return [
             [['title', 'groups', 'price'], 'required'],
-            [['price'], 'number'],
+            [['groups'], 'string'],
+            [['price', 'total'], 'number'],
             [['sort', 'status'], 'integer'],
             [['title'], 'string', 'max' => 50],
-            [['description'], 'string', 'max' => 255]
+            [['description','cover'], 'string', 'max' => 255]
         ];
     }
 
@@ -48,8 +50,10 @@ class ShopGroup extends \common\core\BaseActiveRecord
             'id' => 'ID',
             'title' => 'Title',
             'description' => 'Description',
+            'cover' => 'Cover',
             'groups' => 'Groups',
             'price' => 'Price',
+            'total' => 'Total',
             'sort' => 'Sort',
             'status' => 'Status',
         ];

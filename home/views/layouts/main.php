@@ -221,6 +221,17 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 
 <script type="text/javascript">
     $(".form_datetime5").datetimepicker({
+        startDate: '<?=date('Y-m-d',time()+60*60*24)?>',
+        format: "yyyy-mm-dd hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        language:'zh-CN',
+        linkFormat: "yyyy-mm-ddi",
+        startView: 2,//
+        minView: 1
+    });
+    $(".form_datetime6").datetimepicker({
+        startDate: '<?=date('Y-m-d',time()+60*60*24)?>',
         format: "yyyy-mm-dd",
         autoclose: true,
         todayBtn: true,

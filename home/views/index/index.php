@@ -40,159 +40,153 @@
             <li><a href="#sea" data-toggle="tab">海钓</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade in active" id="guestroom">
+            <div class="tab-pane fade in active items" id="guestroom">
                 <section id="demo_position">
-                    <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                    <div class="input-append date form_datetime6 w_120" data-picker-position="bottom-left">
                         <p>入住日期</p>
                         <div class="border">
-                        <input size="16" readonly="readonly" type="text">
-                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                            <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d',time()+60*60*24)?>">
+                            <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
-                    <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                    <div class="input-append date form_datetime6 w_120" data-picker-position="bottom-left">
                         <p>退房日期</p>
                         <div class="border">
-                            <input size="16" readonly="readonly" type="text">
+                            <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                    <p>房间类型</p>
-                        <select class="form-control">
-                            <option>空调房</option>
-                            <option>单人房</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <p>房间类型</p>
+                        <select class="form-control goodid" name="aid" >
+                            <?php foreach (\backend\models\Shop::lists(1) as $v): ?>
+                            <option value="<?=$v['id']?>"><?=$v['title']?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
                         <p>房间数量</p>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select class="form-control num">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                 </section>
-                <p  class="jia">+房间类型</p>
-                <a href="" class="tijiao ">提&nbsp;交</a>
+                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
             </div>
-            <div class="tab-pane fade" id="sailing">
+            <div class="tab-pane fade items" id="sailing">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>入住日期</p>
+                        <p>起租日期</p>
                         <div class="border">
-                        <input size="16" readonly="readonly" type="text">
-                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                            <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
+                            <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退房日期</p>
+                        <p>退租日期</p>
                         <div class="border">
-                            <input size="16" readonly="readonly" type="text">
+                            <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                    <p>房间类型</p>
-                        <select class="form-control">
-                            <option>空调房</option>
-                            <option>单人房</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <p>商品类型</p>
+                        <select class="form-control goodid" name="aid" >
+                            <?php foreach (\backend\models\Shop::lists(2) as $v): ?>
+                                <option value="<?=$v['id']?>"><?=$v['title']?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
                         <p>房间数量</p>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select class="form-control num">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                 </section>
+                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
             </div>
-            <div class="tab-pane fade" id="dive">
+            <div class="tab-pane fade items" id="dive">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>入住日期</p>
+                        <p>起租日期</p>
                         <div class="border">
-                        <input size="16" readonly="readonly" type="text">
-                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                            <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
+                            <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退房日期</p>
+                        <p>退租日期</p>
                         <div class="border">
-                            <input size="16" readonly="readonly" type="text">
+                            <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                    <p>房间类型</p>
-                        <select class="form-control">
-                            <option>空调房</option>
-                            <option>单人房</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <p>房间类型</p>
+                        <select class="form-control goodid" name="aid" >
+                            <?php foreach (\backend\models\Shop::lists(3) as $v): ?>
+                                <option value="<?=$v['id']?>"><?=$v['title']?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>房间数量</p>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <p>商品数量</p>
+                        <select class="form-control num">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                 </section>
+                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
             </div>
-            <div class="tab-pane fade" id="sea">
+            <div class="tab-pane fade items" id="sea">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>入住日期</p>
+                        <p>起租日期</p>
                         <div class="border">
-                        <input size="16" readonly="readonly" type="text">
-                        <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                            <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
+                            <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退房日期</p>
+                        <p>退租日期</p>
                         <div class="border">
-                            <input size="16" readonly="readonly" type="text">
+                            <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
                     <p>房间类型</p>
-                        <select class="form-control">
-                            <option>空调房</option>
-                            <option>单人房</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select class="form-control goodid" name="aid" >
+                            <?php foreach (\backend\models\Shop::lists(4) as $v): ?>
+                                <option value="<?=$v['id']?>"><?=$v['title']?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>房间数量</p>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <p>商品数量</p>
+                        <select class="form-control num">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                 </section>
+                <a href="javascript:;" class="tijiao">提&nbsp;交</a>
             </div>
         </div>
     </div>
@@ -426,3 +420,52 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        /* 立即购买，跳转到结算页 */
+        $('.tijiao').click(function () {
+            clearCart();
+            addCart(this);
+        });
+
+    });
+    /* 清空购物车 */
+    function clearCart() {
+        $.ajax({
+            async: false, //同步
+            type: "GET",
+            url: "<?=\yii\helpers\Url::to(['order/clear'])?>",
+            success: function(data){
+
+            }
+        });
+    }
+    /* 添加或修改购物车 */
+    function addCart(that) {
+        var item = $(that).parents('.items');
+
+        var id  = parseInt(item.find('.goodid').val());
+        var stime  = item.find('.stime').val();
+        var etime  = item.find('.etime').val();
+        var num   = parseInt(item.find('.num').val());
+
+        var t1 = new Date(stime);
+        var t2 = new Date(etime);console.log(t1.getTime());console.log(t2.getTime());console.log(num);
+        if(num > 0 && t1.getTime() < t2.getTime()){
+            $.ajax({
+                async: false, //同步
+                type: "GET",
+                url: "<?=\yii\helpers\Url::to(['order/cart'])?>",
+                data: {type:"shop",aid:id,stime:stime,etime:etime,num:num},
+                success: function(data){
+                    if(data.code != 0){
+                        layer.alert(data.msg);
+                        return;
+                    }
+                    window.location.href = '/order';
+                }
+            });
+        }
+    }
+</script>

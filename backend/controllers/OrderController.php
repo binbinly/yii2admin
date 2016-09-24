@@ -99,7 +99,7 @@ class OrderController extends BaseController
         $id = Yii::$app->request->get('id',0);
 
         if (Yii::$app->request->isPost) {
-            $data = Yii::$app->request->post('Order');
+            $data = Yii::$app->request->post('Order');//var_dump($data);exit();
             $data['update_time'] = time();
             $data['id'] = $id;
             $data['start_time'] = strtotime($data['start_time']);
@@ -141,6 +141,34 @@ class OrderController extends BaseController
         } else {
             $this->error('删除失败！');
         }
+    }
+
+    /*
+     * ---------------------------------------
+     * 导出excel
+     * ---------------------------------------
+     */
+    public function actionExport(){
+        $data = Order::find()->where(['pay_status' => 1])
+            ->andWhere(['status'=>1])
+            ->orderBy('order_id DESC')
+            ->asArray()->all();
+        $arr = [];
+        $title = ['order_id','订单号','用户ID','姓名','电话','身份证','商品类型','套餐ID','商品ID','商品名','起租时间','退租时间',
+            '数量','价格','支付状态','支付时间','支付类型','支付途径','下单时间','状态'];
+        foreach ($data as $key => $value) {
+            $arr[$key] = $value;
+            $arr[$key]['start_time'] = date('Y-m-d H:i', $value['start_time']);
+            $arr[$key]['end_time'] = date('Y-m-d H:i', $value['end_time']);
+            $arr[$key]['pay_time'] = $value['pay_time'] ? date('Y-m-d H:i', $value['end_time']):0;
+            $arr[$key]['create_time'] = $value['create_time'] ? date('Y-m-d H:i', $value['create_time']):0;
+            $arr[$key]['pay_status'] = Yii::$app->params['pay_status'][$value['pay_status']];
+            $arr[$key]['pay_type'] = Yii::$app->params['pay_type'][$value['pay_type']];
+            $arr[$key]['pay_source'] = Yii::$app->params['pay_source'][$value['pay_source']];
+            $arr[$key]['status'] = '订单正常';
+        }
+
+        FuncHelper::exportexcel($arr,$title);
     }
 
 }

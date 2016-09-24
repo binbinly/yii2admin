@@ -34,6 +34,29 @@ use backend\models\Shop;
 
         <?=$form->field($model, 'description')->textarea(['class'=>'span4', 'rows'=>3])->label('商品描述')->hint(' ', ['style'=>'display:block;']) ?>
 
+        <div class="control-group">
+            <label class="control-label">封面图片</label>
+            <div class="controls">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="icon-file fileupload-exists"></i>
+                            <span class="fileupload-preview">
+                                <?=$model->cover?>
+                            </span>
+                        </div>
+                        <span class="btn btn-file">
+                            <span class="fileupload-new">选择文件</span>
+                            <span class="fileupload-exists">更改</span>
+                            <input type="file" name="cover" class="default" id="file_but">
+                            <input type="hidden" name="ShopGroup[cover]" id="file_ipt" value="<?=$model->cover?>">
+                        </span>
+                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+                    </div>
+                    <div><img id="file_img" src="<?=$model->cover?>" class="img-circle"  width="100px" height="100px" style="margin:10px 0 -10px 0;<?= !empty($model->cover) ? 'display:block' : 'display:none'; ?>"></div>
+                </div>
+            </div>
+        </div>
 
         <div class="control-group">
             <label class="control-label">套餐【酒店】</label>
@@ -41,7 +64,7 @@ use backend\models\Shop;
                 <div class="controls" style="padding: 4px;">
                     <div class="span3 m-wrap" style="line-height: 30px;"><?=$list1['id']?>、<?=$list1['title']?></div>
                     <input type="text" class="span1 m-wrap" name="ShopGroup[groups][1][<?=$list1['id']?>][days]" value="<?=isset($groups[1][$list1['id']]['days'])?$groups[1][$list1['id']]['days']:''?>" placeholder="天数">
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][1][<?=$list1['id']?>][num]" value="<?=isset($groups[1][$list1['id']]['days'])?$groups[1][$list1['id']]['num']:''?>" placeholder="人数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][1][<?=$list1['id']?>][num]" value="<?=isset($groups[1][$list1['id']]['days'])?$groups[1][$list1['id']]['num']:''?>" placeholder="房间数">
                     <input type="hidden" name="ShopGroup[groups][1][<?=$list1['id']?>][id]" value="<?=$list1['id']?>" >
                 </div>
             <?php endforeach; ?>
@@ -52,8 +75,8 @@ use backend\models\Shop;
             <?php foreach (Shop::lists(2) as $list1) :?>
                 <div class="controls" style="padding: 4px;">
                     <div class="span3 m-wrap" style="line-height: 30px;"><?=$list1['id']?>、<?=$list1['title']?></div>
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][2][<?=$list1['id']?>][days]" value="<?=isset($groups[2][$list1['id']]['days'])?$groups[2][$list1['id']]['days']:''?>" placeholder="天数">
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][2][<?=$list1['id']?>][num]" value="<?=isset($groups[2][$list1['id']]['num'])?$groups[2][$list1['id']]['num']:''?>" placeholder="人数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][2][<?=$list1['id']?>][days]" value="<?=isset($groups[2][$list1['id']]['days'])?$groups[2][$list1['id']]['days']:''?>" placeholder="小时数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][2][<?=$list1['id']?>][num]" value="<?=isset($groups[2][$list1['id']]['num'])?$groups[2][$list1['id']]['num']:''?>" placeholder="数量">
                     <input type="hidden" name="ShopGroup[groups][2][<?=$list1['id']?>][id]" value="<?=$list1['id']?>">
                 </div>
             <?php endforeach; ?>
@@ -64,8 +87,8 @@ use backend\models\Shop;
             <?php foreach (Shop::lists(3) as $list1) :?>
                 <div class="controls" style="padding: 4px;">
                     <div class="span3 m-wrap" style="line-height: 30px;"><?=$list1['id']?>、<?=$list1['title']?></div>
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][3][<?=$list1['id']?>][days]" value="<?=isset($groups[3][$list1['id']]['days'])?$groups[3][$list1['id']]['days']:''?>" placeholder="天数">
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][3][<?=$list1['id']?>][num]" value="<?=isset($groups[3][$list1['id']]['num'])?$groups[3][$list1['id']]['num']:''?>" placeholder="人数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][3][<?=$list1['id']?>][days]" value="<?=isset($groups[3][$list1['id']]['days'])?$groups[3][$list1['id']]['days']:''?>" placeholder="小时数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][3][<?=$list1['id']?>][num]" value="<?=isset($groups[3][$list1['id']]['num'])?$groups[3][$list1['id']]['num']:''?>" placeholder="数量">
                     <input type="hidden" name="ShopGroup[groups][3][<?=$list1['id']?>][id]" value="<?=$list1['id']?>">
                 </div>
             <?php endforeach; ?>
@@ -76,8 +99,8 @@ use backend\models\Shop;
             <?php foreach (Shop::lists(4) as $list1) :?>
                 <div class="controls" style="padding: 4px;">
                     <div class="span3 m-wrap" style="line-height: 30px;"><?=$list1['id']?>、<?=$list1['title']?></div>
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][4][<?=$list1['id']?>][days]" value="<?=isset($groups[4][$list1['id']]['days'])?$groups[4][$list1['id']]['days']:''?>" placeholder="天数">
-                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][4][<?=$list1['id']?>][num]" value="<?=isset($groups[4][$list1['id']]['num'])?$groups[4][$list1['id']]['num']:''?>" placeholder="人数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][4][<?=$list1['id']?>][days]" value="<?=isset($groups[4][$list1['id']]['days'])?$groups[4][$list1['id']]['days']:''?>" placeholder="小时数">
+                    <input type="text" class="span1 m-wrap" name="ShopGroup[groups][4][<?=$list1['id']?>][num]" value="<?=isset($groups[4][$list1['id']]['num'])?$groups[4][$list1['id']]['num']:''?>" placeholder="数量">
                     <input type="hidden" name="ShopGroup[groups][4][<?=$list1['id']?>][id]" value="<?=$list1['id']?>">
                 </div>
             <?php endforeach; ?>
@@ -166,7 +189,37 @@ $(function() {
     /* 子导航高亮 */
     highlight_subnav('group/index');
     
-    
+    /* ===================上传单图======================= */
+    $("#file_but").on("change", function(){
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return;
+        if (/^image/.test( files[0].type)){
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function(){
+                $.ajax({
+                    type: 'post',
+                    url: '<?=Url::to(["upload/image"])?>',
+                    data: {imgbase64:this.result},
+                    dataType: 'json',
+                    beforeSend: function(){
+                        
+                    },
+                    success: function(json){
+                        if(json.boo){
+                            $('#file_img').attr('src',json.data);
+                            $('#file_ipt').val(json.data);
+                        } else {
+                            alert(json.msg);
+                        }
+                    },
+                    error: function(xhr, type){
+                        alert('服务器错误')
+                    }
+                });
+            }
+        }
+    });
     
 });
 

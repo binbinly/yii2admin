@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\Shop;
 use backend\models\ShopGroup;
 use common\helpers\ArrayHelper;
 use common\helpers\FuncHelper;
@@ -43,6 +44,7 @@ class GroupController extends BaseController
             $data = Yii::$app->request->post('ShopGroup');
 
             /* 处理掉空白的groups数据 */
+            $totel = 0;
             if ($data['groups'] && is_array($data['groups'])) {
                 foreach ($data['groups'] as $i => $g) {
                     if ($g && is_array($g)) {
@@ -50,6 +52,9 @@ class GroupController extends BaseController
                             if (!$v['days'] || !$v['num']) {
                                 unset($data['groups'][$i][$k]);
                             }
+                            /* 价格计算 */
+                            $goods = Shop::info($v['id']);
+                            $totel += $v['days'] * $v['num'] * $goods['price'];
                         }
                         if (!$data['groups'][$i]) {
                             unset($data['groups'][$i]);
@@ -58,6 +63,7 @@ class GroupController extends BaseController
                 }
             }
             $data['groups'] = serialize($data['groups']);
+            $data['totel']  = $totel;
 
             /* 表单数据加载、验证、数据库操作 */
             if ($this->addRow('\backend\models\ShopGroup', $data)) {
@@ -88,6 +94,7 @@ class GroupController extends BaseController
             $data = Yii::$app->request->post('ShopGroup');
             $data['id'] = $id;
             /* 处理掉空白的groups数据 */
+            $total = 0;
             if ($data['groups'] && is_array($data['groups'])) {
                 foreach ($data['groups'] as $i => $g) {
                     if ($g && is_array($g)) {
@@ -95,6 +102,9 @@ class GroupController extends BaseController
                             if (!$v['days'] || !$v['num']) {
                                 unset($data['groups'][$i][$k]);
                             }
+                            /* 价格计算 */
+                            $goods = Shop::info($v['id']);
+                            $total += $v['days'] * $v['num'] * $goods['price'];
                         }
                         if (!$data['groups'][$i]) {
                             unset($data['groups'][$i]);
@@ -103,6 +113,7 @@ class GroupController extends BaseController
                 }
             }
             $data['groups'] = serialize($data['groups']);
+            $data['total']  = $total;
 
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\ShopGroup', 'id', $data)) {

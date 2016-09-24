@@ -1,5 +1,18 @@
 <?php
 /* @var $this yii\web\View */
+
+if(Yii::$app->request->get('type') != 1){
+    $timeClass = 'form_datetime5';
+    $timeFormat = 'Y-m-d H:00';
+    $dw = '时';
+    $dd = 1;
+}else{
+    $timeClass = 'form_datetime6';
+    $timeFormat = 'Y-m-d';
+    $dw = '天';
+    $dd = 24;
+}
+
 ?>
 
 
@@ -39,33 +52,35 @@
                     <div class="w_260_1">
                         <img src="<?=$v['cover']?>" class="shop_kefang_img">
                         <p><?=$v['title']?></p>
+                        <?php if(Yii::$app->request->get('type') == 1): ?>
                         <i><img src="/bootstrap/images/shuanren.png"> </i>
                         <i><img src="/bootstrap/images/diannao.png"> </i>
                         <i><img src="/bootstrap/images/wifi.png"> </i>
-                        <a href=""><img src="/bootstrap/images/jiaru.png"></a>
+                        <!--<a href=""><img src="/bootstrap/images/jiaru.png"></a>-->
+                        <?php endif; ?>
                     </div>
                     <div class="w_215"><?=$v['description']?></div>
                     <div class="w_295">
                         <div class="store_shop_text05">
                             <div class="w_295_bott">
                                 <span>入住日期</span>
-                                <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                                <div class="input-append date <?=$timeClass?> w_120" data-picker-position="bottom-left">
                                     <div class="border">
-                                        <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d')?>">
+                                        <input class="stime" size="16" readonly="readonly" type="text" value="<?=date($timeFormat,time()+60*60*24)?>">
                                         <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
                             <div >
                                 <span>退房日期</span>
-                                <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
+                                <div class="input-append date <?=$timeClass?> w_120" data-picker-position="bottom-left">
                                     <div class="border">
-                                        <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d')?>">
+                                        <input class="etime" size="16" readonly="readonly" type="text" value="<?=date($timeFormat,time()+60*60*(24+$dd))?>">
                                         <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
-                            <span class="shijian">共<i>0</i> 天</span>
+                            <span class="shijian">共<i type="<?=$dd?>">1</i> <?=$dw?></span>
                         </div>
                     </div>
                     <div class="w_235">
@@ -83,7 +98,7 @@
                     <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1"></a>
                     <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
                         <?php foreach ($v['images'] as $img) :?>
-                        <span><img src="<?=$img?>"></span>
+                        <span><a class="tanchuimg" href="<?=$img?>"><img src="<?=$img?>"></a></span>
                         <?php endforeach; ?>
                     </div>
                 </li>
@@ -130,15 +145,16 @@
         $('.stime,.etime').change(function () {
             var item = $(this).parents('.items');
             var stime = item.find('.stime').val();
-            stime = new Date(stime.replace(/-/g, "/"));
+            stime = new Date(stime);
             var etime = item.find('.etime').val();
-            etime = new Date(etime.replace(/-/g, "/"));
+            etime = new Date(etime);
             var days = etime.getTime() - stime.getTime();
-            days = parseInt(days / (1000 * 60 * 60 * 24));
+            days = parseInt(days / (1000 * 60 * 60)); //小时
             if(days<0){
                 return;
             }
-            item.find('.shijian i').text(days);
+            var dd = parseInt(item.find('.shijian i').attr('type')); // 判断单位是天(24)还是时(1)
+            item.find('.shijian i').text(Math.ceil(days/dd));
             total()//更新总价格
         });
         /* 加入购物车 */
@@ -152,6 +168,10 @@
             addCart();
             window.location.href = '/order';
         });
+        
+        /* 点击图片自动放大 */
+        
+        
     });
     /* 更新总价 */
     function total(){

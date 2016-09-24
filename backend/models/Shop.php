@@ -64,6 +64,23 @@ class Shop extends \common\models\Shop
         return $arr ;
     }
     
-    
+    /*
+     * ---------------------------------------
+     * 获取某个商品在某天的剩余数量
+     * ---------------------------------------
+     */
+    public static function getOverNum($id, $time){
+        $shop = static::info($id);
+        $res = Order::find()->select('SUM(num) as num')
+            ->where(['<=', 'start_time', $time])
+            ->andWhere(['>=', 'end_time', $time])
+            ->andWhere(['aid'=>$id])
+            ->andWhere(['pay_status' => 1])
+            ->andWhere(['status'=>1])->asArray()->one();
+        //var_dump($res);exit;
+        $num = $res['num'];
+        $num = $shop['num'] - $num;
+        return $num > 0 ? $num : 0 ;
+    }
     
 }

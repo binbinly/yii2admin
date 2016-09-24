@@ -45,8 +45,16 @@ class ShopController extends \yii\web\Controller
             'info' => $info,
         ]);
     }
-    
-    
+
+    /* 自定义套餐内容 */
+    public function actionCustom()
+    {
+        $id = Yii::$app->request->get('id', 1);
+        $lists = \backend\models\Shop::lists();
+        return $this->render('custom',[
+            'lists' => $lists,
+        ]);
+    }
     
     
     

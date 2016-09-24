@@ -71,7 +71,7 @@ use backend\models\Shop;
         
         <?=$form->field($model, 'pay_status')->radioList(['1'=>'已支付','0'=>'未支付'])->label('支付状态') ?>
         <?php if($this->context->action->id != 'add'):?>
-        <?=$form->field($model, 'pay_time')->textInput(['class'=>'span2 m-wrap','value'=>date('Y-m-d H:i'),'disabled'=>true])->label('支付时间')->hint('支付时间')?>
+        <?=$form->field($model, 'pay_time')->textInput(['class'=>'span2 m-wrap','value'=>date('Y-m-d H:i')])->label('支付时间')->hint('支付时间')?>
         <?php endif ?>
         <?=$form->field($model, 'pay_type')->radioList(\Yii::$app->params['pay_type'])->label('支付类型')->hint(' ')?>
         <?=$form->field($model, 'pay_source')->radioList(['1'=>'网站','2'=>'微信','3'=>'后台'])->label('支付途径')->hint(' ')?>
@@ -80,7 +80,7 @@ use backend\models\Shop;
         
         <div class="form-actions">
             <?= Html::submitButton('<i class="icon-ok"></i> 确定', ['class' => 'btn blue ajax-post','target-form'=>'form-aaa']) ?>
-            <?= Html::Button('取消', ['class' => 'btn']) ?>
+            <?= Html::Button('取消', ['class' => 'btn','onclick'=>'JavaScript:history.go(-1)']) ?>
         </div>
         
         <?php ActiveForm::end(); ?>

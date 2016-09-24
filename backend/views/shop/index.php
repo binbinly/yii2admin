@@ -86,6 +86,13 @@ use backend\models\Category;
                     'options' => ['width' => '100px;'],
                 ],
                 [
+                    'header' => '剩余数量',
+                    'options' => ['width' => '100px;'],
+                    'content' => function($model){
+                        return \backend\models\Shop::getOverNum($model['id'],time());
+                    }
+                ],
+                [
                     'header' => '价格',
                     'attribute' => 'price',
                     'options' => ['width' => '100px;'],

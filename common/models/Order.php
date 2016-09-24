@@ -12,12 +12,15 @@ use Yii;
  * @property integer $uid
  * @property string $name
  * @property string $tel
+ * @property string $sfz
  * @property string $type
+ * @property integer $taocan
  * @property integer $aid
  * @property string $title
  * @property integer $start_time
  * @property integer $end_time
  * @property integer $num
+ * @property string $total
  * @property integer $pay_status
  * @property integer $pay_time
  * @property integer $pay_type
@@ -41,11 +44,12 @@ class Order extends \common\core\BaseActiveRecord
     public function rules()
     {
         return [
-            [['order_sn', 'type', 'aid', 'title', 'start_time', 'end_time', 'pay_time', 'create_time', 'status'], 'required'],
-            [['uid', 'aid', 'start_time', 'end_time', 'num', 'pay_status', 'pay_time', 'pay_type', 'pay_source', 'create_time', 'status'], 'integer'],
+            [['order_sn', 'type', 'aid', 'title', 'start_time', 'end_time', 'pay_time', 'create_time'], 'required'],
+            [['uid', 'taocan', 'aid', 'start_time', 'end_time', 'num', 'pay_status', 'pay_time', 'pay_type', 'pay_source', 'create_time', 'status'], 'integer'],
+            [['total'], 'number'],
             [['order_sn', 'type'], 'string', 'max' => 10],
             [['name'], 'string', 'max' => 30],
-            [['tel'], 'string', 'max' => 20],
+            [['tel', 'sfz'], 'string', 'max' => 20],
             [['title'], 'string', 'max' => 100]
         ];
     }
@@ -61,12 +65,15 @@ class Order extends \common\core\BaseActiveRecord
             'uid' => 'Uid',
             'name' => 'Name',
             'tel' => 'Tel',
+            'sfz' => 'Sfz',
             'type' => 'Type',
+            'taocan' => 'Taocan',
             'aid' => 'Aid',
             'title' => 'Title',
             'start_time' => 'Start Time',
             'end_time' => 'End Time',
             'num' => 'Num',
+            'total' => 'Total',
             'pay_status' => 'Pay Status',
             'pay_time' => 'Pay Time',
             'pay_type' => 'Pay Type',

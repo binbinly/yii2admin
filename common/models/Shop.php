@@ -37,7 +37,7 @@ class Shop extends \common\core\BaseActiveRecord
     public function rules()
     {
         return [
-            [['type', 'title', 'images', 'num', 'price', 'extend'], 'required'],
+            [['type', 'title', 'images', 'num', 'price'], 'required'],
             [['type', 'num', 'sort', 'create_time', 'update_time', 'status'], 'integer'],
             [['images', 'extend'], 'string'],
             [['price'], 'number'],
