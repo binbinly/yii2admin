@@ -97,24 +97,44 @@ class TrainController extends \yii\web\Controller
         }
     }
 
-    public function actionOrder(){
-        $train_id = Yii::$app->request->post('train_id', 0);
-        $cid = Yii::$app->request->post('cid', 0);
-        $n = Yii::$app->request->post('n', 1);
-        $name = Yii::$app->request->post('name', 1);
-        $tel = Yii::$app->request->post('tel', 1);
-        $sfz = Yii::$app->request->post('sfc', 1);
+    public function actionOrderPay(){
+        $order_sn = Yii::$app->request->post('order_sn', '');
+        $name = Yii::$app->request->post('name', '');
+        $tel = Yii::$app->request->post('tel', '');
+        $sfz = Yii::$app->request->post('sfz', '');
+        $pay_type = Yii::$app->request->post('pay_type', 0);
 
-        if (Yii::$app->user->isGuest) {
-            $this->redirect(Url::toRoute(['/index/index']));
+        if(!$order_sn || !$name || !$tel || !$sfz || !$pay_type){
+            Yii::$app->getSession()->setFlash('error', '参数异常');
+            $this->redirect(Url::to(['/train/index']));
             Yii::$app->end();
         }
-        $train_info = Train::info($train_id);
-        $data['name'] = Yii::$app->request->post('name');
-        $data['tel'] = Yii::$app->request->post('tel');
-        $data['sfc'] = Yii::$app->request->post('sfc');
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->getSession()->setFlash('error', '请先登录');
+            $this->redirect(Url::to(['/train/index']));
+            Yii::$app->end();
+        }
+        $uid = Yii::$app->user->identity->getId();
+        $model = Order::findOne(['order_sn'=>$order_sn, 'uid'=>$uid]);
+        if(!$model) {
+            Yii::$app->getSession()->setFlash('error', '订单不存在');
+            $this->redirect(Url::to(['/train/index']));
+            Yii::$app->end();
+        }
+        $model->name = $name;
+        $model->tel = $tel;
+        $model->sfz = $sfz;
+        if($model->save()) {
+            if($pay_type == 1) {
 
-        $this->redirect(Url::toRoute(['/train/index']));
-        Yii::$app->end();
+            }else if($pay_type == 2) {
+                $show_url = '/';
+                $alipay = new \AlipayPay();
+                $html = $alipay->requestPay($order_sn, $model->title, 0.01, $model->title, $show_url);
+                echo $html;
+            }else if($pay_type == 3) {
+
+            }
+        }
     }
 }

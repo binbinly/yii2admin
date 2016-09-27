@@ -25,32 +25,48 @@ use yii\helpers\Url;
             <li><span class="">培训人数</span><i><?= $data['num']?></i></li>
             <li><span class="">总金额</span><i class="hong">￥<?= $data['total']?></i></li>
         </ul>
+        <form class="form-horizontal" action="<?= Url::to(['/train/order-pay'])?>" method="post">
         <h4>个人信息</h4>
-        <form class="form-horizontal" action="<?= Url::to(['/train/order'])?>">
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">真实姓名</label>
                 <div class="col-sm-5">
-                    <input type="" class="form-control" name="name" placeholder="真实姓名">
+                    <input type="" class="form-control name" name="name" placeholder="真实姓名">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">身份证</label>
                 <div class="col-sm-5">
-                    <input type="" class="form-control" name="sfz" placeholder="身份证">
+                    <input type="" class="form-control sfz" name="sfz" placeholder="身份证">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">联系电话</label>
                 <div class="col-sm-5">
-                    <input type="" class="form-control" name="tel" placeholder="手机号码">
+                    <input type="" class="form-control tel" name="tel" placeholder="手机号码">
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
-                    <button type="submit" class=""><img src="/bootstrap/images/pay_xia.jpg"></button>
-                </div>
-            </div>
+        <h4>付款方式</h4>
+        <div class="pay_mode">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <input type="hidden" name="pay_type" value="0" class="pay_type">
+                <li class="active">
+                    <a href="#order_cen01" class="pay-type-list" data-id="1" role="tab" data-toggle="tab"><img src="/bootstrap/images/zgyl.jpg"></a>
+                </li>
+                <li>
+                    <a href="#order_cen02" class="pay-type-list" data-id="2" role="tab" data-toggle="tab"><img src="/bootstrap/images/zfb.jpg"></a>
+                </li>
+                <li>
+                    <a href="#order_cen04" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="fkfs">支付</div>
+        <div class="xiayibu">
+            <input type="hidden" name="order_sn" value="<?= $data['order_sn']?>">
+            <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
+            <button type="submit" class="submit"><img src="/bootstrap/images/pay_xia.jpg"></button>
+        </div>
         </form>
     </div>
     <div class="pay_cen_right">
@@ -61,3 +77,21 @@ use yii\helpers\Url;
         <div class="pay_cen_bottom"><p>总计<span></span><i class="hong">￥<?= $data['total']?></i></p></div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('.submit').click(function () {
+            var name = $('.name').val();
+            var tel  = $('.tel').val();
+            var sfz  = $('.sfz').val();
+            var pay_type  = $('.pay_type').val();
+            if (!name || !tel || !sfz || !pay_type){
+                layer.msg('用户信息与支付信息不为空');
+                return false;
+            }
+
+        });
+        $(".pay-type-list").click(function(){
+            $(".pay_type").val($(this).attr('data-id'));
+        });
+    });
+</script>
