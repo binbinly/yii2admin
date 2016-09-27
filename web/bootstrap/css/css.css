@@ -27,7 +27,7 @@ i,em{font-style:normal}
 
 .glyphicon-chevron-left::before{ content: none;}
 .glyphicon-chevron-right::before{ content: none;}
-.ban{width:1440px; margin:0 auto;}
+.ban{width:1440px; margin:0 auto;max-width: 100%;}
 .ban .carousel-control{ filter: alpha(opacity=60); opacity: .6;}
 .carousel-control:hover,
 .carousel-control:focus {

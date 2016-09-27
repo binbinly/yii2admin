@@ -38,6 +38,9 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
     top: 0;
     left: 0;
 }
+.nav > li > a {
+    padding: 10px 10px;
+}
 </style>
 <!--首页-->
 <div class="sy_header">
@@ -50,7 +53,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                     <li><a href="/" class="first-nav" id='home_nav'>首页</a></li>
                     
                     <li class="dropdown">
-                        <a id='product_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">产&nbsp;&nbsp;&nbsp;品</a>
+                        <a id='product_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">产品&服务</a>
                         <ul class="dropdown-menu">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
                             <li class="popup"><a href="/shop/group"><img src="/bootstrap/images/01.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>套餐</p><span>说明内容说明内容说明内容</span></div></a></li>
@@ -61,7 +64,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a id='train_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">培&nbsp;&nbsp;&nbsp;训</a>
+                        <a id='train_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">活动&培训</a>
                         <ul class="dropdown-menu train">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
                             <? foreach(\common\models\TrainType::getAll(0) as $item): ?>
@@ -69,7 +72,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                             <? endforeach; ?>
                         </ul>
                     </li>
-                    <li class="acitve"><a id='active_nav' href="/article/index?cid=3">活&nbsp;&nbsp;&nbsp;动</a></li>
+                    <li class="acitve"><a id='active_nav' href="/article/index?cid=3">最新资讯</a></li>
                     <li><a id='about_nav' href="/article/index?cid=1">关于我们</a></li>
                 </ul>
                 

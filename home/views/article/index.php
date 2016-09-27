@@ -56,10 +56,10 @@ use yii\helpers\Url;
         <?php foreach ($data as $k => $v): ?>
         <li>
         <a href="<?=Url::to(['show','id'=>$v['id']])?>">
-            <div class="store_cen_text">            
+            <!-- <div class="store_cen_text">            
                 <span><?=$v['title']?></span>
                 <p><?=$v['description']?></p>
-            </div>
+            </div> -->
             <img src="/bootstrap/images/store.jpg" class="store_cen_img">
             <div class="store_cen_text01">            
                 <span><i><?=$v['title']?></i></span>

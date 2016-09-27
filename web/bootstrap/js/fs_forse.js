@@ -279,5 +279,5 @@
 })(jQuery, document, window);
 
 $(document).ready(function() {
-    $('#gallery img,#gallery2 img').fsgallery()
+    $('#gallery img, #gallery2 img, #gallery3 img, #gallery4 img, #gallery5 img').fsgallery()
 })

@@ -120,7 +120,7 @@ if(Yii::$app->request->get('type') != 1){
                     <div class="shop_kefang_xian"></div>
                     <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1"></a>
                     <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
-                        <div class="img_detail" id='gallery'>
+                        <div class="img_detail" id='gallery<?=$key+2?>'>
                             <?php foreach ($v['images'] as $img) :?>
                             <span><a class="tanchuimg" href="<?=$img?>"><img src="<?=$img?>"></a></span>
                             <?php endforeach; ?>
