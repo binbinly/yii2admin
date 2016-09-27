@@ -47,7 +47,7 @@ class Order extends \common\core\BaseActiveRecord
             [['order_sn', 'type', 'aid', 'title', 'start_time', 'end_time', 'pay_time', 'create_time'], 'required'],
             [['uid', 'taocan', 'aid', 'start_time', 'end_time', 'num', 'pay_status', 'pay_time', 'pay_type', 'pay_source', 'create_time', 'status'], 'integer'],
             [['total'], 'number'],
-            [['order_sn', 'type'], 'string', 'max' => 10],
+            [['order_sn', 'type'], 'string', 'max' => 20],
             [['name'], 'string', 'max' => 30],
             [['tel', 'sfz'], 'string', 'max' => 20],
             [['title'], 'string', 'max' => 100]

@@ -4,7 +4,7 @@
 
 
 <?= $this->render('/public/nav')?>
-
+<form action="<?= \yii\helpers\Url::to(['/train/submit'])?>" method="post">
 <div class="w_1200 sailing01">
     <ul role="tablist" class="nav nav-tabs" id="myTabs">
         <li class="active" role="presentation"><a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">培训详情</a></li>
@@ -50,10 +50,13 @@
 <div class="w_1200 store1_bottom">
     <p>服务热线: <i>4008888888</i>工作日: 00:00 - 22:00</p>
     <div class="goumai">
-        合计：<i>¥ <span id="total"><?= $data['num']*$data['price']?></span></i><a href="javascript:;" id="submit-order" class="goumai02">立即购买</a>
+        <input type="hidden" name="cid" value="<?= $cid ?>">
+        <input type="hidden" name="id" value="<?= $data['id'] ?>">
+        <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
+        合计：<i>¥ <span id="total"><?= $data['num']*$data['price']?></span></i><input type="submit" class="goumai02" value="立即购买"/>
     </div>
 </div>
-
+</form>
 <script type="text/javascript">
     var days = "<?= $data['days']?>";
     var min = "<?= $data['num']?>";
@@ -80,13 +83,6 @@
             }
             ipt.val(num-1);
             total()//更新总价格
-        });
-        $("#submit-order").click(function(){
-            var url = "<?= \yii\helpers\Url::to(['/train/submit','id'=>$data['id'], 'cid'=>$cid])?>";
-            var n = $("input[name=num]").val();
-            url += '&n='+n;
-            $(this).attr('href', url);
-            return true;
         });
 //        $(".stime").on('change',function(){
 //            var stime = $(".stime").val();

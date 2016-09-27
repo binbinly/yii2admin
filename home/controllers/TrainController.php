@@ -2,6 +2,7 @@
 
 namespace home\controllers;
 
+use common\models\Order;
 use common\models\TrainCertificate;
 use home\models\Train;
 use home\models\TrainPrice;
@@ -48,14 +49,52 @@ class TrainController extends \yii\web\Controller
     }
 
     public function actionSubmit() {
-        $train_id = Yii::$app->request->get('id', 0);
-        $cid = Yii::$app->request->get('cid', 0);
-        $n = Yii::$app->request->get('n', 1);
+        $train_id = Yii::$app->request->post('id', 0);
+        $cid = Yii::$app->request->post('cid', 0);
+        if(!$train_id || !$cid) {
+            Yii::$app->getSession()->setFlash('error', '参数不合法');
+            $this->redirect(Url::toRoute(['/train/index']));
+            Yii::$app->end();
+        }
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->getSession()->setFlash('error', '请先登录');
+            $this->redirect(Url::to(['/train/show', 'id'=>$train_id,'cid'=>$cid]));
+            Yii::$app->end();
+        }
+        $n = Yii::$app->request->post('n', 1);
+        if($n<1) {
+            Yii::$app->getSession()->setFlash('error', '数量必须大于1哦');
+            $this->redirect(Url::to(['/train/show', 'id'=>$train_id,'cid'=>$cid]));
+            Yii::$app->end();
+        }
+        $stime = Yii::$app->request->post('stime', date('Y-m-d'));
         $train_info = Train::info($train_id);
         $certif_info = TrainCertificate::getInfo($cid);
         $train_info['price'] = TrainPrice::getNickPrice($train_id, $cid);
-        $train_info['n'] = $n;
-        return $this->render('submit',['train_info'=>$train_info, 'certif_info'=>$certif_info]);
+
+        $data['order_sn'] = 'T'.time().rand(1000,9999);
+        $data['uid'] = Yii::$app->user->identity->getId();
+        $data['aid'] = $train_id;
+        $data['title'] = $certif_info['title'].$train_info['title'];
+        $data['start_time'] = time($stime);
+        $data['num'] = $n;
+        $data['type'] = 'train';
+        $data['total'] = $n * $train_info['price'];
+        $data['pay_status'] = 0;
+        $data['create_time'] = time();
+        $data['end_time'] = $data['pay_time'] = 0;
+
+        $data['status'] = 1;
+        $model = new Order();
+        $model->setAttributes($data);
+        if ($model->save()) {
+            Yii::$app->getSession()->setFlash('success', '订单提交成功，请尽快完成支付哦!');
+            return $this->render('submit',['data'=>$data]);
+        }else{
+            Yii::$app->getSession()->setFlash('error', '订单提交失败');
+            $this->redirect(Url::to(['/train/index']));
+            Yii::$app->end();
+        }
     }
 
     public function actionOrder(){
@@ -71,15 +110,9 @@ class TrainController extends \yii\web\Controller
             Yii::$app->end();
         }
         $train_info = Train::info($train_id);
-        $date['order_sn'] = 'T'.time().rand(1000,9999);
-        $data['uid'] = Yii::$app->user->identity->getId();
         $data['name'] = Yii::$app->request->post('name');
         $data['tel'] = Yii::$app->request->post('tel');
         $data['sfc'] = Yii::$app->request->post('sfc');
-        $data['type'] = Yii::$app->request->post('train');
-        $data['aid'] = $train_id;
-        $data['title'] = $train_info['title'];
-        $data['start_time'] = $train_info['title'];
 
         $this->redirect(Url::toRoute(['/train/index']));
         Yii::$app->end();
