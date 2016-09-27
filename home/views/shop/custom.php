@@ -1,7 +1,16 @@
 <?php
 /* @var $this yii\web\View */
 ?>
-
+<style type="text/css">
+.change_else li p {
+    margin-bottom: 5px;
+}
+.w_200{
+    font-size: 12px;
+    color: #676565;
+    padding-right: 10px;
+}
+</style>
 <!--banner-->
 <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
     <!-- Indicators -->

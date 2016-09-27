@@ -15,7 +15,30 @@ if(Yii::$app->request->get('type') != 1){
 
 ?>
 
+<link href="/bootstrap/css/fsgallery.css" rel="stylesheet">
+<script src="/bootstrap/js/fs_forse.js"></script>
 
+<style type="text/css">
+.img_detail{
+    float: left;
+    width: 310px;
+    min-height: 120px;
+}
+.text_detail{
+    float: left;
+    width: 770px;
+    margin-left: 20px;
+    margin-top: 9px;
+    font-size: 12px;
+}
+.text_detail .title{
+    font-size: 14px;
+    font-weight: bold;
+}
+.sailing01 .shop_kefang li{
+    font-size: 12px;
+}
+</style>
 
 <div class="w_1200">
     <ol class="breadcrumb">
@@ -26,14 +49,14 @@ if(Yii::$app->request->get('type') != 1){
     <!--客房-->
 </div>
 
-<div class="bann01">
-    <div class="bann02"><img src="/bootstrap/images/zx01.jpg"></div>
+<div class="bann01" id='gallery'>
+    <div class="bann02"> <a href="/bootstrap/images/A1.jpg"><img src="/bootstrap/images/A1.jpg"></a></div>
     <div class="bann03">
         <ul>
-            <li><img src="/bootstrap/images/zx01.jpg"></li>
-            <li><img src="/bootstrap/images/zx01.jpg"></li>
-            <li><img src="/bootstrap/images/zx01.jpg"></li>
-            <li><img src="/bootstrap/images/zx01.jpg"></li>
+            <li><a href="/bootstrap/images/B1.jpg"><img src="/bootstrap/images/B1.jpg"></a></li>
+            <li><a href="/bootstrap/images/B2.jpg"><img src="/bootstrap/images/B2.jpg"></a></li>
+            <li><a href="/bootstrap/images/B3.jpg"><img src="/bootstrap/images/B3.jpg"></a></li>
+            <li><a href="/bootstrap/images/B4.jpg"><img src="/bootstrap/images/B4.jpg"></a></li>
         </ul>
     </div>
 </div>
@@ -97,9 +120,19 @@ if(Yii::$app->request->get('type') != 1){
                     <div class="shop_kefang_xian"></div>
                     <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1"></a>
                     <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
-                        <?php foreach ($v['images'] as $img) :?>
-                        <span><a class="tanchuimg" href="<?=$img?>"><img src="<?=$img?>"></a></span>
-                        <?php endforeach; ?>
+                        <div class="img_detail" id='gallery<?=$key+2?>'>
+                            <?php foreach ($v['images'] as $img) :?>
+                            <span><a class="tanchuimg" href="<?=$img?>"><img src="<?=$img?>"></a></span>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="text_detail">
+                            <p class="title">1、产品详情</p>
+                            <p>不同的帆船带来的是截然不同的感受，DC22尺帆船象征着刺激与速度，在风与浪间灵活穿梭，他带来的兴奋感觉绝不亚于过山车。船长随着风向不断调整帆的角度，风大的时候船身倾斜，半个身子落入水中，非常刺激，但经验老道的船长保证了帆船绝对的安全。</p>
+                            <p class="title">2、使用时间</p>
+                            <p>8：00--18：00</p>
+                            <p class="title">3、使用人数</p>
+                            <p>一艘船限载6人（不包含船长）</p>
+                        </div>
                     </div>
                 </li>
                 <?php endforeach; ?>

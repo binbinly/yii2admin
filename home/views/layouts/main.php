@@ -24,6 +24,24 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
     <![endif]-->
 </head>
 <body>
+<style type="text/css">
+.mask{
+    width: 100%;
+    height: 100%;
+     display: none; 
+    background: #000;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 999;
+    text-align: center;
+    padding: 200px;
+    top: 0;
+    left: 0;
+}
+.nav > li > a {
+    padding: 10px 10px;
+}
+</style>
 <!--首页-->
 <div class="sy_header">
     <div class="sy_header_nav">
@@ -32,10 +50,10 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">首页</a></li>
-                    <li class="active"><a href="/article/index?cid=3">活&nbsp;&nbsp;&nbsp;动</a></li>
+                    <li><a href="/" class="first-nav" id='home_nav'>首页</a></li>
+                    
                     <li class="dropdown">
-                        <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle active" href="#">商&nbsp;&nbsp;&nbsp;城</a>
+                        <a id='product_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">产品&服务</a>
                         <ul class="dropdown-menu">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
                             <li class="popup"><a href="/shop/group"><img src="/bootstrap/images/01.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>套餐</p><span>说明内容说明内容说明内容</span></div></a></li>
@@ -46,7 +64,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">培&nbsp;&nbsp;&nbsp;训</a>
+                        <a id='train_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">活动&培训</a>
                         <ul class="dropdown-menu train">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
                             <? foreach(\common\models\TrainType::getAll(0) as $item): ?>
@@ -54,7 +72,8 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                             <? endforeach; ?>
                         </ul>
                     </li>
-                    <li><a href="/article/index?cid=1">关于我们</a></li>
+                    <li class="acitve"><a id='active_nav' href="/article/index?cid=3">最新资讯</a></li>
+                    <li><a id='about_nav' href="/article/index?cid=1">关于我们</a></li>
                 </ul>
                 
                 <?php if (Yii::$app->user->identity) : ?>
@@ -70,14 +89,15 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                     <a class="btn btn-primary" href="<?=Url::to('/order/view')?>">购物车</a>
                 </div>
                 <?php else: ?>
-                <form role="search" method="post" class="navbar-form navbar-left login">
+                <form role="search" method="post" class="navbar-form navbar-left login" id='login_form'>
                     <div class="form-group">
                         <input name="username" type="text" placeholder="用户名/邮箱/手机号" class="form-control">
                     </div>
                     <div class="form-group">
                         <input name="password" type="password" placeholder="请输入密码" class="form-control">
                     </div>
-                    <button class="btn btn-default dl" type="submit">登陆</button>
+                    <button class="btn btn-default dl" type="submit">登录</button>
+                    <p id='baocuo' style="width: 274px;text-align: right;color: red; display: none;">用户名或密码错误</p>
                 </form>
 
                 <!-- 按钮触发模态框 -->
@@ -142,11 +162,8 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 <?php endif ?>
                 
                 <ul class="nav navbar-nav wx">
-                    <li class="dropdown">
-                        <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"><img src="/bootstrap/images/co.jpg"></a>
-                       <ul class="dropdown-menu">
-                            <li>微信二维码</li>
-                        </ul>
+                    <li class="dropdown" id='show_wx'>
+                        <a href="#"><img src="/bootstrap/images/co.jpg"></a>
                     </li>
                 </ul>
                 
@@ -191,7 +208,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 
 <div class="sy_bottom">
     <p><i>A：</i>地址23号鹰君中心2701室<i>T</i> (852) 2186 2388 F (852) 2186 2300<i>E</i>   info@langhamhotels.com</p>
-    <div class="sy_bottom_icon">
+    <!-- <div class="sy_bottom_icon">
         <ul>
             <li>
                 <a class="" href="" target="_blank" style="top: 0px;">
@@ -210,14 +227,16 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                     <img src="/bootstrap/images/db.png" alt=""></a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="xian"></div>
     <div class="sy_bottom_cen">
-        <a href="">帆海汇俱乐部</a>|<a href="">媒体中心</a>|<a href="">联系我们</a>|<a href="">就业机会</a>|<a href="">最优惠房价保证</a><br>
-条款和细则 隐私政策 Cookies政策 网站地图<br>
+        <a href="">帆海汇俱乐部</a>|<a href="">媒体中心</a>|<a href="">联系我们</a>|<a href="">就业机会</a>|<a href="/article/index?cid=1">关于我们</a><br>
 ©帆海汇俱乐部有投资有限公司版权所有。粤ICP备09039361号</div>
 </div>
 
+<div class="mask">
+    <img src="/bootstrap/images/weixin.jpg">
+</div>
 
 <script type="text/javascript">
     $(".form_datetime5").datetimepicker({
@@ -294,7 +313,8 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                         if(data == 1){
                             window.location.reload();
                         } else {
-                            layer.alert('用户名或密码错误');
+                            // layer.alert('用户名或密码错误');
+                            $('#baocuo').show();
                         }
                     }
                 });
@@ -343,6 +363,32 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
             //window.location.reload();
         });
     });
+var pathname = location.pathname+location.search;
+if(pathname=='/'){
+    $('.first-nav').removeClass('acitve');
+    $('#home_nav').addClass('active');
+}else if(location.pathname=='/shop/index'){
+    $('.first-nav').removeClass('acitve');
+    $('#product_nav').addClass('active');
+}else if(location.pathname=='/shop/group'){
+    $('.first-nav').removeClass('acitve');
+    $('#product_nav').addClass('active');
+}else if(pathname=='/article/index?cid=3'){
+    $('.first-nav').removeClass('acitve');
+    $('#active_nav').addClass('active');
+}else if(pathname=='/article/index?cid=1'){
+    $('.first-nav').removeClass('acitve');
+    $('#about_nav').addClass('active');
+}
+$('#login_form input').focus(function(){
+    $('#baocuo').hide();
+})
+$('#show_wx').click(function(){
+    $('.mask').show();
+})
+$('.mask').click(function(){
+    $(this).hide();
+})
 </script>
 
 </body>

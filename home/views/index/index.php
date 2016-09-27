@@ -1,3 +1,15 @@
+
+<style type="text/css">
+#carousel-example-captions img{
+    width: 740px;
+    height: 290px;
+}
+#carousel-example-generic01 .carousel-inner img{
+    width: 385px;
+    height: 253px;
+}
+
+</style>
 <!--banner-->
 <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
     <!-- Indicators -->
@@ -57,7 +69,7 @@
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                        <p>房间类型</p>
+                        <p>类型</p>
                         <select class="form-control goodid" name="aid" >
                             <?php foreach (\backend\models\Shop::lists(1) as $v): ?>
                             <option value="<?=$v['id']?>"><?=$v['title']?></option>
@@ -65,7 +77,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>商品数量</p>
+                        <p>数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -81,14 +93,14 @@
             <div class="tab-pane fade items" id="sailing">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>起租日期</p>
+                        <p>开始日期</p>
                         <div class="border">
                             <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退租日期</p>
+                        <p>结束日期</p>
                         <div class="border">
                             <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
@@ -103,7 +115,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>商品数量</p>
+                        <p>数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -119,21 +131,21 @@
             <div class="tab-pane fade items" id="dive">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>起租日期</p>
+                        <p>开始日期</p>
                         <div class="border">
                             <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退租日期</p>
+                        <p>结束日期</p>
                         <div class="border">
                             <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                        <p>房间类型</p>
+                        <p>类型</p>
                         <select class="form-control goodid" name="aid" >
                             <?php foreach (\backend\models\Shop::lists(3) as $v): ?>
                                 <option value="<?=$v['id']?>"><?=$v['title']?></option>
@@ -141,7 +153,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>商品数量</p>
+                        <p>数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -157,21 +169,21 @@
             <div class="tab-pane fade items" id="sea">
                 <section id="demo_position">
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>起租日期</p>
+                        <p>开始日期</p>
                         <div class="border">
                             <input class="stime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*24)?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
                     <div class="input-append date form_datetime5 w_120" data-picker-position="bottom-left">
-                        <p>退租日期</p>
+                        <p>结束日期</p>
                         <div class="border">
                             <input class="etime" size="16" readonly="readonly" type="text" value="<?=date('Y-m-d H:00',time()+60*60*(24+24))?>">
                             <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div>
-                    <div class="input-append  w_120 fz" data-picker-position="bottom-left">
-                    <p>房间类型</p>
+                    <div class="input-append w_120 fz" data-picker-position="bottom-left">
+                    <p>类型</p>
                         <select class="form-control goodid" name="aid" >
                             <?php foreach (\backend\models\Shop::lists(4) as $v): ?>
                                 <option value="<?=$v['id']?>"><?=$v['title']?></option>
@@ -179,7 +191,7 @@
                         </select>
                     </div>
                     <div class="input-append  w_120" data-picker-position="bottom-left">
-                        <p>商品数量</p>
+                        <p>数量</p>
                         <select class="form-control num">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -234,19 +246,19 @@
 </div>
 <!--最新推荐滚动图-->
 <div class="recommended_top">
-    <span class="recommended_top_span">所有</span>
+    <span class="recommended_top_span">选择</span>
     <div class="input-append">
-        <select class="form-control">
-            <option>选择</option>
-            <option>客房</option>
-            <option>潜水</option>
+        <select class="form-control" id='recommend_select'>
+            <option value="all">所有</option>
+            <option value="active">活动</option>
+            <option value="package">套餐</option>
         </select>
     </div>
     <div class="recommended_top_right"><span class="glyphicon glyphicon-menu-left"></span>12 <i>/</i> 24<span class="glyphicon glyphicon-menu-right"></span></div>
 </div>
 <div id="carousel-example-generic01" class="carousel slide recommended" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
+        <!-- <div class="item active">
             <div class="w_385">
                 <a href="">
                     <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
@@ -303,7 +315,7 @@
             </div>
         </div>
         <div class="item">
-                        <div class="w_385">
+            <div class="w_385">
                 <a href="">
                     <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
                     <div class="carousel-caption">
@@ -357,7 +369,7 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
     <a class="left carousel-control" href="#carousel-example-generic01" role="button" data-slide="prev">
         <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left01.png"></span>
@@ -447,6 +459,10 @@
         var id  = parseInt(item.find('.goodid').val());
         var stime  = item.find('.stime').val();
         var etime  = item.find('.etime').val();
+        if(etime==stime){
+            alert('开始时间与结束时间不能相同');
+            return;
+        }
         var num   = parseInt(item.find('.num').val());
 
         var t1 = new Date(stime);
@@ -471,4 +487,35 @@
             });
         }
     }
+
+
+    function changeRecommd(type){
+        if(!type){
+            type='all';
+        }
+        var data = <?php echo json_encode($recommd); ?>;
+        var html = '<item class="item active">';
+        var item_data = data[type];
+        for (var i = 0; i < item_data.length; i++) {
+            if(item_data[i].category_id){
+                var url = '/article/show?id='+item_data[i]['id'];
+            }else{
+                var url = "/shop/detail?id="+item_data[i]['id'];
+            }
+            html += '<div class="w_385"><a href="'+url+'"><img src="'+item_data[i]['cover']+'" data-holder-rendered="true"><div class="carousel-caption"><h3>'+item_data[i]['title']+'</h3><p>'+item_data[i]['description']+'</p></div></a></div>';
+            if((i+1)%6==0 && i<item_data.length-1){
+                html += '</item>';
+                html += '<item class="item">';
+            }
+        };
+        html += '</item>';
+        
+        $('#carousel-example-generic01 .carousel-inner').html(html);
+
+    }
+    changeRecommd()
+    $('#recommend_select').change(function(){
+        var type = $(this).val();
+        changeRecommd(type);
+    })
 </script>

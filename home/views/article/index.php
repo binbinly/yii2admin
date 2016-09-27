@@ -2,7 +2,11 @@
 
 use yii\helpers\Url;
 ?>
-
+<style type="text/css">
+    .store_cen img{
+        max-width: 100%;
+    }
+</style>
 <!--banner-->
 <div id="carousel-example-generic" class="carousel slide activity" data-ride="carousel">
     <!-- Indicators -->
@@ -52,13 +56,13 @@ use yii\helpers\Url;
         <?php foreach ($data as $k => $v): ?>
         <li>
         <a href="<?=Url::to(['show','id'=>$v['id']])?>">
-            <div class="store_cen_text">            
+            <!-- <div class="store_cen_text">            
                 <span><?=$v['title']?></span>
                 <p><?=$v['description']?></p>
-            </div>
+            </div> -->
             <img src="/bootstrap/images/store.jpg" class="store_cen_img">
             <div class="store_cen_text01">            
-                <span><i><?=$v['title']?></i><?=$v['description']?></span>
+                <span><i><?=$v['title']?></i></span>
             </div>
             <div class="store_bg"><img src="/bootstrap/images/store_bg.png"></div>
         </a>
