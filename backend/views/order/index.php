@@ -99,9 +99,11 @@ use backend\models\Category;
                     'options' => ['width' => '50px;'],
                 ],
                 [
-                    'label' => '实收',
-                    'value' => 'total',
+                    'label' => '订单金额/支付',
                     'options' => ['width' => '50px;'],
+                    'content' => function($model){
+                        return $model['total'].' | '.$model['order_money'];
+                    }
                 ],
                 [
                     'label' => '支付状态',
@@ -144,13 +146,13 @@ use backend\models\Category;
                     'filter' => Html::activeDropDownList($searchModel, 'pay_type', [1 => '微信',2 => '支付宝',3 => '银联'], ['prompt'=>'全部','style' => 'width:80px']),
                 ],
                 [
-                    'label' => '支付途径',
-                    'attribute' => 'pay_source',
+                    'label' => '订单类型',
+                    'attribute' => 'type',
                     'options' => ['width' => '80px;'],
                     'content' => function($model){
-                        return Yii::$app->params['pay_source'][$model['pay_source']];
+                        return Yii::$app->params['order_type'][$model['type']];
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'pay_source', [1 => '网站',2 => '微信',3 => '后台'],['prompt'=>'全部','style' => 'width:80px']),
+                    'filter' => Html::activeDropDownList($searchModel, 'type', ['shop' => '产品','train' => '培训'],['prompt'=>'全部','style' => 'width:80px']),
                 ],
                 [
                     'label' => '状态',

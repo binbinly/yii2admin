@@ -8,6 +8,7 @@ use backend\models\Shop;
 use backend\models\Train;
 use common\helpers\ArrayHelper;
 use common\helpers\FuncHelper;
+use common\models\TrainCertificate;
 use Yii;
 
 
@@ -54,6 +55,7 @@ class OrderController extends BaseController
         if (Yii::$app->request->isPost) {
             
             $data = Yii::$app->request->post('Order');
+            $data['order_money'] && $data['total'] = $data['order_money'];
             $data['create_time'] = time();
             $data['type'] = $type;
             $data['start_time'] = strtotime($data['start_time']);
@@ -63,8 +65,12 @@ class OrderController extends BaseController
                 $shang = Shop::info($data['aid']);
                 $data['title'] = $shang['title'];
             } else {
+                $id_arr = explode('-', $data['aid']);
+                $data['cid'] = $id_arr[0];
+                $data['aid'] = $id_arr[1];
                 $shang = Train::info($data['aid']);
-                $data['title'] = $shang['title'];
+                $centif = TrainCertificate::getInfo($id_arr[0]);
+                $data['title'] = $centif['title'].$shang['title'];
             }
             /* 格式化extend值，为空或数组序列化 */
             if (isset($data['extend'])) {
@@ -85,7 +91,7 @@ class OrderController extends BaseController
 
         /* 获取模型默认数据 */
         $model->loadDefaultValues();
-        $model->order_sn = time();
+        $model->order_sn = strtoupper(substr($type,0,1)).time().rand(1000,9999);
         $model->pay_type = 4;
         $model->pay_source = 3;
         /* 渲染模板 */
@@ -103,7 +109,8 @@ class OrderController extends BaseController
         $id = Yii::$app->request->get('id',0);
 
         if (Yii::$app->request->isPost) {
-            $data = Yii::$app->request->post('Order');//var_dump($data);exit();
+            $data = Yii::$app->request->post('Order');//print_r($data);exit();
+            $data['order_money'] && $data['total'] = $data['order_money'];
             $data['update_time'] = time();
             $data['id'] = $id;
             $data['start_time'] = strtotime($data['start_time']);
@@ -118,6 +125,20 @@ class OrderController extends BaseController
                     $data['extend'] = '';
                 }
             }
+            $model = Order::findOne($id);
+            if($model->aid != $data['aid']) {
+                if ($model->type == 'shop') {
+                    $shang = Shop::info($data['aid']);
+                    $data['title'] = $shang['title'];
+                } else {
+                    $id_arr = explode('-', $data['aid']);
+                    $data['cid'] = $id_arr[0];
+                    $data['aid'] = $id_arr[1];
+                    $shang = Train::info($data['aid']);
+                    $centif = TrainCertificate::getInfo($id_arr[0]);
+                    $data['title'] = $centif['title'] . $shang['title'];
+                }
+            }
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\Order', 'id', $data)) {
                 $this->success('操作成功', $this->getForward());
@@ -128,6 +149,8 @@ class OrderController extends BaseController
         $model = Order::findOne($id);
         $model->start_time = date('Y-m-d H:i',$model->start_time);
         $model->end_time   = date('Y-m-d H:i',$model->end_time);
+        if($model->type == 'train')
+        $model->aid= $model->cid.'-'.$model->aid;
         /* 渲染模板 */
         return $this->render('edit', [
             'model' => $model,

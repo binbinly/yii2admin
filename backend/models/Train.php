@@ -2,6 +2,7 @@
 
 namespace backend\models;
 
+use common\models\TrainCertificate;
 use common\models\TrainType;
 use Yii;
 
@@ -55,10 +56,12 @@ class Train extends \common\models\Train
             if (!$_tmps) {
                 continue;
             }
-            foreach ($_tmps as $v) {
-                $arr[$value['name']][$v['id']] = $v['title'];
+            $certif_arr = TrainCertificate::getAllByIds($value['certif_ids'], 0);
+            foreach($certif_arr as $certif) {
+                foreach ($_tmps as $v) {
+                    $arr[$value['name']][$certif['title']][$certif['id'].'-'.$v['id']] = $certif['title'].$v['title'];
+                }
             }
-
         }
         return $arr ;
     }

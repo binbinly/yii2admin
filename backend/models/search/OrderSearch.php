@@ -70,7 +70,7 @@ class OrderSearch extends Order
             'pay_status' => $this->pay_status,
             'uid' => $this->uid,
             'pay_type' => $this->pay_type,
-            'pay_source' => $this->pay_source,
+            'type' => $this->type,
         ]);
 
         /* 某用户推荐的人的订单 */

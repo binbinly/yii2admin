@@ -31,14 +31,14 @@ use backend\models\Shop;
             ]
         ]); ?>
 
-        <?=$form->field($model, 'order_sn')->textInput(['class'=>'span2 m-wrap'])->label('订单号')->hint('订单号由系统自动生成')?>
+        <?=$form->field($model, 'order_sn')->textInput(['class'=>'span3 m-wrap'])->label('订单号')->hint('订单号由系统自动生成')?>
 
         <?=$form->field($model, 'name')->textInput(['class'=>'span2 m-wrap'])->label('姓名')->hint('购买人的姓名')?>
         <?=$form->field($model, 'tel')->textInput(['class'=>'span2 m-wrap'])->label('电话')->hint('购买人的电话')?>
 
         <?php $type = Yii::$app->request->get('type') ?>
         <?=$form->field($model, 'aid')->widget(\kartik\widgets\Select2::classname(), [
-            'data' => $type == 'shop'?Shop::listsKv():Train::listsKv(),
+            'data' => $model->type == 'shop'?Shop::listsKv():Train::listsKv(),
             'options' => ['placeholder' => '选择商品'],
             'pluginOptions' => [
                 'allowClear' => true,
@@ -68,7 +68,9 @@ use backend\models\Shop;
         ])->label('结束时间')->hint('租赁结束时间')?>
         
         <?=$form->field($model, 'num')->textInput(['class'=>'span1 m-wrap'])->label('数量')->hint('订购数量')?>
-        
+
+        <?=$form->field($model, 'order_money')->textInput(['class'=>'span1 m-wrap'])->label('总金额')->hint('订购总金额')?>
+
         <?=$form->field($model, 'pay_status')->radioList(['1'=>'已支付','0'=>'未支付'])->label('支付状态') ?>
         <?php if($this->context->action->id != 'add'):?>
         <?=$form->field($model, 'pay_time')->textInput(['class'=>'span2 m-wrap','value'=>date('Y-m-d H:i')])->label('支付时间')->hint('支付时间')?>
@@ -153,6 +155,9 @@ $(function() {
     FormComponents.init();
     /* 子导航高亮 */
     highlight_subnav('order/index');
+<!--    $("#order-aid").change(function(){-->
+<!--        console.log($(this).val());-->
+<!--    });-->
 });
 
 <?php $this->endBlock() ?>
