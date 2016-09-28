@@ -7,7 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AlipayPay' => $vendorDir . '/pay/AliPay/AlipayPay.php',
+    'AlipayNotify' => $vendorDir . '/pay/AliPay/AlipayNotify.php',
     'AcpService' => $vendorDir . '/pay/UnionPay/AcpService.php',
     'WxPayApi' => $vendorDir . '/pay/WxPay/lib/WxPay.Api.php',
-    'WxPayNative' => $vendorDir . '/pay/WxPay/lib/WxPay.NativePay.php',
+    'NativePay' => $vendorDir . '/pay/WxPay/lib/WxPay.NativePay.php',
 );

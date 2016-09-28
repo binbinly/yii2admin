@@ -128,12 +128,12 @@ class TrainController extends \yii\web\Controller
             if($pay_type == 1) {
 
             }else if($pay_type == 2) {
-                $show_url = '/';
+                $show_url = 'http://ddd.huanglongfei.cn';
                 $alipay = new \AlipayPay();
                 $html = $alipay->requestPay($order_sn, $model->title, 0.01, $model->title, $show_url);
                 echo $html;
             }else if($pay_type == 3) {
-
+                $this->redirect(Url::to(['/pay/wx-pay','order_sn'=>$order_sn]));
             }
         }
     }

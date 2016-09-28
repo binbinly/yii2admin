@@ -35,10 +35,12 @@ class PayController extends Controller{
         $input->SetNotify_url('http://www.test.lo/WxPayNotify/index');
         $input->SetTrade_type("NATIVE");
         $input->SetProduct_id($order_sn);
+
         $result = $notify->GetPayUrl($input);
+
         $url2 = $result["code_url"];
         $pay_code_url = "http://paysdk.weixin.qq.com/example/qrcode.php?data=" . urlencode($url2);
-        return $this->render('wx-pay', ['pay_code_url', $pay_code_url]);
+        return $this->render('wx-pay', ['pay_code_url'=>$pay_code_url]);
     }
 
     /**
