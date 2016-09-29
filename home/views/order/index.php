@@ -54,15 +54,15 @@
         <div class="pay_mode">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <input type="hidden" name="pay_type" value="1" class="pay_type">
+                <input type="hidden" name="pay_type" value="0" class="pay_type">
                 <li class="active">
-                    <a href="#order_cen01" role="tab" data-toggle="tab"><img src="/bootstrap/images/zgyl.jpg"></a>
+                    <a href="#order_cen01" class="pay-type-list" data-id="1" role="tab" data-toggle="tab"><img src="/bootstrap/images/zgyl.jpg"></a>
                 </li>
                 <li>
-                    <a href="#order_cen02" role="tab" data-toggle="tab"><img src="/bootstrap/images/zfb.jpg"></a>
+                    <a href="#order_cen02" class="pay-type-list" data-id="2" role="tab" data-toggle="tab"><img src="/bootstrap/images/zfb.jpg"></a>
                 </li>
                 <li>
-                    <a href="#order_cen04" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
+                    <a href="#order_cen04" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
                 </li>
             </ul>
         </div>
@@ -127,6 +127,9 @@
 
 <script type="text/javascript">
     $(function () {
+        $(".pay-type-list").click(function(){
+            $(".pay_type").val($(this).attr('data-id'));
+        });
         $('.submit').click(function () {
             var name = $('.name').val();
             var tel  = $('.tel').val();
@@ -144,11 +147,16 @@
                 data: {name:name,tel:tel,sfz:sfz,pay_type:pay_type},
                 success: function(data){
                     if(data.code == 0){
-                        layer.alert(data.msg);
-                        /* 跳转到支付页面 */
-
+                        layer.msg(data.msg);
+                        var url = '';
+                        if(pay_type == 2) {
+                            url = "<?= \yii\helpers\Url::to(['/pay/ali-pay'])?>";
+                        }else if (pay_type == 3) {
+                            url = "<?= \yii\helpers\Url::to(['/pay/wx-pay']);?>";
+                        }
+                        window.location.href=url+'?order_sn='+data.obj;
                     } else {
-                        layer.alert(data.msg);
+                        layer.msg(data.msg);
                     }
                 }
             });

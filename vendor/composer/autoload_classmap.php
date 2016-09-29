@@ -11,4 +11,5 @@ return array(
     'AcpService' => $vendorDir . '/pay/UnionPay/AcpService.php',
     'WxPayApi' => $vendorDir . '/pay/WxPay/lib/WxPay.Api.php',
     'NativePay' => $vendorDir . '/pay/WxPay/lib/WxPay.NativePay.php',
+    'PayNotifyCallBack' => $vendorDir . '/pay/WxPay/example/notify.php',
 );

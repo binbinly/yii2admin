@@ -1,6 +1,7 @@
 <?php
 namespace home\controllers;
 
+use home\models\Order;
 use Yii;
 use yii\web\Controller;
 
@@ -10,11 +11,16 @@ class PayController extends Controller{
 
     }
 
-    public function aLiPay(){
-
+    public function actionAliPay($order_sn){
+        $order_info = $this->checkOrder($order_sn);
+        $show_url = 'http://ddd.huanglongfei.cn';
+        $alipay = new \AlipayPay();
+        $html = $alipay->requestPay($order_sn, $order_info->title, 0.01, $order_sn, $show_url);
+        echo $html;
     }
 
     public function actionWxPay($order_sn){
+        //echo '<meta http-equiv="content-type" content="text/html;charset=utf-8"/>';
         //模式二
         /**
          * 流程：
@@ -23,23 +29,23 @@ class PayController extends Controller{
          * 3、支付完成之后，微信服务器会通知支付成功
          * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
          */
+        $order_info = $this->checkOrder($order_sn);
         $notify = new \NativePay();
         $input = new \WxPayUnifiedOrder();
-        $input->SetBody("蝶讯服装商品");
+        $input->SetBody($order_info->title);
         $input->SetAttach($order_sn);
         $input->SetOut_trade_no($order_sn);
-        $input->SetTotal_fee(1);
+        $input->SetTotal_fee("1");
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 600));
-        $input->SetGoods_tag("蝶讯服装商品");
-        $input->SetNotify_url('http://www.test.lo/WxPayNotify/index');
+        $input->SetGoods_tag($order_info->title);
+        $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
         $input->SetTrade_type("NATIVE");
         $input->SetProduct_id($order_sn);
 
         $result = $notify->GetPayUrl($input);
 
-        $url2 = $result["code_url"];
-        $pay_code_url = "http://paysdk.weixin.qq.com/example/qrcode.php?data=" . urlencode($url2);
+        $pay_code_url = $result["code_url"];
         return $this->render('wx-pay', ['pay_code_url'=>$pay_code_url]);
     }
 
@@ -84,5 +90,34 @@ class PayController extends Controller{
      */
     public function actionBackreceive (){
 
+    }
+
+    private function checkOrder($order_sn) {
+        $order_sn = explode(',', $order_sn);
+        if(count($order_sn) == 1) {
+            $order_info = Order::findOne(['order_sn' => $order_sn]);
+            if(!$order_info) {
+                Yii::$app->getSession()->setFlash('error', '该订单不存在!');
+                $this->redirect(Url::to(['/train/index']));
+                Yii::$app->end();
+            }
+            if ($order_info->pay_status == 1 && $order_info->pay_time > 0) {
+                Yii::$app->getSession()->setFlash('error', '该订单已经支付了哦!');
+                $this->redirect(Url::to(['/train/index']));
+                Yii::$app->end();
+            }
+        }else{
+            $order_list = Order::findAll(['order_sn'=>$order_sn]);
+            $total = 0;
+            $title = null;
+            foreach($order_list as $order) {
+                $title[] = $order->title;
+                $total += $order->total;
+            }
+            $order_info = new Order();
+            $order_info->total= $total;
+            $order_info->title = join("+", $title);
+        }
+        return $order_info;
     }
 }

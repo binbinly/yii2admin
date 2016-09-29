@@ -138,7 +138,7 @@ class OrderController extends \yii\web\Controller
                 }
 
                 $data = [];
-                $data['order_sn'] = (string)time(); //订单号
+                $data['order_sn'] = 'S'.time().rand(1000,9999); //订单号
                 $data['uid'] = Yii::$app->user->identity->getId();
                 $data['name'] = $name;
                 $data['tel']  = $tel;
@@ -178,8 +178,9 @@ class OrderController extends \yii\web\Controller
                     //var_dump($model->getErrors());
                     FuncHelper::ajaxReturn(1, '下单失败');
                 }
+                $order_sn[] = $data['order_sn'];
             } //var_dump($cart);exit();
-            FuncHelper::ajaxReturn(0, '下单成功');
+            FuncHelper::ajaxReturn(0, '下单成功', join(',', $order_sn));
         } else {
             FuncHelper::ajaxReturn(1, '订单数据为空');
         }

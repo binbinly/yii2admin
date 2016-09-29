@@ -8,8 +8,11 @@ use yii\web\Controller;
 
 class NoticeController extends Controller{
 
-    public function actionWx(){
-
+    public function actionWxNotify(){
+        $json ='{"appid":"wxbd9b409d1e5b8e75","attach":"14748537812376","bank_type":"CFT","cash_fee":"1","fee_type":"CNY","is_subscribe":"Y","mch_id":"1263522701","nonce_str":"hhfmlivca9e8ljc657yp1glu9ycu5kne","openid":"ozvbEjqOODSPmNiBGCyJHCWQW7oU","out_trade_no":"14748537812376","result_code":"SUCCESS","return_code":"SUCCESS","sign":"ABBA9F44158866384E905FC1F1D0283B","time_end":"20160926093728","total_fee":"1","trade_type":"NATIVE","transaction_id":"4004472001201609264952831791"}';
+        $notify = new \PayNotifyCallBack();
+        $notify->NotifyProcess(json_decode($json, 1), 'aaaa');
+        //$notify->Handle(false);
     }
 
     public function actionAliNotify(){
@@ -34,6 +37,8 @@ class NoticeController extends Controller{
             //交易状态
             $trade_status = $_POST['trade_status'];
 
+            $body = $_POST['body'];
+
 
             if($_POST['trade_status'] == 'TRADE_FINISHED') {
                 //判断该笔订单是否在商户网站中已经做过处理
@@ -52,6 +57,7 @@ class NoticeController extends Controller{
                 $data['trade_status'] = $trade_status;
                 $data['total_fee'] = $_POST['total_fee'];
                 $data['pay_type'] = 2;
+                $data['body'] = $body;
                 Order::orderPayCallback($data);
             }
             else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
@@ -70,6 +76,7 @@ class NoticeController extends Controller{
                 $data['trade_status'] = $trade_status;
                 $data['total_fee'] = $_POST['total_fee'];
                 $data['pay_type'] = 2;
+                $data['body'] = $body;
                 Order::orderPayCallback($data);
             }
 
@@ -110,6 +117,7 @@ class NoticeController extends Controller{
             //交易状态
             $trade_status = $_GET['trade_status'];
 
+            $body = $_POST['body'];
 
             if($_GET['trade_status'] == 'TRADE_FINISHED' || $_GET['trade_status'] == 'TRADE_SUCCESS') {
                 //判断该笔订单是否在商户网站中已经做过处理
@@ -120,6 +128,7 @@ class NoticeController extends Controller{
                 $data['trade_status'] = $trade_status;
                 $data['total_fee'] = $_GET['total_fee'];
                 $data['pay_type'] = 2;
+                $data['body'] = $body;
                 Order::orderPayCallback($data);
             }
             else {
