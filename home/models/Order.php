@@ -2,6 +2,7 @@
 
 namespace home\models;
 
+use common\models\ScoreLog;
 use Yii;
 
 /**
@@ -20,6 +21,7 @@ class Order extends \common\models\Order
             $info->order_money = $data['total_fee'];
             $succ = $info->save();
             if($succ) {
+                //支付记录
                 $trade['trade_type'] = 1;//支付
                 $trade['third_trade_num'] = $data['trade_no'];
                 $trade['order_sn'] = $data['out_trade_no'];
@@ -27,10 +29,25 @@ class Order extends \common\models\Order
                 $trade['amount'] = '+'.$data['total_fee'];
                 $trade['add_time'] = time();
                 $trade['remark'] = '支付宝支付记录';
+                $trade['uid'] = $info['uid'];
                 $model = new TradeRecord();
                 $model->setAttributes($trade);
-                return $model->save();
+                $model->save();
+
+                //用户积分修改
+                User::updateUserScore($info['uid'], '+'.$data['total_fee']);
+
+                //积分记录
+                $score['order_sn'] = $data['out_trade_no'];
+                $score['score'] = '+'. $data['total_fee'];
+                $score['create_time'] = time();
+                $score['uid'] = $info['uid'];
+                $score_model = new ScoreLog();
+                $score_model->setAttributes($score);
+                $score_model->save();
+                return true;
             }
         }
+        return false;
     }
 }

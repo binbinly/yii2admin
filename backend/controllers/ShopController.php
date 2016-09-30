@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\Shop;
+use backend\models\ShopPrice;
 use common\helpers\ArrayHelper;
 use common\helpers\FuncHelper;
 use Yii;
@@ -56,12 +57,16 @@ class ShopController extends BaseController
                     $data['extend'] = '';
                 }
             }
+
             /* 将图组转化为字符串 */
             if ($data['images'] && is_array($data['images'])) {
                 $data['images'] = trim(implode ( ",", $data['images']),',');
             }
             /* 表单数据加载、验证、数据库操作 */
-            if ($this->addRow('\backend\models\Shop', $data)) {
+            if ($id = $this->addRow('\backend\models\Shop', $data)) {
+                $price_model = new ShopPrice();
+                $data['shop_id'] = $id;
+                $price_model->setShopPrice($data);
                 $this->success('操作成功', $this->getForward());
             }else{
                 $this->error('操作错误');
@@ -104,6 +109,9 @@ class ShopController extends BaseController
             if ($data['images'] && is_array($data['images'])) {
                 $data['images'] = trim(implode ( ",", $data['images']),',');
             }
+            $price_model = new ShopPrice();
+            $data['shop_id'] = $id;
+            $price_model->setShopPrice($data);
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\Shop', 'id', $data)) {
                 $this->success('操作成功', $this->getForward());
@@ -124,9 +132,12 @@ class ShopController extends BaseController
             $model->extend = $_str;
         }
 
+        //获取节日假
+        $price_list = ShopPrice::findAll(['shop_id'=>$id]);
         /* 渲染模板 */
         return $this->render('edit', [
             'model' => $model,
+            'price_list' => $price_list
         ]);
     }
 

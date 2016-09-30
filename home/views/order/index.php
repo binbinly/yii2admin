@@ -24,6 +24,10 @@
                 </li>
                 <li><span class="">数量：</span><i><?=$v['num']?></i></li>
                 <li><span class="">单价：</span><i class="hong">￥<?=$v['goods']['price']?></i></li>
+                <? if(isset($v['price_to']) && !empty($v['price_to'])): ?>
+                <li><span class="">假日价：</span><i class="hong">￥<?= $v['price_to']?></i></li>
+                <li><span class="">温馨提示：</span><i>亲，你所选日期 <?= $v['day_to']?> 处在节假日，价格会稍微变动!</i></li>
+                <? endif; ?>
             </ul>
             <?php endforeach; ?>
 
@@ -87,7 +91,15 @@
                 <li>总费用<span></span><i>￥<?=$price['total']?></i></li>
                 <li>套餐优惠<span></span><i class="hong">-￥<?=$price['discount']?></i></li>
             </ul>
+
+            <? if(isset($price['price_to']) && !empty($price['price_to'])): ?>
+                <div class="pay_cen_bottom"><p>总计<span></span><i class="hong">￥<?=$price['price_to']?></i></p></div>
+                <div><span class="">平日价：</span><i class="hong">￥<?= $price['price']?></i></div>
+                <div><span class="">假日套餐价：</span><i class="hong">￥<?= $price['price_to']?></i></div>
+                <div><span class="">温馨提示：</span><i>亲，你所选日期处在节假日，价格会稍微变动!</i></div>
+            <? else:?>
             <div class="pay_cen_bottom"><p>总计<span></span><i class="hong">￥<?=$price['price']?></i></p></div>
+            <? endif; ?>
         </div>
         <div class="pay_cen_right02">
             <div class="bs-example">
@@ -136,7 +148,7 @@
             var sfz  = $('.sfz').val();
             var pay_type  = $('.pay_type').val();
             if (!name || !tel || !sfz || !pay_type){
-                layer.alert('用户信息与支付信息不为空');
+                layer.msg('用户信息与支付信息不为空');
                 return false;
             }
             console.log(name);console.log(tel);console.log(sfz);console.log(pay_type);

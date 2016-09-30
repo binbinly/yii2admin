@@ -3,8 +3,10 @@
 namespace home\controllers;
 
 use common\models\Order;
+use common\models\OrderExtend;
 use home\models\Shop;
 use home\models\ShopGroup;
+use home\models\ShopPrice;
 use home\models\Train;
 use Yii;
 use common\helpers\FuncHelper;
@@ -46,15 +48,34 @@ class OrderController extends \yii\web\Controller
                 $value['hour'] = $hour; // 小时
 
                 if ($value['goods']['type'] == 1) {
-                    $price['total'] += $value['num'] * $value['goods']['price'] * $days;
+                    $price_info = ShopPrice::getNickPrice($value['stime'], $days, $value['aid']);
+                    if($price_info && !$value['taocan']) {
+                        $value['price_to'] = $price_info['price'];
+                        $value['day_to'] = $price_info['n'].'天';
+                        $price['total'] += $value['num'] * ($price_info['total'] + $value['goods']['price'] * ($days-$price_info['n']));
+                    }else {
+                        $price['total'] += $value['num'] * $value['goods']['price'] * $days;
+                    }
                 } else {
-                    $price['total'] += $value['num'] * $value['goods']['price'] * $hour;
+                    $price_info = ShopPrice::getNickPriceHour($value['stime'], $value['aid']);
+                    if($price_info && !$value['taocan']) {
+                        $value['price_to'] = $price_info->price;
+                        $price['total'] += $value['num'] * $value['price_to'] * $hour;
+                        $value['day_to'] = '当天';
+                    }else {
+                        $price['total'] += $value['num'] * $value['goods']['price'] * $hour;
+                    }
                 }
                 
                 /* 套餐判断 */
                 if ($value['taocan'] > 0) {
                     $shopGroup = ShopGroup::info($value['taocan']);
-                    $price['discount'] = $shopGroup['total'] - $shopGroup['price'];
+                    $price_info = ShopPrice::getNickPriceHour($value['stime'], $value['taocan'], 2);
+                    if($price_info) {
+                        $price['price_to'] = $price_info->price;
+                    }else {
+                        $price['discount'] = $shopGroup['total'] - $shopGroup['price'];
+                    }
                 }
 
             }
@@ -128,59 +149,91 @@ class OrderController extends \yii\web\Controller
 
         $cart = Yii::$app->session->get('cart',[]);
         if ($cart) {
-            $ii = 0;
+            $shop_total = 0;
+            $taocan_id = 0;
             foreach ($cart as $key => &$value) {
-                $ii ++ ;
-                if ($value['type'] == 'shop') {
-                    $value['goods'] = Shop::info($value['aid']);
-                }else{
-                    $value['goods'] = Train::info($value['aid']);
-                }
+                $value['goods'] = Shop::info($value['aid']);
 
                 $data = [];
-                $data['order_sn'] = 'S'.time().rand(1000,9999); //订单号
-                $data['uid'] = Yii::$app->user->identity->getId();
-                $data['name'] = $name;
-                $data['tel']  = $tel;
-                $data['sfz']  = $sfz;
-                $data['type'] = $value['type']; //商品类型
-                $data['aid']  = $value['aid']; //商品id
-                $data['title']  = $value['goods']['title']; //商品标题
-                $data['start_time']  = strtotime($value['stime']); // 起租时间
-                $data['end_time']  = strtotime($value['etime']); //退租时间
-                $data['num'] = $value['num'];
+                $data['aid'] = $aid = $value['aid']; //商品id
+                $data['title'] = $title = $value['goods']['title']; //商品标题
+                $data['start_time'] = $start_time  = strtotime($value['stime']); // 起租时间
+                $data['end_time'] = $end_time = strtotime($value['etime']); //退租时间
+                $data['num'] = $num = $value['num'];
 
-                $time = (strtotime($value['etime']) - strtotime($value['stime']))/(60*60);
+                /* 时间差判断 */
+                $hour = ceil((strtotime($value['etime']) - strtotime($value['stime']))/(60 * 60));
+                $days = ceil($hour/24);
+                $value['days'] = $days; // 天数
+                $value['hour'] = $hour; // 小时
                 if ($value['goods']['type'] == 1) {
-                    $time = $time/24;
+                    $price_info = ShopPrice::getNickPrice($value['stime'], $days, $value['aid']);
+                    if($price_info && !$value['taocan']) {
+                        $data['total'] = $value['num'] * ($price_info['total'] + $value['goods']['price'] * ($days-$price_info['n']));
+                    }else {
+                        $data['total'] = $value['num'] * $value['goods']['price'] * $days;
+                    }
+                }else{
+                    $price_info = ShopPrice::getNickPriceHour($value['stime'], $value['aid']);
+                    if($price_info && !$value['taocan']) {
+                        $data['total'] = $value['num'] * $price_info->price * $hour;
+                    }else {
+                        $data['total'] = $value['num'] * $value['goods']['price'] * $hour;
+                    }
                 }
+
                 if ($value['taocan'] > 0) {
                     $group = ShopGroup::info($value['taocan']);
-                    $data['total'] = $ii == 1 ?$group['price']:0.00;
-                    $data['taocan'] = $value['taocan'];
-                    $data['title']  = $value['goods']['title'].'[套餐('.$data['order_sn'].'|'.$value['taocan'].')]'; //商品标题
-                } else {
-                    $data['total'] = $time * $value['num'] * $value['goods']['price'];
+                    $price_info = ShopPrice::getNickPriceHour($value['stime'], $value['taocan'], 2);
+                    $data['taocan'] = $taocan_id = $value['taocan'];
+                    $data['title'] = $title = $group['title']; //套餐标题
+                    if($price_info) {
+                        $shop_total = $price_info->price;
+                    }else {
+                        $shop_total = $group['price'];
+                    }
+                }else{
+                    $shop_total += $data['total'];
                 }
-
-
-                $data['pay_status'] = 0; //未支付，支付成功后的回调修改
-                $data['pay_time'] = 0; //支付时间，支付成功后的回调修改
-                $data['pay_type'] = $pay_type; // 支付类型
-                $data['pay_source'] = 1; // 支付途径-网站
-
                 $data['create_time'] = time();
-                $data['status'] = 1;
 
-                $model = new Order();
+                $title .= $data['title'];
+                $model = new OrderExtend();
                 $model->setAttributes($data);
                 if (!$model->save()) {
                     //var_dump($model->getErrors());
-                    FuncHelper::ajaxReturn(1, '下单失败');
+                    FuncHelper::ajaxReturn(1, '下单失败哦');
                 }
-                $order_sn[] = $data['order_sn'];
-            } //var_dump($cart);exit();
-            FuncHelper::ajaxReturn(0, '下单成功', join(',', $order_sn));
+            }
+            $data = null;
+            $data['order_sn'] = 'S'.time().rand(1000,9999); //订单号
+            $data['uid'] = Yii::$app->user->identity->getId();
+            $data['name'] = $name;
+            $data['tel']  = $tel;
+            $data['sfz']  = $sfz;
+            $data['type'] = 'shop'; //商品类型
+            $data['pay_status'] = 0; //未支付，支付成功后的回调修改
+            $data['pay_time'] = 0; //支付时间，支付成功后的回调修改
+            $data['pay_type'] = 0; // 支付类型
+            $data['pay_source'] = 1; // 支付途径-网站
+            $data['create_time'] = time();
+            $data['status'] = 1;
+            $data['aid'] = $aid;
+            $data['title'] = $title;
+            $data['start_time'] = $start_time;
+            $data['end_time'] = $end_time;
+            $data['num'] = $num;
+            $data['total'] = $shop_total;
+            if($taocan_id) {
+                $data['taocan'] = $taocan_id;
+            }
+            $model = new Order();
+            $model->setAttributes($data);
+            if (!$model->save()) {
+                //var_dump($model->getErrors());
+                FuncHelper::ajaxReturn(1, '下单失败');
+            }
+            FuncHelper::ajaxReturn(0, '下单成功', $data['order_sn']);
         } else {
             FuncHelper::ajaxReturn(1, '订单数据为空');
         }

@@ -65,6 +65,25 @@ use yii\helpers\Url;
         <?=$form->field($model, 'num')->textInput(['class'=>'span1 m-wrap'])->label('商品总数')->hint('商品的总数量，出售数达到这个数后将停止出售')?>
         
         <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('价格')->hint('价格保留两位小数，例如420.12')?>
+
+        <div class="control-group field-shop-price-list">
+            <label for="shop-price" class="control-label">节日价</label>
+            <? if(isset($price_list) && !empty($price_list)):?>
+            <? foreach($price_list as $price): ?>
+            <div class="controls price_list">
+                日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" value="<?= $price->day; ?>" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list" value="<?= $price->price?>"/>
+                <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+            </div>
+            <? endforeach; ?>
+            <? else: ?>
+            <div class="controls price_list">
+                日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list"/>
+                <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+            </div>
+            <? endif; ?>
+        </div>
         
         <?=$form->field($model, 'extend')->textarea(['class'=>'span4', 'rows'=>5])->label('扩展参数')->hint('一维数组配置格式“项:值”每项之间用换行或逗号隔开，其值转化为array后serialize()存储到数据库', ['style'=>'display:block;']) ?>
         
@@ -194,6 +213,10 @@ $(function() {
                 });
             }
         }
+    });
+
+    $(".field-shop-price-list").on('click', '.add_price', function(){
+        $(this).parents('.price_list').clone(false).appendTo(".field-shop-price-list");
     });
 
     /* ===================上传单图======================= */

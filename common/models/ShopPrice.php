@@ -28,8 +28,8 @@ class ShopPrice extends \common\core\BaseActiveRecord
     public function rules()
     {
         return [
-            [['shop_id', 'day', 'price'], 'required'],
-            [['shop_id', 'day'], 'integer'],
+            [['day', 'price'], 'required'],
+            [['shop_id', 'group_id'], 'integer'],
             [['price'], 'number']
         ];
     }
@@ -44,6 +44,7 @@ class ShopPrice extends \common\core\BaseActiveRecord
             'shop_id' => 'Shop ID',
             'day' => 'Day',
             'price' => 'Price',
+            'group_id' => 'Group ID'
         ];
     }
 }

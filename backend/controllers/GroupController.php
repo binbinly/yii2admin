@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use backend\models\Shop;
 use backend\models\ShopGroup;
+use backend\models\ShopPrice;
 use common\helpers\ArrayHelper;
 use common\helpers\FuncHelper;
 use Yii;
@@ -71,7 +72,10 @@ class GroupController extends BaseController
             }
 
             /* 表单数据加载、验证、数据库操作 */
-            if ($this->addRow('\backend\models\ShopGroup', $data)) {
+            if ($id = $this->addRow('\backend\models\ShopGroup', $data)) {
+                $price_model = new ShopPrice();
+                $data['group_id'] = $id;
+                $price_model->setShopPrice($data);
                 $this->success('操作成功', $this->getForward());
             }else{
                 $this->error('操作错误');
@@ -120,6 +124,10 @@ class GroupController extends BaseController
             $data['groups'] = serialize($data['groups']);
             $data['total']  = $total;
 
+            $price_model = new ShopPrice();
+            $data['group_id'] = $id;
+            $price_model->setShopPrice($data);
+
             /* 将图组转化为字符串 */
             if (isset($data['images']) && is_array($data['images'])) {
                 $data['images'] = trim(implode ( ",", $data['images']),',');
@@ -136,10 +144,13 @@ class GroupController extends BaseController
         /* 还原groups的数据 */
         $groups = unserialize($model->groups);
 
+        //获取节日假
+        $price_list = ShopPrice::findAll(['group_id'=>$id]);
         /* 渲染模板 */
         return $this->render('edit', [
             'model' => $model,
             'groups' => $groups,
+            'price_list' => $price_list
         ]);
     }
 

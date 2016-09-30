@@ -117,7 +117,7 @@ class NoticeController extends Controller{
             //交易状态
             $trade_status = $_GET['trade_status'];
 
-            $body = $_POST['body'];
+            $body = $_GET['body'];
 
             if($_GET['trade_status'] == 'TRADE_FINISHED' || $_GET['trade_status'] == 'TRADE_SUCCESS') {
                 //判断该笔订单是否在商户网站中已经做过处理

@@ -167,5 +167,16 @@ class User extends \common\models\User implements IdentityInterface
     public static function findByMobile($mobile){
         return static::find()->where(['mobile'=>$mobile,'status'=>1])->orderBy('uid ASC')->asArray()->one();
     }
+
+    /**
+     * 修改用户积分
+     */
+    public static function updateUserScore($uid, $score) {
+        if(!$uid) return false;
+        $user = static::findOne($uid);
+        $score > 0 ? $user->score += $score : $user->score -= $score;
+        $user->score_all += abs($score);
+        return $user->save();
+    }
     
 }

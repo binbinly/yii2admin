@@ -113,7 +113,26 @@ use backend\models\Shop;
 
         
         <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('套餐价格')->hint('价格保留两位小数，例如420.12')?>
-        
+
+        <div class="control-group field-shop-price-list">
+            <label for="shop-price" class="control-label">节日价</label>
+            <? if(isset($price_list) && !empty($price_list)):?>
+                <? foreach($price_list as $price): ?>
+                    <div class="controls price_list">
+                        日期：<input type="text" name="ShopGroup[shop_day][]" class="span2 m-wrap" value="<?= $price->day; ?>" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                        价格：<input type="text" name="ShopGroup[shop_price][]" class="span2 m-wrap" id="shop-price_list" value="<?= $price->price?>"/>
+                        <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+                    </div>
+                <? endforeach; ?>
+            <? else: ?>
+                <div class="controls price_list">
+                    日期：<input type="text" name="ShopGroup[shop_day][]" class="span2 m-wrap" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                    价格：<input type="text" name="ShopGroup[shop_price][]" class="span2 m-wrap" id="shop-price_list"/>
+                    <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+                </div>
+            <? endif; ?>
+        </div>
+
         <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
         
         <?=$form->field($model, 'status')->radioList(['1'=>'正常','0'=>'隐藏'])->label('状态') ?>
@@ -240,6 +259,10 @@ $(function() {
                 });
             }
         }
+    });
+
+    $(".field-shop-price-list").on('click', '.add_price', function(){
+        $(this).parents('.price_list').clone(false).appendTo(".field-shop-price-list");
     });
 
     /* ===================上传单图======================= */

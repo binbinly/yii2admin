@@ -3,6 +3,7 @@ namespace home\controllers;
 
 use home\models\Order;
 use Yii;
+use yii\helpers\Url;
 use yii\web\Controller;
 
 class PayController extends Controller{
@@ -93,30 +94,16 @@ class PayController extends Controller{
     }
 
     private function checkOrder($order_sn) {
-        $order_sn = explode(',', $order_sn);
-        if(count($order_sn) == 1) {
-            $order_info = Order::findOne(['order_sn' => $order_sn]);
-            if(!$order_info) {
-                Yii::$app->getSession()->setFlash('error', '该订单不存在!');
-                $this->redirect(Url::to(['/train/index']));
-                Yii::$app->end();
-            }
-            if ($order_info->pay_status == 1 && $order_info->pay_time > 0) {
-                Yii::$app->getSession()->setFlash('error', '该订单已经支付了哦!');
-                $this->redirect(Url::to(['/train/index']));
-                Yii::$app->end();
-            }
-        }else{
-            $order_list = Order::findAll(['order_sn'=>$order_sn]);
-            $total = 0;
-            $title = null;
-            foreach($order_list as $order) {
-                $title[] = $order->title;
-                $total += $order->total;
-            }
-            $order_info = new Order();
-            $order_info->total= $total;
-            $order_info->title = join("+", $title);
+        $order_info = Order::findOne(['order_sn' => $order_sn]);
+        if(!$order_info) {
+            Yii::$app->getSession()->setFlash('error', '该订单不存在!');
+            $this->redirect(Url::to(['/train/index']));
+            Yii::$app->end();
+        }
+        if ($order_info->pay_status == 1 && $order_info->pay_time > 0) {
+            Yii::$app->getSession()->setFlash('error', '该订单已经支付了哦!');
+            $this->redirect(Url::to(['/train/index']));
+            Yii::$app->end();
         }
         return $order_info;
     }
