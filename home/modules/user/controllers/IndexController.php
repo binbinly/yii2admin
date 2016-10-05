@@ -12,4 +12,18 @@ class IndexController extends BaseController
     }
 
 
+    public function actionPoints()
+    {
+        return $this->render('points');
+    }
+
+    public function actionWallet()
+    {
+        return $this->render('wallet');
+    }
+
+    public function actionTrain()
+    {
+        return $this->render('train');
+    }
 }

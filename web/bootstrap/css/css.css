@@ -163,7 +163,7 @@ i,em{font-style:normal}
 
 /**store商城**/
 .sailing,.store {margin:0 auto; width:1200px;}
-.breadcrumb{background: none;padding:15px  0px; margin-bottom: 0px;}
+.breadcrumb{background: none;padding:15px  0px; margin-bottom: 0px;font-size: 12px;}
 .breadcrumb > li + li:before{content:">"}
 .store_cen li{position: relative;}
 .store_bg{position: absolute; left:0px; bottom: 0px}
