@@ -97,9 +97,6 @@
     color: #000;
     margin-left: 5px;
 }
-.member_cen_r{
-    /*border-top:none;*/
-}
 </style>
 <!--banner-->
 <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
@@ -139,6 +136,27 @@
     <!--客房-->
 </div>
 <div class="member_cen">
+    <div class="member_cen_l">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation">
+                <div class="member_img"><img src="/bootstrap/images/touxiang.jpg">
+                    <p>会员名称</p>
+                    <div class="member_jdt">
+                        <div class="progress">
+                            <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
+                                60%
+                            </div>
+                        </div>
+                    </div>
+                    <p class="member_img_p">普通会员</p>
+                </div>
+            </li>
+            <li role="presentation"><a href="#member_cen02" aria-controls="profile" role="tab" data-toggle="tab">个人资料</a></li>
+            <li role="presentation" class="active"><a href="#member_cen03" aria-controls="messages" role="tab" data-toggle="tab">我的订单</a></li>
+            <li role="presentation"><a href="#member_cen04" aria-controls="settings" role="tab" data-toggle="tab">我的积分</a></li>
+            <li role="presentation"><a href="#member_cen05" aria-controls="settings" role="tab" data-toggle="tab">意见反馈</a></li>
+        </ul>
+    </div>
     <div class="member_cen_r">
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="member_cen02">
@@ -147,6 +165,11 @@
             <div role="tabpanel" class="tab-pane active" id="member_cen03">
                 <div class="member_cen_text">
                     <div class="order_cen">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#order_cen01" aria-controls="home" role="tab" data-toggle="tab">我的钱包</a></li>
+                            <li role="presentation"><a href="#order_cen02" aria-controls="profile" role="tab" data-toggle="tab">我的积分</a></li>
+                        </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <!-- 用户资料 -->

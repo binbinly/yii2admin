@@ -83,7 +83,6 @@
     margin-left: 30px;
     color: #fff;
     line-height: 20px;
-    float: right;
 }
 .pagination_wrap{
     margin-top: 10px;
@@ -96,9 +95,6 @@
 .pagination_content a{
     color: #000;
     margin-left: 5px;
-}
-.member_cen_r{
-    /*border-top:none;*/
 }
 </style>
 <!--banner-->
@@ -139,6 +135,27 @@
     <!--客房-->
 </div>
 <div class="member_cen">
+    <div class="member_cen_l">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation">
+                <div class="member_img"><img src="/bootstrap/images/touxiang.jpg">
+                    <p>会员名称</p>
+                    <div class="member_jdt">
+                        <div class="progress">
+                            <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
+                                60%
+                            </div>
+                        </div>
+                    </div>
+                    <p class="member_img_p">普通会员</p>
+                </div>
+            </li>
+            <li role="presentation"><a href="#member_cen02" aria-controls="profile" role="tab" data-toggle="tab">个人资料</a></li>
+            <li role="presentation" class="active"><a href="#member_cen03" aria-controls="messages" role="tab" data-toggle="tab">我的订单</a></li>
+            <li role="presentation"><a href="#member_cen04" aria-controls="settings" role="tab" data-toggle="tab">我的积分</a></li>
+            <li role="presentation"><a href="#member_cen05" aria-controls="settings" role="tab" data-toggle="tab">意见反馈</a></li>
+        </ul>
+    </div>
     <div class="member_cen_r">
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="member_cen02">
@@ -147,6 +164,11 @@
             <div role="tabpanel" class="tab-pane active" id="member_cen03">
                 <div class="member_cen_text">
                     <div class="order_cen">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#order_cen01" aria-controls="home" role="tab" data-toggle="tab">我的钱包</a></li>
+                            <li role="presentation"><a href="#order_cen02" aria-controls="profile" role="tab" data-toggle="tab">我的积分</a></li>
+                        </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <!-- 用户资料 -->
@@ -158,8 +180,8 @@
                                             <td>lasek0018736   <a href="#" class='member_btn'>成为会员</a></td>
                                         </tr>
                                         <tr>
-                                            <td>余额 </td>
-                                            <td>1740.00元   <a href="#" class='member_btn'>充值</a></td>
+                                            <td>积分</td>
+                                            <td>1740</td>
                                         </tr>
                                         <tr>
                                             <td>手机</td>
@@ -174,12 +196,12 @@
                                             <td>lasek0018736</td>
                                         </tr>
                                         <tr>
-                                            <td>我的积分</td>
-                                            <td>888</td>
+                                            <td>我的余额</td>
+                                            <td>1740</td>
                                         </tr>
                                         <tr>
                                             <td>会员等级</td>
-                                            <td>普通会员</td>
+                                            <td>13123123</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -187,32 +209,43 @@
                             <div class="clearfix"></div>
                             <!-- 积分明细 -->
                             <div class="points_detail">
-                                <p class="title">收支明细</p>
+                                <p class="title">积分明细</p>
                                 <table>
                                     <thead>
                                         <td>交易时间</td>
                                         <td>订单号</td>
                                         <td>交易类型</td>
-                                        <td>交易金额</td>
+                                        <td>交易积分</td>
+                                        <td>可用积分</td>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>2016/09/28 15:21:49</td>
                                             <td>C60880011088</td>
-                                            <td class="red">退款</td>
-                                            <td>￥500</td>
+                                            <td class="red">积分抵现</td>
+                                            <td class="red">-500</td>
+                                            <td>1740</td>
                                         </tr>
                                         <tr>
                                             <td>2016/09/28 15:21:49</td>
                                             <td>C60880011088</td>
-                                            <td>消费</td>
-                                            <td>￥1200</td>
+                                            <td class="green">获取积分</td>
+                                            <td class="green">+500</td>
+                                            <td>2240</td>
                                         </tr>
                                         <tr>
                                             <td>2016/09/28 15:21:49</td>
                                             <td>C60880011088</td>
-                                            <td class="green">充值</td>
-                                            <td>￥1200</td>
+                                            <td class="red">积分抵现</td>
+                                            <td class="red">-500</td>
+                                            <td>1740</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2016/09/28 15:21:49</td>
+                                            <td>C60880011088</td>
+                                            <td class="green">获取积分</td>
+                                            <td class="green">+500</td>
+                                            <td>2240</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -230,7 +263,7 @@
 
                             <!-- 积分说明 -->
                             <div class="points_desc">
-                                <p class="title">会员说明</p>
+                                <p class="title">积分明细</p>
                                 <div class="points_desc_item">
                                     <p class="question">1.什么是途牛"会员等级"方案？</p>
                                     <p class="answer">这是途牛为会员打造定制的一套回馈、增值奖励方案，会员级别越高享受的权益越多，更多的权益策略将在不断完善中，敬请期待。</p>
