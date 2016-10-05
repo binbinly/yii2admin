@@ -67,6 +67,9 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                         <a id='train_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">活动&培训</a>
                         <ul class="dropdown-menu train">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
+                            <?php foreach(\common\models\TrainType::getAll(0) as $item): ?>
+                            <li class="popup01"><a href="<?= Url::to(['/train/certificate','type'=>$item['id']])?>"><img src="<?=$item['cover']?>"><p class="popup_bg"></p><div class="popup_bg_p"><p><?=$item['name']?></p><span><?= $item['description']?></span></div></a></li>
+                            <?php endforeach; ?>
                             <? foreach(\common\models\TrainType::getAll(0) as $item): ?>
                             <li class="popup01"><a href="<?= Url::to(['/train/certificate','type'=>$item['id']])?>"><img src="<?= $item['cover']?>"><p class="popup_bg"></p><div class="popup_bg_p"><p><?= $item['name']?></p><span><?= $item['description']?></span></div></a></li>
                             <? endforeach; ?>
