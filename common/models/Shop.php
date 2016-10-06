@@ -42,7 +42,8 @@ class Shop extends \common\core\BaseActiveRecord
             [['images', 'extend'], 'string'],
             [['price'], 'number'],
             [['title'], 'string', 'max' => 100],
-            [['description', 'cover'], 'string', 'max' => 255]
+            [['description', 'cover'], 'string', 'max' => 255],
+            [['info', 'cover'], 'string', 'max' => 255],
         ];
     }
 
@@ -56,6 +57,7 @@ class Shop extends \common\core\BaseActiveRecord
             'type' => 'Type',
             'title' => 'Title',
             'description' => 'Description',
+            'info' => 'Info',
             'cover' => 'Cover',
             'images' => 'Images',
             'num' => 'Num',

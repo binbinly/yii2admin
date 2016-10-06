@@ -68,24 +68,26 @@ use yii\helpers\Url;
 
         <div class="control-group field-shop-price-list">
             <label for="shop-price" class="control-label">节日价</label>
-            <? if(isset($price_list) && !empty($price_list)):?>
-            <? foreach($price_list as $price): ?>
-            <div class="controls price_list">
-                日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" value="<?= $price->day; ?>" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
-                价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list" value="<?= $price->price?>"/>
-                <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
-            </div>
-            <? endforeach; ?>
-            <? else: ?>
-            <div class="controls price_list">
-                日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
-                价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list"/>
-                <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
-            </div>
-            <? endif; ?>
+            <?php if(isset($price_list) && !empty($price_list)): ?>
+                <? foreach($price_list as $price): ?>
+                <div class="controls price_list">
+                    日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" value="<?= $price->day; ?>" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                    价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list" value="<?= $price->price?>"/>
+                    <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+                </div>
+                <? endforeach; ?>
+                <? else: ?>
+                <div class="controls price_list">
+                    日期：<input type="text" name="Shop[shop_day][]" class="span2 m-wrap" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
+                    价格：<input type="text" name="Shop[shop_price][]" class="span2 m-wrap" id="shop-price_list"/>
+                    <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
+                </div>
+            <?php endif; ?>
         </div>
         
         <?=$form->field($model, 'extend')->textarea(['class'=>'span4', 'rows'=>5])->label('扩展参数')->hint('一维数组配置格式“项:值”每项之间用换行或逗号隔开，其值转化为array后serialize()存储到数据库', ['style'=>'display:block;']) ?>
+
+        <?=$form->field($model, 'info')->textarea(['class'=>'span10', 'rows'=>5])->label('产品描述')->hint('换行的时候加上<br>', ['style'=>'display:block;']) ?>
         
         <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
         
