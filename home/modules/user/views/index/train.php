@@ -1,6 +1,6 @@
 
 <style type="text/css">
-.nav > li > a {
+.member_cen .nav > li > a {
     padding: 0px;
 }
 .tab-content{

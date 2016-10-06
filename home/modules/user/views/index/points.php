@@ -1,6 +1,6 @@
 
 <style type="text/css">
-.nav > li > a {
+.member_cen .nav > li > a {
     padding: 0px;
 }
 .tab-content{
@@ -98,193 +98,125 @@
 }
 </style>
 <!--banner-->
-<div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-    <div role="listbox" class="carousel-inner">
-        <div class="item active">
-            <img src="/bootstrap/images/banner.jpg" alt="First slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Third slide">
-        </div>
-    </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left.png"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/bootstrap/images/right.png"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+<?php include('public_head.php'); ?>
 
-<div class="w_1200">
-    <ol class="breadcrumb">
-      <li><a href="#">首页</a></li>
-      <li class="active">关于我们</li>
-    </ol>
-    <!--客房-->
-</div>
-<div class="member_cen">
-    <div class="member_cen_l">
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation">
-                <div class="member_img"><img src="/bootstrap/images/touxiang.jpg">
-                    <p>会员名称</p>
-                    <div class="member_jdt">
-                        <div class="progress">
-                            <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
-                                60%
-                            </div>
-                        </div>
+<div role="tabpanel" class="tab-pane active" id="member_cen03">
+    <div class="member_cen_text">
+        <div class="order_cen">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"><a href="/user/index/wallet">我的钱包</a></li>
+                <li role="presentation" class="active"><a href="/user/index/points">我的积分</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- 用户资料 -->
+                <div class="userinfo">
+                    <div class="base_info">
+                        <table>
+                            <tr>
+                                <td>用户名</td>
+                                <td>lasek0018736   <a href="#" class='member_btn'>成为会员</a></td>
+                            </tr>
+                            <tr>
+                                <td>积分</td>
+                                <td>1740</td>
+                            </tr>
+                            <tr>
+                                <td>手机</td>
+                                <td>13123123</td>
+                            </tr>
+                        </table>
                     </div>
-                    <p class="member_img_p">普通会员</p>
+                    <div class="other_info">
+                        <table>
+                            <tr>
+                                <td>注册时间：</td>
+                                <td>lasek0018736</td>
+                            </tr>
+                            <tr>
+                                <td>我的余额</td>
+                                <td>1740</td>
+                            </tr>
+                            <tr>
+                                <td>会员等级</td>
+                                <td>13123123</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </li>
-            <li role="presentation"><a href="#member_cen02" aria-controls="profile" role="tab" data-toggle="tab">个人资料</a></li>
-            <li role="presentation" class="active"><a href="#member_cen03" aria-controls="messages" role="tab" data-toggle="tab">我的订单</a></li>
-            <li role="presentation"><a href="#member_cen04" aria-controls="settings" role="tab" data-toggle="tab">我的积分</a></li>
-            <li role="presentation"><a href="#member_cen05" aria-controls="settings" role="tab" data-toggle="tab">意见反馈</a></li>
-        </ul>
-    </div>
-    <div class="member_cen_r">
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="member_cen02">
-                <div class="member_cen_text">个人资料</div>
-            </div>
-            <div role="tabpanel" class="tab-pane active" id="member_cen03">
-                <div class="member_cen_text">
-                    <div class="order_cen">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#order_cen01" aria-controls="home" role="tab" data-toggle="tab">我的钱包</a></li>
-                            <li role="presentation"><a href="#order_cen02" aria-controls="profile" role="tab" data-toggle="tab">我的积分</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <!-- 用户资料 -->
-                            <div class="userinfo">
-                                <div class="base_info">
-                                    <table>
-                                        <tr>
-                                            <td>用户名</td>
-                                            <td>lasek0018736   <a href="#" class='member_btn'>成为会员</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>积分</td>
-                                            <td>1740</td>
-                                        </tr>
-                                        <tr>
-                                            <td>手机</td>
-                                            <td>13123123</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="other_info">
-                                    <table>
-                                        <tr>
-                                            <td>注册时间：</td>
-                                            <td>lasek0018736</td>
-                                        </tr>
-                                        <tr>
-                                            <td>我的余额</td>
-                                            <td>1740</td>
-                                        </tr>
-                                        <tr>
-                                            <td>会员等级</td>
-                                            <td>13123123</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <!-- 积分明细 -->
-                            <div class="points_detail">
-                                <p class="title">积分明细</p>
-                                <table>
-                                    <thead>
-                                        <td>交易时间</td>
-                                        <td>订单号</td>
-                                        <td>交易类型</td>
-                                        <td>交易积分</td>
-                                        <td>可用积分</td>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>2016/09/28 15:21:49</td>
-                                            <td>C60880011088</td>
-                                            <td class="red">积分抵现</td>
-                                            <td class="red">-500</td>
-                                            <td>1740</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2016/09/28 15:21:49</td>
-                                            <td>C60880011088</td>
-                                            <td class="green">获取积分</td>
-                                            <td class="green">+500</td>
-                                            <td>2240</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2016/09/28 15:21:49</td>
-                                            <td>C60880011088</td>
-                                            <td class="red">积分抵现</td>
-                                            <td class="red">-500</td>
-                                            <td>1740</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2016/09/28 15:21:49</td>
-                                            <td>C60880011088</td>
-                                            <td class="green">获取积分</td>
-                                            <td class="green">+500</td>
-                                            <td>2240</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="pagination_wrap">
-                                    <div class="pagination_content">
-                                        <a href="#">上一页</a>
-                                        <a><img src="/bootstrap/images/pre.png"></a>
-                                        <span>1/10</span>
-                                        <a><img src="/bootstrap/images/next.png"></a>
-                                        <a href="#">下一页</a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                            <!-- 积分说明 -->
-                            <div class="points_desc">
-                                <p class="title">积分明细</p>
-                                <div class="points_desc_item">
-                                    <p class="question">1.什么是途牛"会员等级"方案？</p>
-                                    <p class="answer">这是途牛为会员打造定制的一套回馈、增值奖励方案，会员级别越高享受的权益越多，更多的权益策略将在不断完善中，敬请期待。</p>
-                                </div>
-                                <div class="points_desc_item">
-                                    <p class="question">2.会员级别的升级标准是什么？</p>
-                                    <p class="answer">这是途牛为会员打造定制的一套回馈、增值奖励方案，会员级别越高享受的权益越多，更多的权益策略将在不断完善中，敬请期待。</p>
-                                </div>
-                                
-                            </div>
-                        </div><!-- tab-content -->
+                <div class="clearfix"></div>
+                <!-- 积分明细 -->
+                <div class="points_detail">
+                    <p class="title">积分明细</p>
+                    <table>
+                        <thead>
+                            <td>交易时间</td>
+                            <td>订单号</td>
+                            <td>交易类型</td>
+                            <td>交易积分</td>
+                            <td>可用积分</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2016/09/28 15:21:49</td>
+                                <td>C60880011088</td>
+                                <td class="red">积分抵现</td>
+                                <td class="red">-500</td>
+                                <td>1740</td>
+                            </tr>
+                            <tr>
+                                <td>2016/09/28 15:21:49</td>
+                                <td>C60880011088</td>
+                                <td class="green">获取积分</td>
+                                <td class="green">+500</td>
+                                <td>2240</td>
+                            </tr>
+                            <tr>
+                                <td>2016/09/28 15:21:49</td>
+                                <td>C60880011088</td>
+                                <td class="red">积分抵现</td>
+                                <td class="red">-500</td>
+                                <td>1740</td>
+                            </tr>
+                            <tr>
+                                <td>2016/09/28 15:21:49</td>
+                                <td>C60880011088</td>
+                                <td class="green">获取积分</td>
+                                <td class="green">+500</td>
+                                <td>2240</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination_wrap">
+                        <div class="pagination_content">
+                            <a href="#">上一页</a>
+                            <a><img src="/bootstrap/images/pre.png"></a>
+                            <span>1/10</span>
+                            <a><img src="/bootstrap/images/next.png"></a>
+                            <a href="#">下一页</a>
+                        </div>
                         
                     </div>
                 </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="member_cen04">
-                <div class="member_cen_text">我的积分</div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="member_cen05">
-                <div class="member_cen_text">意见反馈</div>
-            </div>
+
+                <!-- 积分说明 -->
+                <div class="points_desc">
+                    <p class="title">积分明细</p>
+                    <div class="points_desc_item">
+                        <p class="question">1.什么是途牛"会员等级"方案？</p>
+                        <p class="answer">这是途牛为会员打造定制的一套回馈、增值奖励方案，会员级别越高享受的权益越多，更多的权益策略将在不断完善中，敬请期待。</p>
+                    </div>
+                    <div class="points_desc_item">
+                        <p class="question">2.会员级别的升级标准是什么？</p>
+                        <p class="answer">这是途牛为会员打造定制的一套回馈、增值奖励方案，会员级别越高享受的权益越多，更多的权益策略将在不断完善中，敬请期待。</p>
+                    </div>
+                    
+                </div>
+            </div><!-- tab-content -->
+            
         </div>
     </div>
 </div>
+
+<?php include('public_footer.php'); ?>
