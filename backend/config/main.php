@@ -12,7 +12,9 @@ return [
     /* 控制器默认命名空间 */
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'redactor' => 'yii\redactor\RedactorModule',
+    ],
     /* 默认路由 */
     'defaultRoute' => 'index',
     /* 默认布局文件 优先级 控制器>配置文件>系统默认 */

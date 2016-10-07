@@ -87,8 +87,8 @@ use yii\helpers\Url;
         
         <?=$form->field($model, 'extend')->textarea(['class'=>'span4', 'rows'=>5])->label('扩展参数')->hint('一维数组配置格式“项:值”每项之间用换行或逗号隔开，其值转化为array后serialize()存储到数据库', ['style'=>'display:block;']) ?>
 
-        <?=$form->field($model, 'info')->textarea(['class'=>'span10', 'rows'=>5])->label('产品描述')->hint('换行的时候加上<br>', ['style'=>'display:block;']) ?>
-        
+        <?= $form->field($model, 'info')->label('产品简介')->widget(\yii\redactor\widgets\Redactor::className()) ?>
+
         <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
         
         <?=$form->field($model, 'status')->radioList(['1'=>'正常','0'=>'隐藏'])->label('状态') ?>
