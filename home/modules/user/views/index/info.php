@@ -312,7 +312,7 @@ $(function() {
         }
         $.post('/user/index/modify',save_data,function(ret){
             if(ret.code==0){
-
+                alert('修改成功');
             }else{
                 alert(ret.msg)
             }

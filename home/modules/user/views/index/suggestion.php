@@ -1,6 +1,6 @@
 
 <style type="text/css">
-.tab-content .nav > li > a {
+.member_cen .nav > li > a {
     padding: 0px;
 }
 .tab-content{
@@ -106,22 +106,22 @@
                 <div  class="tab-pane active" id="member_cen04">
                     <div class="member_cen_text">
                         <div class="about_cen_text">
-                            <form class="form-horizontal" role="form">
+                            <form class="form-horizontal" role="form" id='mainform'>
                               <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">反馈邮箱</label>
                                 <div class="col-sm-10">
-                                  <input class="form-control" id="inputEmail3" placeholder="Email" type="email">
+                                  <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name='email'>
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">留言建议</label>
                                 <div class="col-sm-10">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name='content'></textarea>
                                 </div>
                               </div>
                               <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                  <button type="submit" class="btn btn-default pull-right">Sign in</button>
+                                  <button type="button" id='save_btn' class="btn btn-default pull-right">提交</button>
                                 </div>
                               </div>
                             </form>
@@ -134,3 +134,17 @@
     </div>
 </div>
 <?php include('public_footer.php'); ?>
+
+<script type="text/javascript">
+$('#save_btn').click(function(){
+    var send_data = $('#mainform').serializeArray();
+    $.post('/email',send_data,function(ret){
+        if(ret.code==0){
+            alert('发送成功，谢谢您的建议');
+        }else{
+            alert(ret.msg);
+        }
+    }, 'json')
+})
+</script>
+
