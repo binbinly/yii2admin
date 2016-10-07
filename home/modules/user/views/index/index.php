@@ -1,71 +1,105 @@
 
+<style type="text/css">
+.member_cen .nav > li > a {
+    padding: 0px;
+}
+.tab-content{
+    padding: 10px;
+}
+.base_info{
+    float: left;
+    padding: 10px;
+}
+.tab-content .userinfo{
+}
+.tab-content .userinfo table{
+    width: 300px
+}
+.tab-content .userinfo table td{
+    padding: 3px;
+}
+.other_info{
+    float: right;
+    margin-left: 100px;
+    background: #fefbcc;
+    padding: 10px;
+}
+.clearfix{
+    clear: both;
+}
+.points_detail{
+    margin-top: 20px;
+    padding:10px;
+}
+.points_detail .title{
+    font-size: 14px;
+    font-weight: bold;
+}
+.points_detail table{
+    width: 100%;
+}
+.points_detail thead{
+    background: #c4a76f;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+.points_detail td{
+    padding: 6px 8px;
+}
+.points_detail tbody tr{
+    font-size: 12px;
+}
+.points_detail tbody tr:nth-child(2n){
+    background: #f3ede2;
+    border-top: 1px solid #e1d3b9;
+    border-bottom: 1px solid #e1d3b9;
+}
+.points_detail .red{
+    color: red;
+}
+.points_detail .green{
+    color: green;
+}
+.points_desc{
+    margin-top: 20px;
+    padding: 10px;
+}
+.points_desc .title{
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+.points_desc_item{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.member_btn{
+    display: inline-block;
+    height: 20px;
+    width: 90px;
+    text-align: center;
+    background: #c4a76f;
+    margin-left: 30px;
+    color: #fff;
+    line-height: 20px;
+}
+.pagination_wrap{
+    margin-top: 10px;
+    font-size: 12px;
+    
+}
+.pagination_content{
+    float: right;
+}
+.pagination_content a{
+    color: #000;
+    margin-left: 5px;
+}
+</style>
 <!--banner-->
-<div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-    <div role="listbox" class="carousel-inner">
-        <div class="item active">
-            <img src="/bootstrap/images/banner.jpg" alt="First slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Third slide">
-        </div>
-    </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left.png"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/bootstrap/images/right.png"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+<?php include('public_head.php'); ?>
 
-<div class="w_1200">
-    <ol class="breadcrumb">
-      <li><a href="#">首页</a></li>
-      <li class="active">关于我们</li>
-    </ol>
-    <!--客房-->
-</div>
-<div class="member_cen">
-    <div class="member_cen_l">
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation">
-                <div class="member_img"><img src="/bootstrap/images/touxiang.jpg">
-                    <p>会员名称</p>
-                    <div class="member_jdt">
-                        <div class="progress">
-                            <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
-                                60%
-                            </div>
-                        </div>
-                    </div>
-                    <p class="member_img_p">普通会员</p>
-                </div>
-            </li>
-            <li role="presentation"><a href="#member_cen02" aria-controls="profile" role="tab" data-toggle="tab">个人资料</a></li>
-            <li role="presentation" class="active"><a href="#member_cen03" aria-controls="messages" role="tab" data-toggle="tab">我的订单</a></li>
-            <li role="presentation"><a href="#member_cen04" aria-controls="settings" role="tab" data-toggle="tab">我的积分</a></li>
-            <li role="presentation"><a href="#member_cen05" aria-controls="settings" role="tab" data-toggle="tab">意见反馈</a></li>
-        </ul>
-    </div>
-    <div class="member_cen_r">
-        <div class="tab-content">
-<!--            <div role="tabpanel" class="tab-pane " id="member_cen01">
-                <div class="member_cen_text">帆海汇介绍</div>
-            </div>-->
-            <div role="tabpanel" class="tab-pane" id="member_cen02">
-                <div class="member_cen_text">个人资料</div>
-            </div>
             <div role="tabpanel" class="tab-pane active" id="member_cen03">
                 <div class="member_cen_text">
                     <p class="order_top"><img src="/bootstrap/images/jingao.png" class="member_jingao_img">您可以在线查看近一年的订单。如需查找更早之前的订单，请致电：0755-88888888 </p>
@@ -273,31 +307,4 @@
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="member_cen04">
-                <div class="member_cen_text">我的积分</div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="member_cen05">
-                <div class="member_cen_text">意见反馈</div>
-            </div>
-        </div>
-        <nav>
-            <ul class="pagination posin">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-            </ul>
-        </nav>
-    </div>
-</div>
+<?php include('public_footer.php'); ?>
