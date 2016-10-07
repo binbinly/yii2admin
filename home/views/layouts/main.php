@@ -42,6 +42,13 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 .nav > li > a {
     padding: 10px 10px;
 }
+#reg_model .tips p{
+    padding-top: 7px;
+}
+#reg_model .tips{
+    display: none;
+    color: red;
+}
 </style>
 <!--首页-->
 <div class="sy_header">
@@ -57,11 +64,11 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                         <a id='product_nav' aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle first-nav" href="#">产品&服务</a>
                         <ul class="dropdown-menu">
                             <i class="pos_icon"><img src="/bootstrap/images/up.jpg"> </i>
-                            <li class="popup"><a href="/shop/group"><img src="/bootstrap/images/01.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>套餐</p><span>说明内容说明内容说明内容</span></div></a></li>
-                            <li class="popup"><a href="/shop/index?type=1"><img src="/bootstrap/images/01.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>客房</p><span>说明内容说明内容说明内容</span></div></a></li>
-                            <li class="popup01"><a href="/shop/index?type=2"><img src="/bootstrap/images/02.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>帆船</p><span>说明内容说明内容说明内容</span></div></a></li>
-                            <li class="popup01"><a href="/shop/index?type=3"><img src="/bootstrap/images/02.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>潜水</p><span>说明内容说明内容说明内容</span></div></a></li>
-                            <li class="popup01"><a href="/shop/index?type=4"><img src="/bootstrap/images/02.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>海钓</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <li class="popup"><a href="/shop/group"><img src="/bootstrap/images/taocan.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>套餐</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <li class="popup"><a href="/shop/index?type=1"><img src="/bootstrap/images/kefang.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>客房</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <li class="popup01"><a href="/shop/index?type=2"><img src="/bootstrap/images/fangchuan.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>帆船</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <li class="popup01"><a href="/shop/index?type=3"><img src="/bootstrap/images/qianshui.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>潜水</p><span>说明内容说明内容说明内容</span></div></a></li>
+                            <li class="popup01"><a href="/shop/index?type=4"><img src="/bootstrap/images/haidiao.jpg"><p class="popup_bg"></p><div class="popup_bg_p"><p>海钓</p><span>说明内容说明内容说明内容</span></div></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -71,9 +78,6 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                             <?php foreach(\common\models\TrainType::getAll(0) as $item): ?>
                             <li class="popup01"><a href="<?= Url::to(['/train/certificate','type'=>$item['id']])?>"><img src="<?=$item['cover']?>"><p class="popup_bg"></p><div class="popup_bg_p"><p><?=$item['name']?></p><span><?= $item['description']?></span></div></a></li>
                             <?php endforeach; ?>
-                            <? foreach(\common\models\TrainType::getAll(0) as $item): ?>
-                            <li class="popup01"><a href="<?= Url::to(['/train/certificate','type'=>$item['id']])?>"><img src="<?= $item['cover']?>"><p class="popup_bg"></p><div class="popup_bg_p"><p><?= $item['name']?></p><span><?= $item['description']?></span></div></a></li>
-                            <? endforeach; ?>
                         </ul>
                     </li>
                     <li class="acitve"><a id='active_nav' href="/article/index?cid=3">最新资讯</a></li>
@@ -164,9 +168,15 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group tips">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">提示：</label>
+                                    <div class="col-sm-5">
+                                        <p>xxxx</p>
+                                    </div>
+                                </div>
                             </form>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default ajax_post" data-dismiss="modal">注册</button>
+                                <button type="button" class="btn btn-default ajax_post" data-dismiss="">注册</button>
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal -->
@@ -201,10 +211,11 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                                     </div>
                                     <div class="warning"><i>*</i>请输入正确的验证码</div>
                                 </div>
+                                
                             </form>
                             <div style="height:60px;"></div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default forget" data-dismiss="modal">找回密码
+                                <button type="button" class="btn btn-default forget" data-dismiss="">找回密码
                                 </button>
                             </div>
                         </div><!-- /.modal-content -->
@@ -345,11 +356,16 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 $.get("<?=Url::to(['/user/login/reg'])?>", $("#reg").serialize(), function(data){
                     if(data.code == 0){
                         //window.location.href = '/';
+                    }else{
+                        $('#reg_model .tips p').html(data.msg);
+                        $('#reg_model .tips').show();
                     }
-                    layer.alert(data.msg);
+                    // layer.alert(data.msg);
                 }, 'json');
             } else {
-                layer.alert('同意网站协议后才能注册');
+                // layer.alert('同意网站协议后才能注册');
+                $('#reg_model .tips p').html('同意网站协议后才能注册');
+                $('#reg_model .tips').show();
             }
         });
         /* 找回密码 */
@@ -357,14 +373,18 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
             var mobile = $('.forget_form').find('.mobile').val(),
                 captcha = $('.forget_form').find('.captcha').val();
             if (!mobile || !captcha){
-                layer.alert('手机和验证码不为空');
+                $('#myModal01 .tips p').html('手机和验证码不为空');
+                $('#myModal01 .tips').show();
                 return;
             }
             $.get("<?=Url::to(['/user/login/forget'])?>", {mobile:mobile,captcha:captcha}, function(data){
                 if(data.code == 0){
                     //window.location.href = '/';
+                }else{
+                    $('#myModal01 .tips p').html(data.msg);
+                    $('#myModal01 .tips').show();
                 }
-                layer.alert(data.msg);
+                // layer.alert(data.msg);
             }, 'json');
         });
         /* logout注销 */
