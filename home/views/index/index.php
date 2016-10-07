@@ -254,7 +254,6 @@
             <option value="package">套餐</option>
         </select>
     </div>
-    <div class="recommended_top_right"><span class="glyphicon glyphicon-menu-left"></span>12 <i>/</i> 24<span class="glyphicon glyphicon-menu-right"></span></div>
 </div>
 <div id="carousel-example-generic01" class="carousel slide recommended" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
@@ -397,7 +396,7 @@
 <p>帆海汇培训中心室内拥有设施齐全的超大会议室，可以满足不同公司组织的业内会议
 或不同领域的年度盛会。帆海汇培训中心为美国ASA权威帆船培训体系授权分校，
 将为帆船运动爱好者提供专业的帆船培训，并颁发美国ASA帆船驾驶证书。 </p>
-            <a href="">详&nbsp;情</a>
+            <a href="/article/index?cid=1">详&nbsp;情</a>
         </div>
         <div class="exercise_bg02"></div>
         <div class="exercise_cen">
@@ -430,6 +429,7 @@
 
 <script type="text/javascript">
     $(function () {
+
         /* 立即购买，跳转到结算页 */
         $('.goumai').click(function () {
             clearCart();

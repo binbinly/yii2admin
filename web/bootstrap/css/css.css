@@ -10,16 +10,19 @@ i,em{font-style:normal}
 .sy_header p{margin:0px;}
 .nav > li > a:hover, .nav > li > a:focus { text-decoration: none; background-color:inherit; color:#e50012;}
 .nav > li .active{ color:#e50012;}
-.navbar-nav{margin-top:28px;}
+.navbar-nav{
+    margin-top: 35px;
+    margin-left: 20px;
+}
 .navbar-nav > li{margin: 0 3px 0 5px}
 .form-control:focus{border-color:#c2c2c3;box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(280, 0, 18, 0.6)}
 .sy_header_nav .form-control{width:130px; font-size:12px;}
-.sy_header .navbar-form{margin-top:38px;}
+.sy_header .navbar-form{margin-top:33px;}
 .form-group{margin-left:5px;}
-.sy_header .btn{color:#fff; border:none;margin-left:5px;}
+.sy_header .btn{color:#fff; border:none;margin-left:5px;font-size: 12px;}
 .sy_header .dl{background:#e50012;}
-.sy_header .zc{background:#9e9f9f; float:left; margin-top:38px;}
-.sy_header .wx > li > a{padding:14px 0 0 0;}
+.sy_header .zc{background:#9e9f9f; float:left; margin-top:36px;}
+.sy_header .wx > li > a{padding:6px 0 0 0;}
 .sy_header .wx .dropdown-menu{width:72px; height:72px; left:-50px}
 .sy_header .navbar-form{padding-right:0px; position: relative;}
 .sy_header .nav .open >a{background:none;}
@@ -92,14 +95,19 @@ i,em{font-style:normal}
 
 /*时间控件*/
 .input-append p{margin-bottom:0px; color:#888888;}
-.w_120{width:140px; float:left; margin-right:18px;}
-.w_120 input{width:116px; border:0px;}
+.w_120{width:148px; float:left; margin-right:18px;}
+.w_120 input{
+    width: 122px;
+    border: 0px;
+    line-height: 28px;
+    padding-left: 3px;
+}
 .border{border:1px solid #b1b2b2;}
 .table-condensed .icon-arrow-left{background-position: -240px -96px;}
 .table-condensed .icon-arrow-right{background-position:-264px -96px;}
 [class^="icon-"], [class*=" icon-"] {
     background-image: url("../images/glyphicons-halflings.png");
-    background-position: 14px 14px;
+/*    background-position: 14px 14px;*/
     background-repeat: no-repeat;
     display: inline-block;
     height: 14px;
@@ -496,3 +504,59 @@ i,em{font-style:normal}
 .shopping a{color:#fff; padding:8px 15px;}
 .shopping_pos_but{background: #c4a76f;}
 .shopping_pos_but01{background: #c8c9c9;}
+
+
+
+.cart-wrap{
+    color: #000;
+    margin-left: 13px;
+}
+.cart-wrap .text{
+    position: relative;
+    top:-3px;
+}
+.cart-wrap .glyphicon{
+    background: #e50012;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 30px;
+    color: #fff;
+}
+.user_wrap{
+    position: relative;
+    top: -3px;
+}
+.user_wrap img{
+    position: relative;
+    top: -3px;
+}
+.user_wrap .sub_nav{
+    position: absolute;
+    left: 0px;
+    top: 46px;
+    z-index: 9;
+    background: #fff;
+    margin: 0px;
+    padding: 3px;
+    width: 110px;
+    line-height: 20px;
+    box-shadow: 1px 2px 2px;
+    display: none;
+}
+.user_wrap .sub_nav li{
+    /*border-bottom: 1px solid #ccc;*/
+}
+.user_wrap .sub_nav li a{
+    color: #000;
+    display: block;
+    padding: 3px;
+    font-size: 12px;
+}
+.sub_nav li a:hover{
+    color: #fff;
+    background: #c4a76f;
+}
+

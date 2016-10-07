@@ -9,11 +9,12 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>帆海汇</title>
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">  
     <link href="/bootstrap/css/css.css" rel="stylesheet">
     <link href="/bootstrap/css/datetimepicker.css" rel="stylesheet">
     <script src="/bootstrap/js/jquery-1.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/bootstrap/js/bootstrap-datetimepicker.js"></script>
     <script src="/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
@@ -81,15 +82,22 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 
                 <?php if (Yii::$app->user->identity) : ?>
                 <div class="navbar-form navbar-left">
-                    <div class="form-group">
-                        用户：<?=Yii::$app->user->identity->username?>
+                    <div class="form-group user_wrap">
+                        <span><?=Yii::$app->user->identity->username?></span>
+                        <img style="width: 46px;" src="/uploads/5f0491a16bc1de2add0b09fa0874f272.jpg" class="img-circle">
+                        <ul class="sub_nav">
+                            <li><a href="/user/index/info">个人信息</a></li>
+                            <li><a href="/user">我的订单</a></li>
+                            <li><a href="/user/index/wallet">我的钱包</a></li>
+                            <li><a href="/user/index/points">我的积分</a></li>
+                            <li><a href="/user/login/logout">注销</a></li>
+                        </ul>
                     </div>
-                    <div class="form-group">
-                        积分：<?=Yii::$app->user->identity->score?>
-                    </div>
-                    <a class="btn btn-danger" href="<?=Url::to('/user/login/logout')?>">注销</a>
-                    <a class="btn btn-info" href="<?=Url::to('/user')?>">会员中心</a>
-                    <a class="btn btn-primary" href="<?=Url::to('/order/view')?>">购物车</a>
+
+                    <!-- <a class="btn btn-danger" href="<?=Url::to('/user/login/logout')?>">注销</a> -->
+
+                    <!-- <a class="btn btn-info" href="<?=Url::to('/user')?>">会员中心</a> -->
+                    <a class="cart-wrap" href="<?=Url::to('/order/view')?>"> <span class='text'>购物车 </span><span class="glyphicon glyphicon-shopping-cart"></span></i></a>
                 </div>
                 <?php else: ?>
                 <form role="search" method="post" class="navbar-form navbar-left login" id='login_form'>
@@ -234,7 +242,6 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
     </div> -->
     <div class="xian"></div>
     <div class="sy_bottom_cen">
-        <a href="">帆海汇俱乐部</a>|<a href="">媒体中心</a>|<a href="">联系我们</a>|<a href="">就业机会</a>|<a href="/article/index?cid=1">关于我们</a><br>
 ©帆海汇俱乐部有投资有限公司版权所有。粤ICP备09039361号</div>
 </div>
 
@@ -243,6 +250,11 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 </div>
 
 <script type="text/javascript">
+    $('.user_wrap').hover(function(){
+        $(this).find('.sub_nav').show();
+    }, function(){
+        $(this).find('.sub_nav').hide();
+    });
     $(".form_datetime5").datetimepicker({
         startDate: '<?=date('Y-m-d',time()+60*60*24)?>',
         format: "yyyy-mm-dd hh:ii",
