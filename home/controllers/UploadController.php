@@ -26,7 +26,7 @@ class UploadController extends Controller
     }
 
     public function actionFiles(){
-        $targetFolder = '/uploads';
+        $targetFolder = '/upload/avatar/';
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
             $md5_file_name = md5($_FILES['Filedata']['tmp_name']).'.'.substr(strrchr($_FILES['Filedata']['name'], '.'), 1);
@@ -41,7 +41,7 @@ class UploadController extends Controller
             if (in_array($fileParts['extension'],$fileTypes)) {
                 move_uploaded_file($tempFile,$targetFile);
                 FuncHelper::ajaxReturn(0, 'success', array(
-                    'file_path'=>"/uploads/{$md5_file_name}",
+                    'file_path'=>"/upload/avatar/{$md5_file_name}",
                 ));
             } else {
                 FuncHelper::ajaxReturn(-1, '上传失败');
