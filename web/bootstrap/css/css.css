@@ -143,7 +143,7 @@ i,em{font-style:normal}
 .w_385{width: 385px; float: left; margin: 0 20px 22px 0; position: relative;}
 
 /*爱正能量*/
-.w_1440{width:1440px; height:408px; margin:30px auto 0;}
+.w_1440{width:1440px; height:408px; margin:30px auto 0;max-width: 100%;overflow: hidden;}
 .exercise_bg{height:408px; width:1440px; position: relative; z-index: 99;}
 .exercise_bg01{float: left; width:653px;height:408px ;background: #9e9f9f; color:#fff; line-height: 180%; padding:70px 15px 0 200px;}
 .exercise_bg01 a{position: absolute; bottom: 20px; color:#fff; background:#c4a76f; padding:5px 18px;}
