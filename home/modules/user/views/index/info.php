@@ -132,6 +132,9 @@ use yii\helpers\Html;
 .icon-calendar{
     background: none;
 }
+#save_btn{
+    background: #cfb970;
+}
 </style>
 <script src="/bootstrap/js/jquery.uploadify.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/uploadify.css">
@@ -236,7 +239,7 @@ use yii\helpers\Html;
                             </div>
                             
                         </div>
-                        <div class="form-group" style="text-align: center;">
+                        <div class="form-group" style="text-align: left;margin-left: 40px;">
                             <button type="button" class="btn btn-default" id='save_btn'>提交修改</button>
                         </div>
 
