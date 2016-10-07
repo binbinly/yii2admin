@@ -55,6 +55,12 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
     display: none;
     color: red;
 }
+.show_wx{
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+}
 </style>
 <!--首页-->
 <div class="sy_header">
@@ -91,7 +97,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 </ul>
                 
                 <?php if (Yii::$app->user->identity) : ?>
-                <div class="navbar-form navbar-left">
+                <div class="navbar-form" style="float: right;">
                     <div class="form-group user_wrap">
                         <span><?=Yii::$app->user->identity->username?></span>
                         <img style="width: 46px;" src="/uploads/5f0491a16bc1de2add0b09fa0874f272.jpg" class="img-circle">
@@ -102,12 +108,10 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                             <li><a href="/user/index/points">我的积分</a></li>
                             <li><a href="/user/login/logout">注销</a></li>
                         </ul>
+
                     </div>
-
-                    <!-- <a class="btn btn-danger" href="<?=Url::to('/user/login/logout')?>">注销</a> -->
-
-                    <!-- <a class="btn btn-info" href="<?=Url::to('/user')?>">会员中心</a> -->
                     <a class="cart-wrap" href="<?=Url::to('/order/view')?>"> <span class='text'>购物车 </span><span class="glyphicon glyphicon-shopping-cart"></span></i></a>
+                    <a href="#" class="show_wx" id='show_wx'><img src="/bootstrap/images/co.jpg"></a>
                 </div>
                 <?php else: ?>
                 <form role="search" method="post" class="navbar-form navbar-left login" id='login_form'>
@@ -189,11 +193,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 </div>
                 <?php endif ?>
                 
-                <ul class="nav navbar-nav wx">
-                    <li class="dropdown" id='show_wx'>
-                        <a href="#"><img src="/bootstrap/images/co.jpg"></a>
-                    </li>
-                </ul>
+                
                 
                 
                 <!-- 模态框（Modal） -->

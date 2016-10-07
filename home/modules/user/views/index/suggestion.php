@@ -96,6 +96,9 @@
     color: #000;
     margin-left: 5px;
 }
+.member_data {
+    margin-top: 10px;
+}
 </style>
 <?php include('public_head.php'); ?>
 <div role="tabpanel" class="tab-pane active" id="member_cen03">
@@ -105,22 +108,22 @@
             <div class="tab-content member_data">
                 <div  class="tab-pane active" id="member_cen04">
                     <div class="member_cen_text">
-                        <div class="about_cen_text">
+                        <div class="">
                             <form class="form-horizontal" role="form" id='mainform'>
                               <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">反馈邮箱</label>
+                                <label for="inputEmail3" class="col-sm-1 control-label">反馈邮箱</label>
                                 <div class="col-sm-10">
                                   <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name='email'>
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">留言建议</label>
+                                <label for="inputPassword3" class="col-sm-1 control-label">留言建议</label>
                                 <div class="col-sm-10">
                                 <textarea class="form-control" rows="3" name='content'></textarea>
                                 </div>
                               </div>
                               <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
+                                <div class="col-sm-offset-1 col-sm-10">
                                   <button type="button" id='save_btn' class="btn btn-default pull-right">提交</button>
                                 </div>
                               </div>

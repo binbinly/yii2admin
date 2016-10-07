@@ -38,6 +38,9 @@ if(Yii::$app->request->get('type') != 1){
 .sailing01 .shop_kefang li{
     font-size: 12px;
 }
+.explain{
+    padding: 18px;
+}
 </style>
 
 <div class="w_1200">
@@ -56,6 +59,22 @@ if(Yii::$app->request->get('type') != 1){
       </li>
     </ol>
     <!--客房-->
+</div>
+<div class="bann01" id='gallery'>
+    <div class="bann02"> 
+        <?php if(count($list)>0): ?>
+            <a href="<?=$list[0]['cover']?>"><img src="<?=$list[0]['cover']?>"></a>
+        <?php endif; ?>
+    </div>
+    <div class="bann03">
+        <ul>
+            <?php foreach ($list as $key => $v) :?>
+                <?php if($key>=1 && $key<=4): ?>
+                <li><a href="<?=$v['cover']?>"><img src="<?=$v['cover']?>"></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </div>
 
 <div class="w_1200 sailing01">
@@ -127,7 +146,7 @@ if(Yii::$app->request->get('type') != 1){
                         <p class="w_125_p ">¥ <span class="price"><?=$v['price']?></span></p>
                     </div>
                     <div class="shop_kefang_xian"></div>
-                    <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1"></a>
+                    <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1">展开</a>
                     <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
                         <div class="img_detail" id='gallery<?=$key+2?>'>
                             <?php foreach ($v['images'] as $img) :?>

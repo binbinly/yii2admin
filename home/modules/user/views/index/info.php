@@ -117,6 +117,21 @@ use yii\helpers\Html;
     right: 0px;
     top:0px;
 }
+.img_area .title{
+    padding-left: 15px;
+}
+
+.img_area .glyphicon{
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 66px;
+    color: #ccc;
+    text-align: center;
+}
+.icon-calendar{
+    background: none;
+}
 </style>
 <script src="/bootstrap/js/jquery.uploadify.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/uploadify.css">
@@ -185,7 +200,7 @@ use yii\helpers\Html;
                             <div data-picker-position="bottom-left" class="input-append date form_datetime6 w_120">
                                <div class="border">
                                    <input type="text" name="birthday" readonly="readonly" size="16" value="<?= $user->birthday ?>">
-                                   <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
+                                   <span class="add-on"><i class="icon-calendar glyphicon glyphicon-calendar"></i></span>
                                </div>
                            </div>
                         </div>
@@ -208,10 +223,13 @@ use yii\helpers\Html;
                             </div>
                         </div>
                         <div class="form-group img_area">
+                            <p class='title'>头像上传</p>
                             <div class="col-sm-2">
                                 <div id="img_show">
                                     <?php if(isset($user->image)): ?>
                                         <img src="<?= $user->image ?>" />
+                                    <?php else: ?>
+                                        <span class="glyphicon glyphicon-user"></span>
                                     <?php endif; ?>
                                 </div>
                                 <input id="file_upload" name="file_upload" type="file" multiple="true">
