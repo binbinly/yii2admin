@@ -71,7 +71,7 @@ use yii\helpers\Url;
         <?php endif;?>
 
 
-        <div class="pull-right "> ●  ●  ●正在加载 ●  ●  ●</div>
+        <!-- <div class="pull-right "> ●  ●  ●正在加载 ●  ●  ●</div> -->
     </ul>
     </div>
 </div>

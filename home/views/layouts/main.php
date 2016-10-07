@@ -47,6 +47,12 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 }
 #reg_model .tips{
     display: none;
+}
+#myModal01 .tips p{
+    padding-top: 7px;
+}
+#myModal01 .tips{
+    display: none;
     color: red;
 }
 </style>
@@ -211,7 +217,12 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                                     </div>
                                     <div class="warning"><i>*</i>请输入正确的验证码</div>
                                 </div>
-                                
+                                <div class="form-group tips">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">提示：</label>
+                                    <div class="col-sm-5">
+                                        <p></p>
+                                    </div>
+                                </div>
                             </form>
                             <div style="height:60px;"></div>
                             <div class="modal-footer">
@@ -379,7 +390,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
             }
             $.get("<?=Url::to(['/user/login/forget'])?>", {mobile:mobile,captcha:captcha}, function(data){
                 if(data.code == 0){
-                    //window.location.href = '/';
+                    layer.alert(data.msg);
                 }else{
                     $('#myModal01 .tips p').html(data.msg);
                     $('#myModal01 .tips').show();
