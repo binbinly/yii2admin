@@ -36,8 +36,7 @@ use yii\helpers\Url;
 
 <div class="store">
     <ol class="breadcrumb">
-      <li><a href="#">首页</a></li>
-      <li><a href="#">商城</a></li>
+      <li><a href="/">首页</a></li>
       <li class="active">套餐</li>
     </ol>
     <div class="store_cen">

@@ -2,7 +2,11 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 ?>
-
+<style type="text/css">
+#carousel-example-generic{
+    display: none !important;
+}
+</style>
 
     <!--banner-->
 <?= $this->render('/public/nav')?>

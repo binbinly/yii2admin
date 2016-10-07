@@ -2,6 +2,11 @@
 /* @var $this yii\web\View */
 ?>
 
+<style type="text/css">
+#carousel-example-generic{
+    display: none !important;
+}
+</style>
 
 <?= $this->render('/public/nav')?>
 <form action="<?= \yii\helpers\Url::to(['/train/submit'])?>" method="post">

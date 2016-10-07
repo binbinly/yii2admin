@@ -3,6 +3,11 @@
 use yii\helpers\Url;
 ?>
 
+<style type="text/css">
+#carousel-example-generic{
+    display: none !important;
+}
+</style>
 
     <!--banner-->
 <?= $this->render('/public/nav')?>
@@ -19,7 +24,7 @@ use yii\helpers\Url;
     <section id="feature-area" class="about-section">
         <div class="container">
             <div class="row text-center inner">
-                <? foreach($list as $val): ?>
+                <?php foreach($list as $val): ?>
                 <div class="col-sm-4">
                     <div class="feature-content">
                         <img src="<?= $val['cover']?>" alt="Image">
@@ -28,7 +33,7 @@ use yii\helpers\Url;
                         <a href="<?= Url::to(['/train/index','type' => $type, 'cid'=>$val['id'] ])?>" class="feature-content-link green-btn">选择证书</a>
                     </div>
                 </div>
-                <? endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

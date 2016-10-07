@@ -32,7 +32,7 @@ use yii\helpers\Url;
     </a>
 </div>
 
-<?
+<?php
 use yii\bootstrap\Alert;
 if( Yii::$app->getSession()->hasFlash('success') ) {
     echo Alert::widget([

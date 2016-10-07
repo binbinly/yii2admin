@@ -42,28 +42,37 @@ if(Yii::$app->request->get('type') != 1){
 
 <div class="w_1200">
     <ol class="breadcrumb">
-      <li><a href="#">首页</a></li>
-      <li><a href="#">商城</a></li>
-      <li class="active">客房</li>
+      <li><a href="/">首页</a></li>
+      <li class="active" id='product_name'>
+            <?php if(Yii::$app->request->get('type') == 1): ?>
+                客房
+            <?php elseif(Yii::$app->request->get('type') == 2): ?>
+                帆船
+            <?php elseif(Yii::$app->request->get('type') == 3): ?>
+                潜水
+            <?php elseif(Yii::$app->request->get('type') == 4): ?>
+                海钓
+            <?php endif; ?>
+      </li>
     </ol>
     <!--客房-->
 </div>
 
-<div class="bann01" id='gallery'>
-    <div class="bann02"> <a href="/bootstrap/images/A1.jpg"><img src="/bootstrap/images/A1.jpg"></a></div>
-    <div class="bann03">
-        <ul>
-            <li><a href="/bootstrap/images/B1.jpg"><img src="/bootstrap/images/B1.jpg"></a></li>
-            <li><a href="/bootstrap/images/B2.jpg"><img src="/bootstrap/images/B2.jpg"></a></li>
-            <li><a href="/bootstrap/images/B3.jpg"><img src="/bootstrap/images/B3.jpg"></a></li>
-            <li><a href="/bootstrap/images/B4.jpg"><img src="/bootstrap/images/B4.jpg"></a></li>
-        </ul>
-    </div>
-</div>
-
 <div class="w_1200 sailing01">
     <ul role="tablist" class="nav nav-tabs" id="myTabs">
-        <li class="active" role="presentation"><a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">客房预订</a></li>
+        <li class="active" role="presentation">
+            <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">
+                <?php if(Yii::$app->request->get('type') == 1): ?>
+                    客房预订
+                <?php elseif(Yii::$app->request->get('type') == 2): ?>
+                    帆船预订
+                <?php elseif(Yii::$app->request->get('type') == 3): ?>
+                    潜水预订
+                <?php elseif(Yii::$app->request->get('type') == 4): ?>
+                    海钓预订
+                <?php endif; ?>
+            </a>
+        </li>
         <li role="presentation" class=""><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="false">预订须知</a></li>
     </ul>
     <div class="tab-content shop_kefang" id="myTabContent">
