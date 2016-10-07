@@ -1,5 +1,5 @@
 ul, li {list-style:none;}
-body{background: #eee;}
+body{background: #eee; font-family: "microsoft yahei";}
 a:link{text-decoration:none;}
 a:hover{text-decoration:none;}
 a:focus{text-decoration:none; outline:none;}
@@ -21,7 +21,7 @@ i,em{font-style:normal}
 .sy_header .zc{background:#9e9f9f; float:left; margin-top:38px;}
 .sy_header .wx > li > a{padding:14px 0 0 0;}
 .sy_header .wx .dropdown-menu{width:72px; height:72px; left:-50px}
-.sy_header .navbar-form{padding-right:0px; }
+.sy_header .navbar-form{padding-right:0px; position: relative;}
 .sy_header .nav .open >a{background:none;}
 .carousel-control.left,.carousel-control.right{background:none;}
 
@@ -71,7 +71,7 @@ i,em{font-style:normal}
 .pos_icon{position: absolute;left:190px; top:-17px;}
 .sy_header .dropdown-menu{width:900px;}
 .sy_header .train{width:610px;}
-.wangjimima{float: left; font-size: 12px; color:#b2b1b1; margin-top: 50px; cursor:pointer;}
+.wangjimima{font-size: 12px; color:#b2b1b1; margin-top: 50px; cursor:pointer;top: -14px;left: 20px;position: absolute;}
 
 /*房间选择*/
 .switch_slide{width:1200px; margin:15px auto 0; overflow: hidden;}
