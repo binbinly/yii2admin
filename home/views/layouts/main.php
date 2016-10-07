@@ -101,6 +101,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                     </div>
                     <button class="btn btn-default dl" type="submit">登录</button>
                     <p id='baocuo' style="width: 274px;text-align: right;color: red; display: none;">用户名或密码错误</p>
+                    <div class="wangjimima"  data-toggle="modal" data-target="#myModal01">忘记密码</div>
                 </form>
 
                 <!-- 按钮触发模态框 -->
@@ -170,7 +171,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                     </li>
                 </ul>
                 
-                <div class="wangjimima"  data-toggle="modal" data-target="#myModal01">忘记密码</div>
+                
                 <!-- 模态框（Modal） -->
                 <div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
