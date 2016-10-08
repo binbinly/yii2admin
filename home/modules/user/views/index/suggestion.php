@@ -112,44 +112,44 @@ use yii\widgets\ActiveForm;
                 <div  class="tab-pane active" id="member_cen04">
                     <div class="member_cen_text">
                         <div class="">
-                            <?php $form = ActiveForm::begin([
-                                'id' => 'feedback',
-                                'options' => ['class'=>'form-horizontal'],
-                                'enableAjaxValidation'=>false,
-                                'fieldConfig' => [
-                                    'template' => "{label}\n<div class=\"col-lg-8\">{input}</div>\n<div class=\"col-lg-2\">{error}</div>",
-                                    'labelOptions' => ['class' => 'col-lg-2 control-label'],
-                                ]
-                            ]);?>
-                            <?=$form->field($model,'email')->textInput()?>
-                            <?=$form->field($model,'remark')->textarea(['rows'=>5])?>
-                            <div class="form-group">
-                                <div class="col-sm-4 col-sm-offset-2 ">
-                                    <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
-                                    <button type="submit" class="btn btn-primary">提交</button>
-                                    <button type="reset" class="btn btn-white">取消</button>
+<!--                            --><?php //$form = ActiveForm::begin([
+//                                'id' => 'feedback',
+//                                'options' => ['class'=>'form-horizontal'],
+//                                'enableAjaxValidation'=>false,
+//                                'fieldConfig' => [
+//                                    'template' => "{label}\n<div class=\"col-lg-8\">{input}</div>\n<div class=\"col-lg-2\">{error}</div>",
+//                                    'labelOptions' => ['class' => 'col-lg-2 control-label'],
+//                                ]
+//                            ]);?>
+<!--                            --><?//=$form->field($model,'email')->textInput()?>
+<!--                            --><?//=$form->field($model,'remark')->textarea(['rows'=>5])?>
+<!--                            <div class="form-group">-->
+<!--                                <div class="col-sm-4 col-sm-offset-2 ">-->
+<!--                                    <input type="hidden" value="--><?php //echo Yii::$app->getRequest()->getCsrfToken(); ?><!--" name="_csrf" />-->
+<!--                                    <button type="submit" class="btn btn-primary">提交</button>-->
+<!--                                    <button type="reset" class="btn btn-white">取消</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            --><?php //ActiveForm::end();?>
+                            <form class="form-horizontal" role="form" id='mainform'>
+                              <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-1 control-label">反馈邮箱</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name='email'>
                                 </div>
-                            </div>
-                            <?php ActiveForm::end();?>
-<!--                            <form class="form-horizontal" role="form" id='mainform'>-->
-<!--                              <div class="form-group">-->
-<!--                                <label for="inputEmail3" class="col-sm-1 control-label">反馈邮箱</label>-->
-<!--                                <div class="col-sm-10">-->
-<!--                                  <input class="form-control" id="inputEmail3" placeholder="Email" type="email" name='email'>-->
-<!--                                </div>-->
-<!--                              </div>-->
-<!--                              <div class="form-group">-->
-<!--                                <label for="inputPassword3" class="col-sm-1 control-label">留言建议</label>-->
-<!--                                <div class="col-sm-10">-->
-<!--                                <textarea class="form-control" rows="3" name='content'></textarea>-->
-<!--                                </div>-->
-<!--                              </div>-->
-<!--                              <div class="form-group">-->
-<!--                                <div class="col-sm-offset-1 col-sm-10">-->
-<!--                                  <button type="button" id='save_btn' class="btn btn-default pull-right">提交</button>-->
-<!--                                </div>-->
-<!--                              </div>-->
-<!--                            </form>-->
+                              </div>
+                              <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-1 control-label">留言建议</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" rows="3" name='content'></textarea>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="col-sm-offset-1 col-sm-10">
+                                  <button type="button" id='save_btn' class="btn btn-default pull-right">提交</button>
+                                </div>
+                              </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -159,3 +159,17 @@ use yii\widgets\ActiveForm;
     </div>
 </div>
 <?php include('public_footer.php'); ?>
+
+<script type="text/javascript">
+$('#save_btn').click(function(){
+    var send_data = $('#mainform').serializeArray();
+    $.post('/email',send_data,function(ret){
+        if(ret.code==0){
+            alert('发送成功，谢谢您的建议');
+        }else{
+            alert(ret.msg);
+        }
+    }, 'json')
+})
+</script>
+

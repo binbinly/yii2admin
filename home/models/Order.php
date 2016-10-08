@@ -28,7 +28,7 @@ class Order extends \common\models\Order
                 $trade['pay_type'] = $data['pay_type'];
                 $trade['amount'] = '+'.$data['total_fee'];
                 $trade['add_time'] = time();
-                $trade['remark'] = '支付宝支付记录';
+                $trade['remark'] = '';
                 $trade['uid'] = $info['uid'];
                 $model = new TradeRecord();
                 $model->setAttributes($trade);
