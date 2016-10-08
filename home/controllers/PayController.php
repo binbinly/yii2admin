@@ -21,7 +21,7 @@ class PayController extends Controller{
     }
 
     public function actionWxPay($order_sn){
-        //echo '<meta http-equiv="content-type" content="text/html;charset=utf-8"/>';
+        echo '<meta http-equiv="content-type" content="text/html;charset=utf-8"/>';
         //模式二
         /**
          * 流程：
@@ -40,7 +40,7 @@ class PayController extends Controller{
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 600));
         $input->SetGoods_tag($order_info->title);
-        $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
+        $input->SetNotify_url("http://ddd.huanglongfei.cn/notice/wx-notify");
         $input->SetTrade_type("NATIVE");
         $input->SetProduct_id($order_sn);
 

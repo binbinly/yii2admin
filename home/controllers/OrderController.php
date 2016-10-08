@@ -151,6 +151,32 @@ class OrderController extends \yii\web\Controller
         if ($cart) {
             $shop_total = 0;
             $taocan_id = 0;
+            $data = null;
+            $data['order_sn'] = 'S'.time().rand(1000,9999); //订单号
+            $data['uid'] = Yii::$app->user->identity->getId();
+            $data['name'] = $name;
+            $data['tel']  = $tel;
+            $data['sfz']  = $sfz;
+            $data['type'] = 'shop'; //商品类型
+            $data['pay_status'] = 0; //未支付，支付成功后的回调修改
+            $data['pay_time'] = 0; //支付时间，支付成功后的回调修改
+            $data['pay_type'] = 0; // 支付类型
+            $data['pay_source'] = 1; // 支付途径-网站
+            $data['create_time'] = time();
+            $data['status'] = 1;
+            $data['aid'] = 0;
+            $data['title'] = '套餐';
+            $data['start_time'] = 0;
+            $data['end_time'] = 0;
+            $data['num'] = 1;
+            $data['total'] = 0;
+            $model = new Order();
+            $model->setAttributes($data);
+            if (!$model->save()) {
+                //var_dump($model->getErrors());
+                FuncHelper::ajaxReturn(1, '下单失败哦');
+            }
+            $order_id = $model->primaryKey;
             foreach ($cart as $key => &$value) {
                 $value['goods'] = Shop::info($value['aid']);
 
@@ -196,6 +222,7 @@ class OrderController extends \yii\web\Controller
                     $shop_total += $data['total'];
                 }
                 $data['create_time'] = time();
+                $data['pid'] = $order_id;
 
                 $title .= $data['title'];
                 $model = new OrderExtend();
@@ -205,35 +232,21 @@ class OrderController extends \yii\web\Controller
                     FuncHelper::ajaxReturn(1, '下单失败哦');
                 }
             }
-            $data = null;
-            $data['order_sn'] = 'S'.time().rand(1000,9999); //订单号
-            $data['uid'] = Yii::$app->user->identity->getId();
-            $data['name'] = $name;
-            $data['tel']  = $tel;
-            $data['sfz']  = $sfz;
-            $data['type'] = 'shop'; //商品类型
-            $data['pay_status'] = 0; //未支付，支付成功后的回调修改
-            $data['pay_time'] = 0; //支付时间，支付成功后的回调修改
-            $data['pay_type'] = 0; // 支付类型
-            $data['pay_source'] = 1; // 支付途径-网站
-            $data['create_time'] = time();
-            $data['status'] = 1;
-            $data['aid'] = $aid;
-            $data['title'] = $title;
-            $data['start_time'] = $start_time;
-            $data['end_time'] = $end_time;
-            $data['num'] = $num;
-            $data['total'] = $shop_total;
+            $model = Order::findOne($order_id);
+            $model->aid = $aid;
+            $model->title = $title;
+            $model->start_time = $start_time;
+            $model->end_time = $end_time;
+            $model->num = $num;
+            $model->total = $shop_total;
             if($taocan_id) {
-                $data['taocan'] = $taocan_id;
+                $model->taocan = $taocan_id;
             }
-            $model = new Order();
-            $model->setAttributes($data);
             if (!$model->save()) {
                 //var_dump($model->getErrors());
                 FuncHelper::ajaxReturn(1, '下单失败');
             }
-            FuncHelper::ajaxReturn(0, '下单成功', $data['order_sn']);
+            FuncHelper::ajaxReturn(0, '下单成功', $model->order_sn);
         } else {
             FuncHelper::ajaxReturn(1, '订单数据为空');
         }

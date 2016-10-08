@@ -2,15 +2,26 @@
 
 namespace home\modules\user\controllers;
 
+use common\models\Feedback;
+use home\models\Order;
 use Yii;
 use home\models\User;
 use common\helpers\FuncHelper;
+use yii\data\Pagination;
 
 class IndexController extends BaseController
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Order::find()->where(['uid'=>$this->uid, 'status'=>1]);
+
+        $count = $query->count();
+
+        $pagination = new Pagination(['totalCount' => $count]);
+        $pagination->defaultPageSize = 10;
+
+        $order_list = $query->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render('index',['order_list'=>$order_list, 'page'=>$pagination]);
     }
 
     public function actionInfo(){
@@ -70,7 +81,16 @@ class IndexController extends BaseController
     }
 
     public function actionSuggestion(){
-        return $this->render('suggestion');
+        $model = new Feedback();
+        if(Yii::$app->request->post()) {
+            if ($model->load(Yii::$app->request->post()) && $model->add()) {
+                Yii::$app->getSession()->setFlash('success', '提交成功');
+                return $this->refresh();
+            }else{
+                Yii::$app->getSession()->setFlash('error', '提交失败');
+            }
+        }
+        return $this->render('suggestion', ['model'=>$model]);
     }
 
     public function actionPoints()

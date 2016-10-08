@@ -9,10 +9,7 @@ use yii\web\Controller;
 class NoticeController extends Controller{
 
     public function actionWxNotify(){
-        $json ='{"appid":"wxbd9b409d1e5b8e75","attach":"14748537812376","bank_type":"CFT","cash_fee":"1","fee_type":"CNY","is_subscribe":"Y","mch_id":"1263522701","nonce_str":"hhfmlivca9e8ljc657yp1glu9ycu5kne","openid":"ozvbEjqOODSPmNiBGCyJHCWQW7oU","out_trade_no":"14748537812376","result_code":"SUCCESS","return_code":"SUCCESS","sign":"ABBA9F44158866384E905FC1F1D0283B","time_end":"20160926093728","total_fee":"1","trade_type":"NATIVE","transaction_id":"4004472001201609264952831791"}';
         $notify = new \PayNotifyCallBack();
-        $notify->NotifyProcess(json_decode($json, 1), 'aaaa');
-        //$notify->Handle(false);
     }
 
     public function actionAliNotify(){

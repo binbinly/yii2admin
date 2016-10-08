@@ -99,6 +99,9 @@
 </style>
 <!--banner-->
 <?php include('public_head.php'); ?>
+<?
+use yii\widgets\LinkPager;
+?>
 
             <div role="tabpanel" class="tab-pane active" id="member_cen03">
                 <div class="member_cen_text">
@@ -149,159 +152,38 @@
                                             <input type="checkbox" value="option1" id="inlineCheckbox1"> 全选
                                             </label>
                                         </div>
-                                        <div class="col-md-2">
-                                            <div data-picker-position="bottom-left" class="input-append ">
-                                                <select class="form-control">
-                                                    <option>类型</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        <div class="col-md-2">类型</div>
                                         <div class="col-md-2">用户</div>
                                         <div class="col-md-2">有效日期</div>
                                         <div class="col-md-2">总金额</div>
-                                        <div class="col-md-3">
-                                            <div data-picker-position="bottom-left" class="input-append ">
-                                                <select class="form-control">
-                                                    <option>订单状态</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        <div class="col-md-3">订单状态</div>
                                     </div>
                                 </div>
+                                <? foreach($order_list as $order): ?>
                                 <div class="order_li">
                                     <div class="order_li_top">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
+                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i><?= $order->order_sn?></i>
+                                        </label>   预订日期：<?= date("Y-m-d", $order->start_time)?>     <a>删除订单</a>
                                     </div>
                                     <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
+                                        <div class="col-md-1"><?= $order->title?></div>
+                                        <div class="col-md-2"><?= $order->type?></div>
+                                        <div class="col-md-2"><?= $order->name?></div>
+                                        <div class="col-md-2"><?= date("Y-m-d", $order->create_time)?></div>
+                                        <div class="col-md-2">￥<?= $order->total?></div>
+                                        <div class="col-md-3"><p><?= $order->pay_status?></p><span></span></div>
                                     </div>
                                 </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-                                <div class="order_li">
-                                    <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i>88888888</i>
-                                        </label>   预订日期：2016-06-06     <a>删除订单</a>
-                                    </div>
-                                    <div class="order_li_cen">
-                                        <div class="col-md-1">海景大床房</div>
-                                        <div class="col-md-2">客房</div>
-                                        <div class="col-md-2">住客名字</div>
-                                        <div class="col-md-2">2016-06-06</div>
-                                        <div class="col-md-2">￥666</div>
-                                        <div class="col-md-3"><p>已成交</p><span></span></div>
-                                    </div>
-                                </div>
-
-
+                                <? endforeach; ?>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="order_cen02">2...</div>
-                            <div role="tabpanel" class="tab-pane" id="order_cen03">3...</div>
-                            <div role="tabpanel" class="tab-pane" id="order_cen04">4...</div>
+                            <div class="page text-center">
+                            <?
+                            echo LinkPager::widget([
+                                'pagination' => $page,
+                            ]);
+                            ?>
+                            </div>
                         </div>
 
                     </div>
