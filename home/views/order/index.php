@@ -92,14 +92,14 @@
                 <li>套餐优惠<span></span><i class="hong">-￥<?=$price['discount']?></i></li>
             </ul>
 
-            <? if(isset($price['price_to']) && !empty($price['price_to'])): ?>
+            <?php if(isset($price['price_to']) && !empty($price['price_to'])): ?>
                 <div class="pay_cen_bottom"><p>总计<span></span><i class="hong">￥<?=$price['price_to']?></i></p></div>
                 <div><span class="">平日价：</span><i class="hong">￥<?= $price['price']?></i></div>
                 <div><span class="">假日套餐价：</span><i class="hong">￥<?= $price['price_to']?></i></div>
                 <div><span class="">温馨提示：</span><i>亲，你所选日期处在节假日，价格会稍微变动!</i></div>
-            <? else:?>
+            <?php else:?>
             <div class="pay_cen_bottom"><p>总计<span></span><i class="hong">￥<?=$price['price']?></i></p></div>
-            <? endif; ?>
+            <?php endif; ?>
         </div>
         <div class="pay_cen_right02">
             <div class="bs-example">
