@@ -168,7 +168,7 @@ class IndexController extends BaseController
             FuncHelper::ajaxReturn(-1, '验证码错误');
         }
         
-        $model->setMobile($new_mobile);
+        $model->setMobile((string)$new_mobile);
 
         if ($model->save()) {
             FuncHelper::ajaxReturn(0, '修改成功');

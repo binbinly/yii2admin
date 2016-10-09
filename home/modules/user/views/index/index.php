@@ -159,7 +159,7 @@ use yii\widgets\LinkPager;
                                         <div class="col-md-3">订单状态</div>
                                     </div>
                                 </div>
-                                <? foreach($order_list as $order): ?>
+                                <?php foreach($order_list as $order): ?>
                                 <div class="order_li">
                                     <div class="order_li_top">
                                         <label class="checkbox-inline">
@@ -175,7 +175,7 @@ use yii\widgets\LinkPager;
                                         <div class="col-md-3"><p><?= $order->pay_status?></p><span></span></div>
                                     </div>
                                 </div>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </div>
                             <div class="page text-center">
                             <?

@@ -145,36 +145,30 @@ use yii\helpers\Html;
 <div role="tabpanel" class="tab-pane active" id="member_cen03">
     <div class="member_cen_text">
         <div class="order_cen">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="/user/index/info">个人信息单</a></li>
-                <li role="presentation"><a href="/user/index">会员说明</a></li>
-            </ul>
-            <!-- Tab panes -->
             <div class="tab-content member_data">
                 <div class="tab-pane active " id="order_cen001">
                     <form class="form-horizontal" id="mainform">
                         
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-1 control-label">密码</label>
-                            <div class="col-sm-5">
-                                <input class="form-control w_48left" name="old_password" placeholder="你的密码" type="password">
+                            <div class="col-sm-3">
+                                <input class="form-control" name="old_password" placeholder="你的密码" type="password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-1 control-label">姓名</label>
-                            <div class="col-sm-5">
-                                <input class="form-control w_48left" name="new_password" placeholder="请输入新密码" type="password">
+                            <label for="inputEmail3" class="col-sm-1 control-label">新密码</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" name="new_password" placeholder="请输入新密码" type="password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-1 control-label">姓名</label>
-                            <div class="col-sm-5">
-                                <input class="form-control w_48left" name="new_password2" placeholder="请输入新密码" type="password">
+                            <label for="inputEmail3" class="col-sm-1 control-label">新密码</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" name="new_password2" placeholder="请输入新密码" type="password">
                             </div>
                         </div>
-                        <div class="form-group" style="text-align: left;margin-left: 40px;">
-                            <button type="button" class="btn btn-default" id='save_btn'>提交修改</button>
+                        <div class="form-group" style="text-align: left;margin-left: 82px;">
+                            <button type="button" class="btn btn-default" id='save_btn'>确认</button>
                         </div>
 
                     </form>
