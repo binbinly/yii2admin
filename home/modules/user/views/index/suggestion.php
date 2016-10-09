@@ -112,25 +112,6 @@ use yii\widgets\ActiveForm;
                 <div  class="tab-pane active" id="member_cen04">
                     <div class="member_cen_text">
                         <div class="">
-<!--                            --><?php //$form = ActiveForm::begin([
-//                                'id' => 'feedback',
-//                                'options' => ['class'=>'form-horizontal'],
-//                                'enableAjaxValidation'=>false,
-//                                'fieldConfig' => [
-//                                    'template' => "{label}\n<div class=\"col-lg-8\">{input}</div>\n<div class=\"col-lg-2\">{error}</div>",
-//                                    'labelOptions' => ['class' => 'col-lg-2 control-label'],
-//                                ]
-//                            ]);?>
-<!--                            --><?//=$form->field($model,'email')->textInput()?>
-<!--                            --><?//=$form->field($model,'remark')->textarea(['rows'=>5])?>
-<!--                            <div class="form-group">-->
-<!--                                <div class="col-sm-4 col-sm-offset-2 ">-->
-<!--                                    <input type="hidden" value="--><?php //echo Yii::$app->getRequest()->getCsrfToken(); ?><!--" name="_csrf" />-->
-<!--                                    <button type="submit" class="btn btn-primary">提交</button>-->
-<!--                                    <button type="reset" class="btn btn-white">取消</button>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            --><?php //ActiveForm::end();?>
                             <form class="form-horizontal" role="form" id='mainform'>
                               <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-1 control-label">反馈邮箱</label>

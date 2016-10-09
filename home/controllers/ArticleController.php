@@ -20,6 +20,8 @@ class ArticleController extends \yii\web\Controller
         if ($cid == 1) {
             return $this->render('about',$param);
         }
+        $param['video_data'] = Article::lists(4);
+
         /* 其他活动 */
         return $this->render('index',$param);
     }

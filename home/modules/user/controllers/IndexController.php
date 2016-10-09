@@ -81,16 +81,17 @@ class IndexController extends BaseController
     }
 
     public function actionSuggestion(){
-        $model = new Feedback();
-        if(Yii::$app->request->post()) {
-            if ($model->load(Yii::$app->request->post()) && $model->add()) {
-                Yii::$app->getSession()->setFlash('success', '提交成功');
-                return $this->refresh();
-            }else{
-                Yii::$app->getSession()->setFlash('error', '提交失败');
-            }
-        }
-        return $this->render('suggestion', ['model'=>$model]);
+        // $model = new Feedback();
+        // if(Yii::$app->request->post()) {
+        //     if ($model->load(Yii::$app->request->post()) && $model->add()) {
+        //         Yii::$app->getSession()->setFlash('success', '提交成功');
+        //         return $this->refresh();
+        //     }else{
+        //         Yii::$app->getSession()->setFlash('error', '提交失败');
+        //     }
+        // }
+        // return $this->render('suggestion', ['model'=>$model]);
+        return $this->render('suggestion');
     }
 
     public function actionPoints()
@@ -107,4 +108,38 @@ class IndexController extends BaseController
     {
         return $this->render('train');
     }
+
+    public function actionModifypwd()
+    {
+        $old_password = intval(Yii::$app->request->post('old_password'));
+        $new_password = Yii::$app->request->post('new_password');
+        $new_password2 = Yii::$app->request->post('new_password2');
+        $uid = $_SESSION['__id'];
+
+        if(!$old_password || !$new_password || !$new_password2 || ($new_password!=$new_password2)){
+            FuncHelper::ajaxReturn(-1, '参数错误');
+        }
+
+        $old_password = Yii::$app->security->generatePasswordHash($old_password);
+        $new_password = Yii::$app->security->generatePasswordHash($new_password);
+        $user = new User();
+        $user_info = User::find("uid=$uid and password='$old_password'");
+        if($user_info){
+            $attributes = array(
+                'password'=>$new_password,
+            );
+            $condition = 'uid=:uid';
+            $params = array(
+                ':uid'=>$_SESSION['__id'],
+            );
+            User::updateAll($attributes,$condition,$params);
+        }else{
+            FuncHelper::ajaxReturn(-1, '参数错误');
+        }
+        FuncHelper::ajaxReturn(0, 'success');
+    }
+
+    // public function actionSuggestion(){
+    //     return $this->render('suggestion');
+    // }
 }

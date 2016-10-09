@@ -163,11 +163,7 @@ use yii\helpers\Html;
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-1 control-label">密码</label>
                             <div class="col-sm-5">
-                                <input class="form-control w_48left" name="old_password" placeholder="你的密码" type="password">
-                                <p class="member_mima_p">
-                                    <input class="form-control w_48left" name="new_password" placeholder="请输入新密码" type="password">
-                                    <input class="form-control w_48" name="new_password2" placeholder="请输入新密码" type="password">
-                                </p>
+                                <a class="btn btn-default" href='/user/index/editpwd' style="background:#e50012;color:#fff;">修改密码</a>
                             </div>
                         </div>
                         <div class="form-group">

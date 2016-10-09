@@ -25,6 +25,7 @@ use yii\helpers\Url;
         <!-- BEGIN FORM-->
         <?php $form = ActiveForm::begin([
             'options'=>[
+                'id'=>'mainform',
                 'class'=>"form-aaa form-horizontal form-bordered form-row-stripped",
                 'enctype'=>"multipart/form-data",
             ]
@@ -61,6 +62,38 @@ use yii\helpers\Url;
             </div>
         </div>
         
+        <div class="control-group">
+            <label class="control-label">视频</label>
+            <div class="controls">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="icon-file fileupload-exists"></i> 
+                            <span class="fileupload-preview">
+                                <?=$model->video?>
+                            </span>
+                        </div>
+                        <span class="btn btn-file">
+                            <span class="fileupload-new">选择文件</span>
+                            <span class="fileupload-exists">更改</span>
+                            <input type="file" name="video" class="default" id="file_but2">
+                            <input type="hidden" name="Article[video]" id="file_ipt2" value="<?=$model->video?>">
+                        </span>
+                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+                        <div>
+                            <?php if(!empty($model->video)): ?>
+                                <br>
+                                <video controls="controls" height="150" width="300">
+                                    <source src="<?= $model->video ?>" type="video/mp4" />
+                                </video>
+                            <?php endif; ?>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <?=$form->field($model, 'description')->textarea(['class'=>'span4', 'rows'=>3])->label('文章描述')->hint(' ', ['style'=>'display:block;']) ?>
         
         <?=$form->field($model, 'content')->widget(\crazydb\ueditor\UEditor::className(),[
@@ -158,7 +191,7 @@ $(function() {
     $("#file_but").on("change", function(){
         var files = !!this.files ? this.files : [];
         if (!files.length || !window.FileReader) return;
-        if (/^image/.test( files[0].type)){
+        if (/^image/.test( files[0].type) || /^video/.test( files[0].type)){
             var reader = new FileReader();
             reader.readAsDataURL(files[0]);
             reader.onloadend = function(){
@@ -186,7 +219,36 @@ $(function() {
         }
     });
     
-    
+    $("#file_but2").on("change", function(){
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return;
+        if (/^video/.test( files[0].type)){
+            var formData = new FormData();
+            formData.append('video', files[0]);
+            $.ajax({
+                type: 'post',
+                url: '<?=Url::to(["upload/files"])?>',
+                data: formData,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                beforeSend: function(){
+                    
+                },
+                success: function(json){
+                    if(json.code==0){
+                        <!-- $('#file_img').attr('src',json.obj.file_path); -->
+                        $('#file_ipt2').val(json.obj.file_path);
+                    } else {
+                        alert(json.msg);
+                    }
+                },
+                error: function(xhr, type){
+                    alert('服务器错误')
+                }
+            });
+        }
+    });
     
     
 });

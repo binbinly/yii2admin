@@ -39,12 +39,13 @@ class Article extends \common\core\BaseActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'content'], 'required'],
+            [['category_id'], 'required'],
             [['category_id', 'type', 'position', 'sort', 'create_time', 'update_time', 'status'], 'integer'],
             [['content', 'extend'], 'string'],
             [['name'], 'string', 'max' => 40],
             [['title'], 'string', 'max' => 80],
             [['cover', 'link'], 'string', 'max' => 255],
+            [['video', 'link'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 140]
         ];
     }
@@ -60,6 +61,7 @@ class Article extends \common\core\BaseActiveRecord
             'name' => 'Name',
             'title' => 'Title',
             'cover' => 'Cover',
+            'video' => 'Video',
             'description' => 'Description',
             'content' => 'Content',
             'extend' => 'Extend',
