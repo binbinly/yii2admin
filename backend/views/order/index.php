@@ -141,6 +141,9 @@ use backend\models\Category;
                     'attribute' => 'pay_type',
                     'options' => ['width' => '80px;'],
                     'content' => function($model){
+                        if($model['pay_type']<1){
+                            return '未知类型';
+                        }
                         return Yii::$app->params['pay_type'][$model['pay_type']];
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'pay_type', [1 => '微信',2 => '支付宝',3 => '银联'], ['prompt'=>'全部','style' => 'width:80px']),

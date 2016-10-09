@@ -31,6 +31,7 @@ class OrderController extends BaseController
 
         $params = Yii::$app->request->getQueryParams();
 
+
         $searchModel = new OrderSearch();
         $dataProvider = $searchModel->search($params); //var_dump($dataProvider->query->all());exit();
         if (isset($params['action']) && $params['action'] == 'export') {
