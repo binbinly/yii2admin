@@ -31,7 +31,7 @@
                 </div>
             </li>
             <li role="presentation"><a href="/user/index/info">个人资料</a></li>
-            <li role="presentation"><a href="/order/index">我的订单</a></li>
+            <li role="presentation"><a href="/user">我的订单</a></li>
             <li role="presentation"><a href="/user/index/points">我的积分</a></li>
             <li role="presentation"><a href="/user/index/suggestion">意见反馈</a></li>
         </ul>
