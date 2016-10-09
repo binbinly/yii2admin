@@ -134,6 +134,16 @@ class User extends \common\models\User implements IdentityInterface
     }
 
     /**
+     * 设置加密后的密码
+     *
+     * @param string $password
+     */
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
+    }
+
+    /**
      * 设置密码干扰码
      */
     public function generateAuthKey()
