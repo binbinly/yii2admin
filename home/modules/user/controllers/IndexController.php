@@ -139,6 +139,11 @@ class IndexController extends BaseController
         FuncHelper::ajaxReturn(0, 'success');
     }
 
+    public function actionEditpwd()
+    {
+        return $this->render('edit_password');
+    }
+    
     // public function actionSuggestion(){
     //     return $this->render('suggestion');
     // }
