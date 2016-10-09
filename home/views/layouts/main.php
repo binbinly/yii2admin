@@ -100,7 +100,11 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
                 <div class="navbar-form" style="float: right;">
                     <div class="form-group user_wrap">
                         <span><?=Yii::$app->user->identity->username?></span>
-                        <img style="width: 46px;" src="/uploads/5f0491a16bc1de2add0b09fa0874f272.jpg" class="img-circle">
+                        <?php if(Yii::$app->user->identity->image): ?>
+                            <img style="width: 46px;" src="<?=Yii::$app->user->identity->image?>" class="img-circle">
+                        <?php else: ?>
+                            <img style="width: 46px;" src="/bootstrap/images/avatar.jpg" class="img-circle">
+                        <?php endif; ?>
                         <ul class="sub_nav">
                             <li><a href="/user/index/info">个人信息</a></li>
                             <li><a href="/user">我的订单</a></li>
