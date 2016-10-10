@@ -17,7 +17,7 @@ use yii\helpers\Url;
 <div class="sailing">
     <ol class="breadcrumb">
         <li><a href="#">首页</a></li>
-        <li><a href="#">培训</a></li>
+        <li class="active">培训</li>
         <li class="active">证书</li>
     </ol>
     <br>
