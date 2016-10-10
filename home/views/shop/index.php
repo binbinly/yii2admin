@@ -146,7 +146,7 @@ if(Yii::$app->request->get('type') != 1){
                         <p class="w_125_p ">¥ <span class="price"><?=$v['price']?></span></p>
                     </div>
                     <div class="shop_kefang_xian"></div>
-                    <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1">展开</a>
+                    <a class="preview preview01" role="button" data-toggle="collapse" href="#collapseListGroup<?=$key?>" aria-expanded="false" aria-controls="collapseListGroup1">展开/收起</a>
                     <div id="collapseListGroup<?=$key?>" class="panel-collapse collapse" role="tabpanel"  aria-labelledby="collapseListGroupHeading1" aria-expanded="false" >
                         <div class="img_detail" id='gallery<?=$key+2?>'>
                             <?php foreach ($v['images'] as $img) :?>
