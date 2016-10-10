@@ -102,6 +102,7 @@
 <?
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use yii\helpers\Url;
 ?>
 
 <div role="tabpanel" class="tab-pane active" id="member_cen03">
@@ -126,7 +127,43 @@ use yii\helpers\Html;
                 <?=$form->field($model,'renew_password')->passwordInput()?>
                 <?=Html::submitButton('修改',['class'=>'btn btn-primary col-sm-offset-2'])?>
                 <? if($model->scenario == 'edit'): ?>
-                <a href="">忘记密码</a>
+                <a class="" href="javascript:;" data-toggle="modal" data-target="#myModal01">忘记密码</a>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form class="form-horizontal forget_form">
+                                    <div style="height:40px;"></div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">手机号码：</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control mobile" placeholder="您的手机号码" type="">
+                                        </div>
+                                        <div class="warning"><i>*</i>请输入正确的手机号码</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">验证码：</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control w_48left captcha" placeholder="请输入验证码" type="text">
+                                            <input class="w_48 btnSendCode" type="button" value="获取短信验证码" />
+                                        </div>
+                                        <div class="warning"><i>*</i>请输入正确的验证码</div>
+                                    </div>
+                                    <div class="form-group tips">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">提示：</label>
+                                        <div class="col-sm-5">
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div style="height:60px;"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default forget" data-dismiss="">找回密码
+                                    </button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                    </div>
                 <? endif; ?>
                 <?php ActiveForm::end();?>
             </div><!-- tab-content -->
@@ -134,4 +171,48 @@ use yii\helpers\Html;
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        /* 发送验证码 */
+        $('.btnSendCode').click(function () {
+            that = this;
+            var mobile = $(this).parents("form").find('.mobile').val();
+            var re = /^1\d{10}$/;
+            if(!re.test(mobile)){
+                layer.alert('手机号码格式错误');
+                return;
+            }
+            /* 发送验证码 */
+            $.get("<?=Url::to(['/user/login/captcha'])?>", {mobile:mobile}, function(data){
+                if(data.code == 0){
+                    //设置button效果，开始计时
+                    curCount = count;
+                    $(that).attr("disabled", "true");
+                    $(that).val( curCount + "秒后重新获取");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                }
+                layer.alert(data.msg);
+            }, 'json');
+        });
+        /* 找回密码 */
+        $('.forget').click(function(){
+            var mobile = $('.forget_form').find('.mobile').val(),
+                captcha = $('.forget_form').find('.captcha').val();
+            if (!mobile || !captcha){
+                $('#myModal01 .tips p').html('手机和验证码不为空');
+                $('#myModal01 .tips').show();
+                return;
+            }
+            $.get("<?=Url::to(['/user/index/forget'])?>", {mobile:mobile,captcha:captcha}, function(data){
+                if(data.code == 0){
+                    layer.alert(data.msg);
+                }else{
+                    $('#myModal01 .tips p').html(data.msg);
+                    $('#myModal01 .tips').show();
+                }
+                // layer.alert(data.msg);
+            }, 'json');
+        });
+    });
+</script>
 <?php include('public_footer.php'); ?>

@@ -2,6 +2,7 @@
 
 namespace home\models;
 
+use common\models\RechargeLog;
 use common\models\ScoreLog;
 use Yii;
 
@@ -25,6 +26,11 @@ class Order extends \common\models\Order
                 $trade_type = 1;
                 if(substr($data['out_trade_no'], 0, 1) == 'R') {
                     $trade_type = 2;
+                    //用户表金额修改
+                    $recharge_model = RechargeLog::findOne(['order_sn'=>$data['out_trade_no']]);
+                    $user_model = User::findIdentity($recharge_model->uid);
+                    $user_model->amount += $data['total_fee'];
+                    $user_model->save();
                 }
                 $trade['trade_type'] = $trade_type;//支付
                 $trade['third_trade_num'] = $data['trade_no'];
