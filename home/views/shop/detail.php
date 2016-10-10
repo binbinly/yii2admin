@@ -36,7 +36,7 @@
     <ol class="breadcrumb">
       <li><a href="/">首页</a></li>
       <li><a href="/shop/group">套餐</a></li>
-      <li class="active">套餐名称</li>
+      <li class="active">套餐详情</li>
     </ol>
 
     <div class="store_shop_li">
