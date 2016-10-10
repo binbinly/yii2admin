@@ -1,3 +1,4 @@
+/**{max-width: 100% !important;}*/
 ul, li {list-style:none;}
 body{background: #eee; font-family: "microsoft yahei";}
 a:link{text-decoration:none;}
@@ -318,7 +319,7 @@ i,em{font-style:normal}
 .shop_kefang li .preview01{
     color: #000;
     width: 68px;
-    background: url(../../bootstrap/images/preview-right.png) center no-repeat;
+    background: url(../../bootstrap/images/preview-right.png) no-repeat 57px 8px;
     line-height: 29px;
 }
 .sailing01 .shop_kefang li{border-bottom:0px;}
@@ -420,7 +421,7 @@ i,em{font-style:normal}
 .activity .item img{width:1440px; height:653px;}
 .activity .carousel-indicators img{width:275px; height:125px;}
 .activity .carousel-indicators li{width:275px; height:125px; border-radius: 0px;text-indent:0px;}
-.activity .carousel-indicators{width:1440px; padding:15px 0; margin-left: 0px; left:0px; position:static; background: #434343}
+.activity .carousel-indicators{width:1440px; padding:15px 0; margin-left: 0px; left:0px; position:static; background: #434343;max-width: 100%;}
 .activity .carousel-indicators .active{border:1px solid #ccc;}
 .activity .carousel-indicators .active img{width:273px; height:123px;}
 .activity .carousel-control .glyphicon-chevron-left,.activity .carousel-control .glyphicon-chevron-right{top:auto; bottom:80px;}
