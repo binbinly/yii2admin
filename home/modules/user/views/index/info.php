@@ -240,7 +240,7 @@ use yii\helpers\Html;
                             
                         </div>
                         <div class="form-group" style="text-align: left;margin-left: 40px;">
-                            <button type="button" class="btn btn-default" id='save_btn'>提交修改</button>
+                            <button type="button" class="btn btn-default" id='save_btn' style="color: #fff;">提交修改</button>
                         </div>
 
                     </form>
