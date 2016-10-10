@@ -163,7 +163,7 @@ use yii\helpers\Html;
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-1 control-label">密码</label>
                             <div class="col-sm-5">
-                                <a class="btn btn-default" href='/user/index/editpwd' style="background:#e50012;color:#fff;">修改密码</a>
+                                <a class="btn btn-danger" href='/user/index/editpwd'>修改密码</a>
                             </div>
                         </div>
                         <div class="form-group">
@@ -195,7 +195,7 @@ use yii\helpers\Html;
                                 
                             </div>
                             <div class="col-sm-2">
-                                <a class="btn btn-info btn-sm" style="padding: 2px 10px;" href='/user/index/editphone'>修改</a>
+                                <a class="btn btn-info btn-sm btn-danger" style="padding: 2px 10px;" href='/user/index/editphone'>重新绑定</a>
                             </div>
                         </div>
                         <div class="form-group">
@@ -229,7 +229,7 @@ use yii\helpers\Html;
                             <p class='title'>头像上传</p>
                             <div class="col-sm-2">
                                 <div id="img_show">
-                                    <?php if(isset($user->image)): ?>
+                                    <?php if(!empty($user->image)): ?>
                                         <img src="<?= $user->image ?>" />
                                     <?php else: ?>
                                         <span class="glyphicon glyphicon-user"></span>

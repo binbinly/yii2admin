@@ -161,12 +161,12 @@ use yii\helpers\Html;
                                 <input class="form-control" name="captcha" placeholder="请输入验证码" type="text">
                             </div>
                             <div class="col-sm-2">
-                                <button type="button" id='getcode_btn' class="btn btn-info btn-sm" style="padding: 2px 10px;" >获取验证码</button>
+                                <button type="button" id='getcode_btn' class="btn btn-info btn-sm btn-danger" style="padding: 2px 10px;" >获取验证码</button>
                             </div>
                             
                         </div>
                         <div class="form-group" style="text-align: left;margin-left: 0px;">
-                            <button type="button" class="btn btn-default" id='save_btn'>提交修改</button>
+                            <button type="button" class="btn btn-default" style="color:#fff;" id='save_btn'>提交修改</button>
                         </div>
 
                     </form>

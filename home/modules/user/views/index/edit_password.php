@@ -168,7 +168,7 @@ use yii\helpers\Html;
                             </div>
                         </div>
                         <div class="form-group" style="text-align: left;margin-left: 82px;">
-                            <button type="button" class="btn btn-default" id='save_btn'>确认</button>
+                            <button type="button" class="btn btn-default" id='save_btn' style="color: #fff;">确认</button>
                         </div>
 
                     </form>

@@ -47,6 +47,7 @@ use yii\helpers\Url;//var_dump(\common\models\TrainType::getAll(0));exit;
 }
 #reg_model .tips{
     display: none;
+    color: red;
 }
 #myModal01 .tips p{
     padding-top: 7px;
