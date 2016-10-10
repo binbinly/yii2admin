@@ -11,6 +11,7 @@ use common\helpers\FuncHelper;
 use yii\data\Pagination;
 use yii\helpers\Url;
 use home\models\PayPwdService;
+use home\models\Captcha;
 
 class IndexController extends BaseController
 {
@@ -78,6 +79,26 @@ class IndexController extends BaseController
             return $this->refresh();
         }
         return $this->render('paypwd',['model'=>$model]);
+    }
+
+    public function actionForget(){
+        $mobile = Yii::$app->request->get('mobile');
+        $captcha = Yii::$app->request->get('captcha');
+        /* 注册字段判断 */
+        $reg = '/^1[3|4|5|7|8|9]\d{9}$/';
+        if (!isset($mobile) || !preg_match($reg, $mobile)) {
+            FuncHelper::ajaxReturn(1, '手机格式错误');
+        }
+        if (!$captcha || !Captcha::isCaptcha($mobile,$captcha)) {
+            FuncHelper::ajaxReturn(1, '验证码错误');
+        }
+        $model = User::findOne(['mobile' => $mobile, 'status' => 1]);
+        if (!$model) {
+            FuncHelper::ajaxReturn(1, '用户不存在');
+        }
+        $model->pay_pwd = '';
+        $model->save();
+        return $this->refresh();
     }
 
     public function actionModify(){
