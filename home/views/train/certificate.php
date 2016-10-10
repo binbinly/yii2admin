@@ -16,9 +16,9 @@ use yii\helpers\Url;
 </style>
 <div class="sailing">
     <ol class="breadcrumb">
-        <li><a href="#">首页</a></li>
+        <li><a href="/">首页</a></li>
         <li class="active">培训</li>
-        <li class="active">证书</li>
+        <li class="active"><?= $certif_name ?></li>
     </ol>
     <br>
     <section id="feature-area" class="about-section">

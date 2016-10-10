@@ -33,7 +33,7 @@
 <div class="w_1200">
     <ol class="breadcrumb">
       <li><a href="#">首页</a></li>
-      <li class="active">关于我们</li>
+      <li class="active" id='active_id'>关于我们</li>
     </ol>
     <!--客房-->
 </div>
@@ -63,3 +63,11 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('.about_cen_l .nav li').click(function(){
+        var html = $(this).find('a').html();
+        $('#active_id').html(html);
+    })
+
+</script>
