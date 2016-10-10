@@ -99,6 +99,10 @@
 .member_data {
     margin-top: 10px;
 }
+#save_btn {
+    background: #cfb970;
+    color: #fff;
+}
 </style>
 <?php include('public_head.php'); ?>
 <?
