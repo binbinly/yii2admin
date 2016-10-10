@@ -22,7 +22,11 @@ class Order extends \common\models\Order
             $succ = $info->save();
             if($succ) {
                 //支付记录
-                $trade['trade_type'] = 1;//支付
+                $trade_type = 1;
+                if(substr($data['out_trade_no'], 0, 1) == 'R') {
+                    $trade_type = 2;
+                }
+                $trade['trade_type'] = $trade_type;//支付
                 $trade['third_trade_num'] = $data['trade_no'];
                 $trade['order_sn'] = $data['out_trade_no'];
                 $trade['pay_type'] = $data['pay_type'];

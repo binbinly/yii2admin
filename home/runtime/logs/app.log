@@ -45040,3 +45040,1976 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1475919123.05
     'REQUEST_TIME' => 1475919123
 ]
+2016-10-09 09:32:36 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: E:\phpStudy\WWW\yii2admin\home\modules\user\views\public/nav.php' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, NULL)
+#1 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php(12): yii\base\View->render('/public/nav')
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\phpStudy\\WWW...', Array)
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('recharge', Array, Object(home\modules\user\controllers\IndexController))
+#6 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(37): yii\base\Controller->render('recharge')
+#7 [internal function]: home\modules\user\controllers\IndexController->actionRecharge()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('recharge', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/rech...', Array)
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#14 {main}
+2016-10-09 09:32:36 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/recharge'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56583'
+    'REDIRECT_URL' => '/user/index/recharge'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/recharge'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/recharge'
+    'REQUEST_URI' => '/user/index/recharge'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976756.03
+    'REQUEST_TIME' => 1475976756
+]
+2016-10-09 09:32:36 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 09:32:36 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56585'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976756.549
+    'REQUEST_TIME' => 1475976756
+]
+2016-10-09 09:33:28 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: E:\phpStudy\WWW\yii2admin\home\modules\user\views\public/nav.php' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, NULL)
+#1 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php(12): yii\base\View->render('/public/nav')
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\phpStudy\\WWW...', Array)
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('recharge', Array, Object(home\modules\user\controllers\IndexController))
+#6 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(37): yii\base\Controller->render('recharge')
+#7 [internal function]: home\modules\user\controllers\IndexController->actionRecharge()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('recharge', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/rech...', Array)
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#14 {main}
+2016-10-09 09:33:28 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/recharge'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56592'
+    'REDIRECT_URL' => '/user/index/recharge'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/recharge'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/recharge'
+    'REQUEST_URI' => '/user/index/recharge'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976808.73
+    'REQUEST_TIME' => 1475976808
+]
+2016-10-09 09:33:29 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 09:33:29 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56595'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976809.117
+    'REQUEST_TIME' => 1475976809
+]
+2016-10-09 09:33:55 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: data' in E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php:40
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php(40): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\phpStudy\\WWW...', 40, Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('recharge', Array, Object(home\modules\user\controllers\IndexController))
+#5 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(37): yii\base\Controller->render('recharge')
+#6 [internal function]: home\modules\user\controllers\IndexController->actionRecharge()
+#7 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('recharge', Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/rech...', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#13 {main}
+2016-10-09 09:33:55 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/recharge'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56598'
+    'REDIRECT_URL' => '/user/index/recharge'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/recharge'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/recharge'
+    'REQUEST_URI' => '/user/index/recharge'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976835.019
+    'REQUEST_TIME' => 1475976835
+]
+2016-10-09 09:33:55 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 09:33:55 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56600'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976835.397
+    'REQUEST_TIME' => 1475976835
+]
+2016-10-09 09:34:09 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: data' in E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php:48
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\recharge.php(48): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\phpStudy\\WWW...', 48, Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('recharge', Array, Object(home\modules\user\controllers\IndexController))
+#5 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(37): yii\base\Controller->render('recharge')
+#6 [internal function]: home\modules\user\controllers\IndexController->actionRecharge()
+#7 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('recharge', Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/rech...', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#13 {main}
+2016-10-09 09:34:09 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/recharge'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56602'
+    'REDIRECT_URL' => '/user/index/recharge'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/recharge'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/recharge'
+    'REQUEST_URI' => '/user/index/recharge'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976849.247
+    'REQUEST_TIME' => 1475976849
+]
+2016-10-09 09:34:09 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 09:34:09 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => 'cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=cc833c4c0b5a7cb308cb45946b5d63ebd923b306f87ee198aac051cafd51a3cea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QbbgS5wb6UrQpnBKfTXz3iHw0-_2T-DF%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '56604'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475976849.619
+    'REQUEST_TIME' => 1475976849
+]
+2016-10-09 10:40:13 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Setting unknown property: common\models\RechargeLog::title' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Component.php:197
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\db\BaseActiveRecord.php(267): yii\base\Component->__set('title', '\xE5\x85\x85\xE5\x80\xBC')
+#1 E:\phpStudy\WWW\yii2admin\home\controllers\PayController.php(101): yii\db\BaseActiveRecord->__set('title', '\xE5\x85\x85\xE5\x80\xBC')
+#2 E:\phpStudy\WWW\yii2admin\home\controllers\PayController.php(17): home\controllers\PayController->checkOrder('R14759808121338')
+#3 [internal function]: home\controllers\PayController->actionAliPay('R14759808121338')
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('ali-pay', Array)
+#7 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('pay/ali-pay', Array)
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#10 {main}
+2016-10-09 10:40:13 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'pay/ali-pay'
+    'order_sn' => 'R14759808121338'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.test.lo/user/index/recharge'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57788'
+    'REDIRECT_URL' => '/pay/ali-pay'
+    'REDIRECT_QUERY_STRING' => 'r=pay/ali-pay&order_sn=R14759808121338'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=pay/ali-pay&order_sn=R14759808121338'
+    'REQUEST_URI' => '/pay/ali-pay?order_sn=R14759808121338'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475980813.021
+    'REQUEST_TIME' => 1475980813
+]
+2016-10-09 10:40:13 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: pay/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('pay/sizzle.min....', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 10:40:13 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'pay/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57790'
+    'REDIRECT_URL' => '/pay/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=pay/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=pay/sizzle.min.map'
+    'REQUEST_URI' => '/pay/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475980813.462
+    'REQUEST_TIME' => 1475980813
+]
+2016-10-09 11:05:17 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\modifyPassword.php' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('modifyPassword', Array, Object(home\modules\user\controllers\IndexController))
+#2 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(65): yii\base\Controller->render('modifyPassword', Array)
+#3 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('pay-pwd', Array)
+#7 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/pay-...', Array)
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#10 {main}
+2016-10-09 11:05:17 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57959'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475982317.096
+    'REQUEST_TIME' => 1475982317
+]
+2016-10-09 11:05:17 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:05:17 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57961'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475982317.472
+    'REQUEST_TIME' => 1475982317
+]
+2016-10-09 11:05:32 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Invalid Configuration) 'yii\base\InvalidConfigException' with message 'Unable to locate message source for category 'user'.' 
+
+in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\i18n\I18N.php:200
+
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\i18n\I18N.php(88): yii\i18n\I18N->getMessageSource('user')
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\BaseYii.php(501): yii\i18n\I18N->translate('user', 'Old Password', Array, 'en-US')
+#2 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(26): yii\BaseYii::t('user', 'Old Password')
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Model.php(509): home\models\PayPwdService->attributeLabels()
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2-bootstrap\ActiveField.php(399): yii\base\Model->getAttributeLabel('old_password')
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2-bootstrap\ActiveField.php(176): yii\bootstrap\ActiveField->renderLabelParts()
+#6 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\widgets\ActiveField.php(162): yii\bootstrap\ActiveField->render()
+#7 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\paypwd.php(121): yii\widgets\ActiveField->__toString()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\phpStudy\\WWW...', Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\phpStudy\\WWW...', Array, Object(home\modules\user\controllers\IndexController))
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('paypwd', Array, Object(home\modules\user\controllers\IndexController))
+#12 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(65): yii\base\Controller->render('paypwd', Array)
+#13 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#14 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('pay-pwd', Array)
+#17 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/pay-...', Array)
+#18 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#20 {main}' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\ErrorHandler.php:299
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError('<span class="nu...', '<span class="st...', '<span class="st...', '<span class="nu...', '...')
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\ErrorHandler.php(299): trigger_error('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\widgets\ActiveField.php(164): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidConfigException))
+#3 E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\paypwd.php(121): yii\widgets\ActiveField->__toString()
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(325): require('E:\\phpStudy\\WWW...')
+#5 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#6 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(home\modules\user\controllers\IndexController))
+#7 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(home\modules\user\controllers\IndexController))
+#8 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(65): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#9 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#13 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#14 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#16 {main}
+    in E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\paypwd.php:121
+    in E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php:65
+2016-10-09 11:05:32 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57964'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475982332.103
+    'REQUEST_TIME' => 1475982332
+]
+2016-10-09 11:05:32 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:05:32 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '57966'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475982332.565
+    'REQUEST_TIME' => 1475982332
+]
+2016-10-09 11:26:45 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: user' in E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php:37
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(37): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\phpStudy\\WWW...', 37, Array)
+#1 [internal function]: home\models\PayPwdService->validatePassword('old_password', NULL)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'old_password', NULL)
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\Validator.php(243): yii\validators\InlineValidator->validateAttribute(Object(home\models\PayPwdService), 'old_password')
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(home\models\PayPwdService), Array)
+#5 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(44): yii\base\Model->validate()
+#6 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(62): home\models\PayPwdService->modifyPassword()
+#7 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('pay-pwd', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/pay-...', Array)
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#14 {main}
+2016-10-09 11:26:45 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_POST = [
+    '_csrf' => 'Wnp1TUx2eHIcK0x7fy9LAwU4Kjw1KT8taw5DNzkQDxgVGyQSfR0.Bw=='
+    'PayPwdService' => [
+        'old_password' => '12345678'
+        'new_password' => ''
+        'renew_password' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.test.lo/user/index/pay-pwd'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '175'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58191'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983605.582
+    'REQUEST_TIME' => 1475983605
+]
+2016-10-09 11:26:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:26:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58193'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983606.088
+    'REQUEST_TIME' => 1475983606
+]
+2016-10-09 11:28:00 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: user' in E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php:37
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(37): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\phpStudy\\WWW...', 37, Array)
+#1 [internal function]: home\models\PayPwdService->validatePassword('old_password', NULL)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'old_password', NULL)
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\Validator.php(243): yii\validators\InlineValidator->validateAttribute(Object(home\models\PayPwdService), 'old_password')
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(home\models\PayPwdService), Array)
+#5 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(44): yii\base\Model->validate()
+#6 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(61): home\models\PayPwdService->modifyPassword()
+#7 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('pay-pwd', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/pay-...', Array)
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#14 {main}
+2016-10-09 11:28:00 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_POST = [
+    '_csrf' => 'Wnp1TUx2eHIcK0x7fy9LAwU4Kjw1KT8taw5DNzkQDxgVGyQSfR0.Bw=='
+    'PayPwdService' => [
+        'old_password' => '12345678'
+        'new_password' => ''
+        'renew_password' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.test.lo/user/index/pay-pwd'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '175'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58199'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983680.695
+    'REQUEST_TIME' => 1475983680
+]
+2016-10-09 11:28:01 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:28:01 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58201'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983681.253
+    'REQUEST_TIME' => 1475983681
+]
+2016-10-09 11:30:34 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: user' in E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php:37
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(37): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\phpStudy\\WWW...', 37, Array)
+#1 [internal function]: home\models\PayPwdService->validatePassword('old_password', NULL)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'old_password', NULL)
+#3 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\validators\Validator.php(243): yii\validators\InlineValidator->validateAttribute(Object(home\models\PayPwdService), 'old_password')
+#4 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(home\models\PayPwdService), Array)
+#5 E:\phpStudy\WWW\yii2admin\home\models\PayPwdService.php(44): yii\base\Model->validate()
+#6 E:\phpStudy\WWW\yii2admin\home\modules\user\controllers\IndexController.php(61): home\models\PayPwdService->modifyPassword()
+#7 [internal function]: home\modules\user\controllers\IndexController->actionPayPwd()
+#8 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('pay-pwd', Array)
+#11 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/pay-...', Array)
+#12 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#14 {main}
+2016-10-09 11:30:34 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_POST = [
+    '_csrf' => 'ZEk0dkNvLTUiGA1AcDYeRDsLawc6MGpqVT0CDDYJWl8rKGUpcgRrQA=='
+    'PayPwdService' => [
+        'old_password' => '12345678'
+        'new_password' => ''
+        'renew_password' => ''
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.test.lo/user/index/pay-pwd'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '175'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58223'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983834.086
+    'REQUEST_TIME' => 1475983834
+]
+2016-10-09 11:30:34 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:30:34 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58225'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475983834.561
+    'REQUEST_TIME' => 1475983834
+]
+2016-10-09 11:53:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected ':'' in E:\phpStudy\WWW\yii2admin\home\modules\user\views\index\paypwd.php:123
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-09 11:53:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/pay-pwd'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58395'
+    'REDIRECT_URL' => '/user/index/pay-pwd'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/pay-pwd'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/pay-pwd'
+    'REQUEST_URI' => '/user/index/pay-pwd'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475985226.234
+    'REQUEST_TIME' => 1475985226
+]
+2016-10-09 11:53:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/index/sizzle.min.map' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/index/sizz...', Array)
+#2 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-09 11:53:46 [127.0.0.1][17][q8i7985nu14n8aig5uil954ak7][info][application] $_GET = [
+    'r' => 'user/index/sizzle.min.map'
+]
+
+$_COOKIE = [
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+    'PHPSESSID' => 'q8i7985nu14n8aig5uil954ak7'
+    '_csrf' => '897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu\";}'
+    '__forward__' => 'faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a:2:{i:0;s:11:\"__forward__\";i:1;s:25:\"/admin.php/feedback/index\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'cart' => [
+        'shop6' => [
+            'type' => 'shop'
+            'aid' => '6'
+            'num' => '2'
+            'stime' => '2016-10-09'
+            'etime' => '2016-10-12'
+            'taocan' => '6'
+        ]
+        'shop2' => [
+            'type' => 'shop'
+            'aid' => '2'
+            'num' => '2'
+            'stime' => '2016-10-09 10:00'
+            'etime' => '2016-10-09 14:00'
+            'taocan' => '6'
+        ]
+    ]
+    '__id' => '17'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D; PHPSESSID=q8i7985nu14n8aig5uil954ak7; _csrf=897902f7e9f101834c882fdb573fcc57ab9c7bb6afee8b2d5b333b133f3b2839a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FQ963Y3q_B_qy_G_1t6zufwjOaQ_1kFu%22%3B%7D; __forward__=faabec90fa7395ca2f4df30ffe07404647279f44ca911e2e00108296649d4466a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A25%3A%22%2Fadmin.php%2Ffeedback%2Findex%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '58397'
+    'REDIRECT_URL' => '/user/index/sizzle.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user/index/sizzle.min.map'
+    'REQUEST_URI' => '/user/index/sizzle.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1475985226.688
+    'REQUEST_TIME' => 1475985226
+]

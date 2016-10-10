@@ -3,12 +3,14 @@
 namespace home\modules\user\controllers;
 
 use common\models\Feedback;
+use common\models\RechargeLog;
 use home\models\Order;
 use Yii;
 use home\models\User;
 use common\helpers\FuncHelper;
 use yii\data\Pagination;
-use home\models\Captcha;
+use yii\helpers\Url;
+use home\models\PayPwdService;
 
 class IndexController extends BaseController
 {
@@ -32,6 +34,50 @@ class IndexController extends BaseController
             'user' => $userinfo,
             'username' => 'samdark',
         ]);
+    }
+
+    public function actionRecharge(){
+        $model = new RechargeLog();
+        if(Yii::$app->request->post()) {
+            if ($model->load(Yii::$app->request->post()) && $model->add()) {
+                Yii::$app->getSession()->setFlash('success', '提交成功');
+                $pay_type = $model->pay_type;
+                if($pay_type == 1) {
+
+                }else if($pay_type == 2) {
+                    $this->redirect(Url::to(['/pay/ali-pay','order_sn'=>$model->order_sn]));
+                }else if($pay_type == 3) {
+                    $this->redirect(Url::to(['/pay/wx-pay','order_sn'=>$model->order_sn]));
+                }
+            }else{
+                Yii::$app->getSession()->setFlash('error', '提交失败');
+            }
+        }
+        return $this->render('recharge');
+    }
+
+    public function actionPayPwd() {
+        $model = new PayPwdService();
+        $user = User::findIdentity(Yii::$app->user->identity->getId());
+        if($user->pay_pwd) {
+            $model->scenario = 'edit';
+        }else{
+            $model->scenario = 'reset';
+        }
+        if ($model->load(Yii::$app->request->post()) && $model->modifyPassword()){
+            Yii::$app->getSession()->setFlash('success','支付密码修改成功');
+            return $this->refresh();
+        }
+        return $this->render('paypwd',['model'=>$model]);
+    }
+
+    public function actionPayPwdReset(){
+        $model = new PayPwdService();
+        if ($model->load(Yii::$app->request->post()) && $model->modifyPassword()){
+            Yii::$app->getSession()->setFlash('success','支付密码修改成功');
+            return $this->refresh();
+        }
+        return $this->render('paypwd',['model'=>$model]);
     }
 
     public function actionModify(){

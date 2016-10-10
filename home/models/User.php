@@ -133,6 +133,18 @@ class User extends \common\models\User implements IdentityInterface
         $this->password = Yii::$app->security->generatePasswordHash($password);
     }
 
+    public function validatePayPassword($password)
+    {
+        return Yii::$app->security->validatePassword($password, $this->pay_pwd);
+    }
+
+    //当一个用户为第一次使用，提供了一个密码时（比如：注册时），密码就需要被哈希化
+    public function setPayPassword($password)
+    {
+        $this->pay_pwd = Yii::$app->security->generatePasswordHash($password);
+    }
+    
+    
     /**
      * 设置加密后的密码
      *

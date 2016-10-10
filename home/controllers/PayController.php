@@ -1,6 +1,7 @@
 <?php
 namespace home\controllers;
 
+use common\models\RechargeLog;
 use home\models\Order;
 use Yii;
 use yii\helpers\Url;
@@ -94,15 +95,22 @@ class PayController extends Controller{
     }
 
     private function checkOrder($order_sn) {
+        if(substr($order_sn, 0, 1) == 'R') {//充值订单
+            $order_info = RechargeLog::findOne(['order_sn'=>$order_sn]);
+            if($order_info) {
+                $order_info->title = '充值';
+            }
+            return $order_info;
+        }
         $order_info = Order::findOne(['order_sn' => $order_sn]);
         if(!$order_info) {
             Yii::$app->getSession()->setFlash('error', '该订单不存在!');
-            $this->redirect(Url::to(['/train/index']));
+            $this->redirect(Url::to(['/']));
             Yii::$app->end();
         }
         if ($order_info->pay_status == 1 && $order_info->pay_time > 0) {
             Yii::$app->getSession()->setFlash('error', '该订单已经支付了哦!');
-            $this->redirect(Url::to(['/train/index']));
+            $this->redirect(Url::to(['/']));
             Yii::$app->end();
         }
         return $order_info;
