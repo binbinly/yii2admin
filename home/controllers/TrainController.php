@@ -43,9 +43,10 @@ class TrainController extends \yii\web\Controller
         $id = Yii::$app->request->get('type', 1);
         //根据培训分类id获取其证书ids
         $certifIds = TrainType::getFieldById($id);
+        $certif_name = TrainType::getFieldById($id,'name');
         $list = TrainCertificate::getAllByIds($certifIds, 0);
 
-        return $this->render('certificate', ['list'=>$list, 'type' => $id]);
+        return $this->render('certificate', ['list'=>$list, 'type' => $id, 'certif_name'=>$certif_name]);
     }
 
     public function actionSubmit() {
