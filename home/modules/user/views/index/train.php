@@ -325,58 +325,9 @@ float: left;
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><span class='day'>01</span></td>
-                                                    <td><span class='day'>02</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day'>03</span></td>
-                                                    <td><span class='day'>04</span></td>
-                                                    <td><span class='day'>05</span></td>
-                                                    <td><span class='day'>06</span></td>
-                                                    <td><span class='day'>07</span></td>
-                                                    <td><span class='day'>08</span></td>
-                                                    <td><span class='day'>09</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day'>10</span></td>
-                                                    <td><span class='day'>11</span></td>
-                                                    <td><span class='day'>12</span></td>
-                                                    <td><span class='day'>13</span></td>
-                                                    <td><span class='day'>14</span></td>
-                                                    <td><span class='day'>15</span></td>
-                                                    <td><span class='day'>16</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day'>17</span></td>
-                                                    <td><span class='day'>18</span></td>
-                                                    <td><span class='day'>19</span></td>
-                                                    <td><span class='day'>20</span></td>
-                                                    <td><span class='day'>21</span></td>
-                                                    <td><span class='day'>22</span></td>
-                                                    <td><span class='day'>23</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day'>24</span></td>
-                                                    <td><span class='day'>25</span></td>
-                                                    <td><span class='day'>26</span></td>
-                                                    <td><span class='day'>27</span></td>
-                                                    <td><span class='day'>28</span></td>
-                                                    <td><span class='day'>29</span></td>
-                                                    <td><span class='day'>30</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>31</span></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <?
+                                                    echo \home\models\Train::calendar();
+                                                    ?>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -400,58 +351,9 @@ float: left;
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><span class='day on'>01</span></td>
-                                                    <td><span class='day on'>02</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>03</span></td>
-                                                    <td><span class='day on'>04</span><span class='booking notfull'>6/4</span></td>
-                                                    <td><span class='day on'>05</span></td>
-                                                    <td><span class='day on'>06</span></td>
-                                                    <td><span class='day on'>07</span></td>
-                                                    <td><span class='day on'>08</span></td>
-                                                    <td><span class='day on'>09</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>10</span></td>
-                                                    <td><span class='day on'>11</span></td>
-                                                    <td><span class='day on'>12</span></td>
-                                                    <td><span class='day on'>13</span><span class='booking full'>60/40</span></td>
-                                                    <td><span class='day on'>14</span></td>
-                                                    <td><span class='day on'>15</span></td>
-                                                    <td><span class='day on'>16</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>17</span></td>
-                                                    <td><span class='day on'>18</span></td>
-                                                    <td><span class='day on'>19</span></td>
-                                                    <td><span class='day on'>20</span></td>
-                                                    <td><span class='day on'>21</span></td>
-                                                    <td><span class='day on'>22</span></td>
-                                                    <td><span class='day on'>23</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>24</span></td>
-                                                    <td><span class='day on'>25</span></td>
-                                                    <td><span class='day on'>26</span></td>
-                                                    <td><span class='day on'>27</span></td>
-                                                    <td><span class='day on'>28</span></td>
-                                                    <td><span class='day on'>29</span></td>
-                                                    <td><span class='day on'>30</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class='day on'>31</span></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <?
+                                                    echo \home\models\Train::calendar();
+                                                    ?>
                                                 </tr>
                                             </tbody>
                                         </table>

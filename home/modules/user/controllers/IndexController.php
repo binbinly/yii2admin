@@ -4,7 +4,9 @@ namespace home\modules\user\controllers;
 
 use common\models\Feedback;
 use common\models\RechargeLog;
+use common\models\ScoreLog;
 use home\models\Order;
+use home\models\TradeRecord;
 use Yii;
 use home\models\User;
 use common\helpers\FuncHelper;
@@ -164,12 +166,32 @@ class IndexController extends BaseController
 
     public function actionPoints()
     {
-        return $this->render('points');
+        $user = User::findIdentity($this->uid);
+
+        $query = ScoreLog::find()->where(['uid'=>$this->uid]);
+
+        $count = $query->count();
+
+        $pagination = new Pagination(['totalCount' => $count]);
+        $pagination->defaultPageSize = 10;
+
+        $score = $query->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render('points', ['user'=>$user, 'score'=>$score, 'page'=>$pagination]);
     }
 
     public function actionWallet()
     {
-        return $this->render('wallet');
+        $user = User::findIdentity($this->uid);
+
+        $query = TradeRecord::find()->where(['uid'=>$this->uid]);
+
+        $count = $query->count();
+
+        $pagination = new Pagination(['totalCount' => $count]);
+        $pagination->defaultPageSize = 10;
+
+        $trade = $query->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render('wallet', ['user'=>$user, 'trade'=>$trade, 'page'=>$pagination]);
     }
 
     public function actionTrain()

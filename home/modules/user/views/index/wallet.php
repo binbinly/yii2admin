@@ -99,6 +99,9 @@
 }
 </style>
 <?php include('public_head.php'); ?>
+<?
+use yii\widgets\LinkPager;
+?>
 <div role="tabpanel" class="tab-pane active" id="member_cen03">
     <div class="member_cen_text">
         <div class="order_cen">
@@ -117,15 +120,15 @@
                         <table>
                             <tr>
                                 <td>用户名</td>
-                                <td>lasek0018736   <a href="#" class='member_btn'>成为会员</a></td>
+                                <td><?= $user->username?>   <a href="#" class='member_btn'>成为会员</a></td>
                             </tr>
                             <tr>
                                 <td>余额 </td>
-                                <td>1740.00元   <a href="#" class='member_btn'>充值</a></td>
+                                <td><?= $user->amount?>元   <a href="<?= \yii\helpers\Url::to(['/user/index/recharge'])?>" class='member_btn'>充值</a></td>
                             </tr>
                             <tr>
                                 <td>手机</td>
-                                <td>13123123</td>
+                                <td><?= $user->mobile?></td>
                             </tr>
                         </table>
                     </div>
@@ -133,11 +136,11 @@
                         <table>
                             <tr>
                                 <td>注册时间：</td>
-                                <td>lasek0018736</td>
+                                <td><?= date("Y-m-d", $user->reg_time)?></td>
                             </tr>
                             <tr>
                                 <td>我的积分</td>
-                                <td>888</td>
+                                <td><?= $user->score_all?></td>
                             </tr>
                             <tr>
                                 <td>会员等级</td>
@@ -158,33 +161,29 @@
                             <td>交易金额</td>
                         </thead>
                         <tbody>
+                            <? foreach($trade as $val): ?>
                             <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
+                                <td><?= date("Y-m-d H:i:s", $val->add_time)?></td>
+                                <td><?= $val->order_sn?></td>
+                                <? if($val->trade_type == 1): ?>
+                                <td>支付</td>
+                                <? elseif($val->trade_type == 2): ?>
                                 <td class="red">退款</td>
-                                <td>￥500</td>
-                            </tr>
-                            <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
-                                <td>消费</td>
-                                <td>￥1200</td>
-                            </tr>
-                            <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
+                                <? else: ?>
                                 <td class="green">充值</td>
-                                <td>￥1200</td>
+                                <? endif; ?>
+                                <td>￥<?= $val->amount?></td>
                             </tr>
+                            <? endforeach; ?>
                         </tbody>
                     </table>
                     <div class="pagination_wrap">
                         <div class="pagination_content">
-                            <a href="#">上一页</a>
-                            <a><img src="/bootstrap/images/pre.png"></a>
-                            <span>1/10</span>
-                            <a><img src="/bootstrap/images/next.png"></a>
-                            <a href="#">下一页</a>
+                            <?
+                            echo LinkPager::widget([
+                                'pagination' => $page,
+                            ]);
+                            ?>
                         </div>
                         
                     </div>

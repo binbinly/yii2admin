@@ -99,7 +99,9 @@
 </style>
 <!--banner-->
 <?php include('public_head.php'); ?>
-
+<?
+use yii\widgets\LinkPager;
+?>
 <div role="tabpanel" class="tab-pane active" id="member_cen03">
     <div class="member_cen_text">
         <div class="order_cen">
@@ -116,15 +118,19 @@
                         <table>
                             <tr>
                                 <td>用户名</td>
-                                <td>lasek0018736   <a href="#" class='member_btn'>成为会员</a></td>
+                                <td><?= $user->username?>   <a href="#" class='member_btn'>成为会员</a></td>
                             </tr>
                             <tr>
                                 <td>积分</td>
-                                <td>1740</td>
+                                <td><?= $user->score_all?></td>
+                            </tr>
+                            <tr>
+                                <td>可用积分</td>
+                                <td><?= $user->score?></td>
                             </tr>
                             <tr>
                                 <td>手机</td>
-                                <td>13123123</td>
+                                <td><?= $user->mobile?></td>
                             </tr>
                         </table>
                     </div>
@@ -132,15 +138,15 @@
                         <table>
                             <tr>
                                 <td>注册时间：</td>
-                                <td>lasek0018736</td>
+                                <td><?= date("Y-m-d", $user->reg_time)?></td>
                             </tr>
                             <tr>
                                 <td>我的余额</td>
-                                <td>1740</td>
+                                <td><?= $user->amount?></td>
                             </tr>
                             <tr>
                                 <td>会员等级</td>
-                                <td>13123123</td>
+                                <td>普通会员</td>
                             </tr>
                         </table>
                     </div>
@@ -155,46 +161,30 @@
                             <td>订单号</td>
                             <td>交易类型</td>
                             <td>交易积分</td>
-                            <td>可用积分</td>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
+                                <? foreach($score as $val): ?>
+                                <td><?= date('Y-m-d H:i:s', $val->create_time)?></td>
+                                <td><?= $val->order_sn?></td>
+                                <? if($val->score>0): ?>
+                                <td class="greed">获得积分</td>
+                                <td class="greed">+<?= $val->score?></td>
+                                <? else: ?>
                                 <td class="red">积分抵现</td>
-                                <td class="red">-500</td>
-                                <td>1740</td>
-                            </tr>
-                            <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
-                                <td class="green">获取积分</td>
-                                <td class="green">+500</td>
-                                <td>2240</td>
-                            </tr>
-                            <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
-                                <td class="red">积分抵现</td>
-                                <td class="red">-500</td>
-                                <td>1740</td>
-                            </tr>
-                            <tr>
-                                <td>2016/09/28 15:21:49</td>
-                                <td>C60880011088</td>
-                                <td class="green">获取积分</td>
-                                <td class="green">+500</td>
-                                <td>2240</td>
+                                <td class="red"><?= $val->score?></td>
+                                <? endif; ?>
+                                <? endforeach; ?>
                             </tr>
                         </tbody>
                     </table>
                     <div class="pagination_wrap">
                         <div class="pagination_content">
-                            <a href="#">上一页</a>
-                            <a><img src="/bootstrap/images/pre.png"></a>
-                            <span>1/10</span>
-                            <a><img src="/bootstrap/images/next.png"></a>
-                            <a href="#">下一页</a>
+                            <?
+                            echo LinkPager::widget([
+                                'pagination' => $page,
+                            ]);
+                            ?>
                         </div>
                         
                     </div>

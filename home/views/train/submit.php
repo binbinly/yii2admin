@@ -61,9 +61,18 @@ use yii\helpers\Url;
                     <a href="#order_cen02" class="pay-type-list" data-id="2" role="tab" data-toggle="tab"><img src="/bootstrap/images/zfb.jpg"></a>
                 </li>
                 <li>
-                    <a href="#order_cen04" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
+                    <a href="#order_cen03" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
+                </li>
+                <li>
+                    <button href="#order_cen04" class="pay-type-list" data-id="4" role="tab" data-toggle="tab">钱包</button>
                 </li>
             </ul>
+            <div class="form-group inline-pay" style="display:none;">
+                <label for="inputPassword3" class="col-sm-2 control-label">支付密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control tel" name="pay_pwd">
+                </div>
+            </div>
         </div>
         <div class="fkfs">支付</div>
         <div class="xiayibu">
@@ -95,6 +104,14 @@ use yii\helpers\Url;
 
         });
         $(".pay-type-list").click(function(){
+            if($(this).attr('data-id') == 4) {
+                var user_money = '<?= $data['money']?>';
+                var order_money = '<?= $data['total']?>';
+                if(parseFloat(user_money) < parseFloat(order_money)) {
+                    layer.msg('余额不足哦，请先充值!');return;
+                }
+                $(".inline-pay").show();
+            }
             $(".pay_type").val($(this).attr('data-id'));
         });
     });

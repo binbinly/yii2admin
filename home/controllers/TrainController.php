@@ -7,6 +7,7 @@ use common\models\TrainCertificate;
 use home\models\Train;
 use home\models\TrainPrice;
 use home\models\TrainType;
+use home\models\User;
 use Yii;
 use yii\helpers\Url;
 
@@ -89,6 +90,8 @@ class TrainController extends \yii\web\Controller
         $model = new Order();
         $model->setAttributes($data);
         if ($model->save()) {
+            $user_model = User::findIdentity(Yii::$app->user->identity->getId());
+            $data['money'] = $user_model->amount;
             Yii::$app->getSession()->setFlash('success', '订单提交成功，请尽快完成支付哦!');
             return $this->render('submit',['data'=>$data]);
         }else{
@@ -132,6 +135,18 @@ class TrainController extends \yii\web\Controller
                 $this->redirect(Url::to(['/pay/ali-pay','order_sn'=>$order_sn]));
             }else if($pay_type == 3) {
                 $this->redirect(Url::to(['/pay/wx-pay','order_sn'=>$order_sn]));
+            }else if ($pay_type == 4) {
+                $pay_pwd = Yii::$app->request->post('pay_pwd', '');
+                $succ = \home\models\Order::onlinePay($order_sn, $pay_pwd);
+                if($succ['code']==1) {
+                    Yii::$app->getSession()->setFlash('success', '支付成功');
+                    $this->redirect(Url::to(['/']));
+                    Yii::$app->end();
+                }else{
+                    Yii::$app->getSession()->setFlash('error', $succ['msg']);
+                    $this->redirect(Url::to(['/']));
+                    Yii::$app->end();
+                }
             }
         }
     }
