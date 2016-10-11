@@ -281,7 +281,6 @@ class OrderController extends \yii\web\Controller
             Yii::$app->session->set('cart',$cart);
             FuncHelper::ajaxReturn(0, '');
         }
-
     }
 
     /*
