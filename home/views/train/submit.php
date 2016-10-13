@@ -64,17 +64,25 @@ use yii\helpers\Url;
                     <a href="#order_cen03" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
                 </li>
                 <li>
-                    <button href="#order_cen04" class="pay-type-list" data-id="4" role="tab" data-toggle="tab">钱包</button>
+                    <button href="#order_cen04" class="pay-type-list btn btn-primary" data-id="4" role="tab" data-toggle="tab">钱包</button>
                 </li>
             </ul>
             <div class="form-group inline-pay" style="display:none;">
                 <label for="inputPassword3" class="col-sm-2 control-label">支付密码</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control tel" name="pay_pwd">
+                    <input type="password" class="form-control" name="pay_pwd">
                 </div>
             </div>
         </div>
-        <div class="fkfs">支付</div>
+        <button class="btn btn-primary user-score">使用积分</button>
+        <div class="form-group user-score" style="display:none;">
+            <label for="inputPassword3" class="col-sm-2 control-label">积分兑现</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="employ_score">
+                可用积分：<span class="real-score"><?= $data['score']?></span>
+            </div>
+            <div class="col-sm-4">100积分=1元抵付哦</div>
+        </div>
         <div class="xiayibu">
             <input type="hidden" name="order_sn" value="<?= $data['order_sn']?>">
             <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
@@ -111,8 +119,15 @@ use yii\helpers\Url;
                     layer.msg('余额不足哦，请先充值!');return;
                 }
                 $(".inline-pay").show();
+            }else{
+                $(".inline-pay").hide();
             }
             $(".pay_type").val($(this).attr('data-id'));
+        });
+
+        $(".user-score").click(function(){
+            $(".user-score").show();
+            return false;
         });
     });
 </script>

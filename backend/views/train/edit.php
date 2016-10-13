@@ -60,6 +60,8 @@ use yii\helpers\Url;
         
         <?=$form->field($model, 'status')->radioList(['1'=>'正常','0'=>'隐藏'])->label('状态') ?>
 
+        <?=$form->field($model, 'is_tuan')->radioList(['1'=>'是','0'=>'否'])->label('是否团购') ?>
+
         <div class="control-group">
             <label class="control-label">类型封面</label>
             <div class="controls">

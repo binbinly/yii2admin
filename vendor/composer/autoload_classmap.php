@@ -10,6 +10,7 @@ return array(
     'AlipayNotify' => $vendorDir . '/pay/AliPay/AlipayNotify.php',
     'AcpService' => $vendorDir . '/pay/UnionPay/AcpService.php',
     'WxPayApi' => $vendorDir . '/pay/WxPay/lib/WxPay.Api.php',
+    'WxPayRefund' => $vendorDir . '/pay/WxPay/lib/WxPay.Data.php',
     'NativePay' => $vendorDir . '/pay/WxPay/lib/WxPay.NativePay.php',
     'PayNotifyCallBack' => $vendorDir . '/pay/WxPay/lib/notify.php',
 );

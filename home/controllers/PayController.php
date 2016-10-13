@@ -2,7 +2,9 @@
 namespace home\controllers;
 
 use common\models\RechargeLog;
+use common\models\ScoreLog;
 use home\models\Order;
+use home\models\User;
 use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -11,6 +13,24 @@ class PayController extends Controller{
 
     public function unionPay(){
 
+    }
+
+    public function actionWalletPay($order_sn, $employ_score, $pay_pwd){
+        $user_model = User::findIdentity(Yii::$app->user->identity->getId());
+        if($employ_score <= $user_model->score && $user_model->score>=100 && $employ_score>=100) {
+            $score_log_model = new ScoreLog();
+            $score_log_model->add($employ_score, $order_sn);
+        }
+        $succ = \home\models\Order::onlinePay($order_sn, $pay_pwd);
+        if($succ['code']==1) {
+            Yii::$app->getSession()->setFlash('success', '支付成功');
+            $this->redirect(Url::to(['/']));
+            Yii::$app->end();
+        }else{
+            Yii::$app->getSession()->setFlash('error', $succ['msg']);
+            $this->redirect(Url::to(['/']));
+            Yii::$app->end();
+        }
     }
 
     public function actionAliPay($order_sn){
@@ -22,7 +42,7 @@ class PayController extends Controller{
     }
 
     public function actionWxPay($order_sn){
-        echo '<meta http-equiv="content-type" content="text/html;charset=utf-8"/>';
+        //echo '<meta http-equiv="content-type" content="text/html;charset=utf-8"/>';
         //模式二
         /**
          * 流程：

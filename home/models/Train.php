@@ -17,6 +17,12 @@ class Train extends \common\models\Train
         return static::find()->where(['id'=>$id])->asArray()->one();
     }
 
+    public static function getMax($id)
+    {
+        $info = static::findOne($id);
+        return $info->max;
+    }
+
     /*
      * ---------------------------------------
      * 获取一个类型所有的内容
@@ -26,14 +32,17 @@ class Train extends \common\models\Train
         return static::find()->where(['type'=>$type])->orderBy('id ASC')->asArray()->all();
     }
 
-    public static function calendar(){
+    public static function calendar($id, $p=0){
+        $train_max = static::getMax($id);
         $html = '';
-        $month = date('m');
-        $year = date('Y');
+        $month = $p ? date('m', strtotime('+'.$p.' month')) : date('m');
+        $year = $p ? date('Y', strtotime('Y'.$p.' month')) : date('Y');
+
+        $tuan_list = Order::getTrainTuanList($year.'-'.$month);
 
         $start_week = date('w',mktime(0,0,0,$month,1,$year));
         $day_num = date('t',mktime(0,0,0,$month,1,$year));
-        $end = false;
+
         for($i = 0; $i<$start_week; $i++)
         {
             $html .= "<td></td>";
@@ -43,10 +52,25 @@ class Train extends \common\models\Train
         while($j<=$day_num)
         {
             $date = $year."-".$month."-".$j;
-            if($j == 1){
-                $html .= "<td data-time='".$date."'><span class='day on'>$j</span><span class='booking notfull'>6/4</span></td>";
-            }else {
-                $html .= "<td data-time='".$date."'><span class='day on'>$j</span></td>";
+            $datetime = '';
+            if(strtotime($date.' +1 days') > time()) {
+                $datetime = $date;
+            }
+            if($tuan_list) {
+                $is_yes = 0;
+                foreach ($tuan_list as $val) {
+                    if ($val['s'] == $date) {
+                        $is_yes = 1;
+                        if($val['c']>=$train_max){
+                            $datetime = 'ok';
+                        }
+                        $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span><span class='booking notfull'>".$val['c'].'/'.$train_max."</span></td>";
+                        break;
+                    }
+                }
+                !$is_yes && $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span></td>";
+            } else {
+                $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span></td>";
             }
             $week = ($start_week+$j-1)%7;
 

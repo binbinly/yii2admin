@@ -8,6 +8,7 @@ use home\models\Shop;
 use home\models\ShopGroup;
 use home\models\ShopPrice;
 use home\models\Train;
+use home\models\User;
 use Yii;
 use common\helpers\FuncHelper;
 use yii\helpers\Url;
@@ -82,7 +83,9 @@ class OrderController extends \yii\web\Controller
         }
         /* 套餐商品 */
 
-
+        $user_model = User::findIdentity(Yii::$app->user->identity->getId());
+        $price['money'] = $user_model->amount;
+        $price['score'] = $user_model->score;
         /*  判断套餐优惠 */
         $price['price'] = $price['total'] - $price['discount'];//var_dump($cart);var_dump($price);exit();
         return $this->render('index',[

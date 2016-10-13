@@ -29,7 +29,7 @@ class ScoreLog extends \common\core\BaseActiveRecord
     public function rules()
     {
         return [
-            [['uid', 'score', 'create_time'], 'integer'],
+            [['uid', 'score', 'create_time', 'status'], 'integer'],
             [['order_sn'], 'string', 'max' => 20]
         ];
     }
@@ -45,6 +45,15 @@ class ScoreLog extends \common\core\BaseActiveRecord
             'score' => 'Score',
             'order_sn' => 'Order Sn',
             'create_time' => 'Create Time',
+            'status' => 'Status',
         ];
+    }
+
+    public function add($employ_score, $order_sn){
+        $this->uid = Yii::$app->user->identity->getId();
+        $this->create_time = time();
+        $this->order_sn = $order_sn;
+        $this->score = '-'.$employ_score;
+        $this->save();
     }
 }

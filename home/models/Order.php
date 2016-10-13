@@ -21,12 +21,21 @@ class Order extends \common\models\Order
                     return false;
                 }
             }
+            //用户积分使用
+            $score_model = ScoreLog::findOne(['order_sn'=>$data['out_trade_no'], 'status'=>0]);
+            if($score_model) {
+                $score_model -> status = 1;
+                $score_model->save();
+                //用户积分修改
+                User::updateUserScore($info->uid, $score_model->score);
+            }
             $info->pay_time = time();
             $info->pay_type = $data['pay_type'];
             $info->pay_source = 1;
             $info->pay_status = 1;
             if($data['pay_type'] == 4) {//钱包
-                $data['total_fee'] = $info->total;
+                $total_fee = $score_model ? $info->total-abs($score_model->score/100) : $info->total;
+                $data['total_fee'] = $total_fee;
             }
             $info->order_money = $data['total_fee'];
             $succ = $info->save();
@@ -54,13 +63,14 @@ class Order extends \common\models\Order
                 $model->save();
 
                 //用户积分修改
-                User::updateUserScore($info->uid, '+'.$data['total_fee']);
+                User::updateUserScore($info->uid, intval($data['total_fee']));
 
                 //积分记录
                 $score['order_sn'] = $data['out_trade_no'];
-                $score['score'] = '+'. $data['total_fee'];
+                $score['score'] = intval($data['total_fee']);
                 $score['create_time'] = time();
                 $score['uid'] = $info->uid;
+                $score['status'] = 1;
                 $score_model = new ScoreLog();
                 $score_model->setAttributes($score);
                 $score_model->save();
@@ -76,7 +86,7 @@ class Order extends \common\models\Order
         }
         $user = User::findIdentity(Yii::$app->user->identity->getId());
         if(!$user->validatePayPassword($pay_pwd)) {
-            return ['code'=>-1, 'msg'=>'支付密码楚若'];
+            return ['code'=>-1, 'msg'=>'支付密码错误'];
         }
         $data['out_trade_no'] = $order_sn;
         $data['trade_no'] = '';
@@ -85,5 +95,14 @@ class Order extends \common\models\Order
             return ['code'=>1, 'msg'=>'支付成功'];
         }
         return ['code'=>0, 'msg'=>'支付失败'];
+    }
+
+    public static function getTrainTuanList($date){
+        $stime = strtotime($date.'-01');
+        $etime = strtotime($date.'-01 +1 month');
+        $list = static::find()->select(['FROM_UNIXTIME(start_time,"%Y-%m-%d") AS s', 'sum(num) AS c'])
+            ->where(['type'=>'train_tuan', 'pay_status'=>1])
+            ->andWhere(['between', 'start_time', $stime, $etime])->groupBy('s')->asArray()->all();
+        return $list;
     }
 }

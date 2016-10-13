@@ -3,6 +3,7 @@
 namespace home\controllers;
 
 use common\models\Order;
+use common\models\ScoreLog;
 use common\models\TrainCertificate;
 use home\models\Train;
 use home\models\TrainPrice;
@@ -31,12 +32,19 @@ class TrainController extends \yii\web\Controller
         $id = Yii::$app->request->get('id', 1);
         $cid = Yii::$app->request->get('cid', 1);
         $data = Train::info($id);
+        $p = Yii::$app->request->get('p', 0);
         $data['price'] = TrainPrice::getNickPrice($id, $cid);
         $certif = TrainCertificate::getInfo($cid);
-        return $this->render('show',[
+        if($data['is_tuan'] == 1) {
+            $view = 'tuan';
+        }else{
+            $view = 'show';
+        }
+        return $this->render($view,[
             'data' => $data,
             'cid' => $cid,
-            'certif' => $certif
+            'certif' => $certif,
+            'p' => $p
         ]);
     }
 
@@ -63,7 +71,7 @@ class TrainController extends \yii\web\Controller
             $this->redirect(Url::to(['/train/show', 'id'=>$train_id,'cid'=>$cid]));
             Yii::$app->end();
         }
-        $n = Yii::$app->request->post('n', 1);
+        $n = Yii::$app->request->post('num', 1);
         if($n<1) {
             Yii::$app->getSession()->setFlash('error', '数量必须大于1哦');
             $this->redirect(Url::to(['/train/show', 'id'=>$train_id,'cid'=>$cid]));
@@ -78,9 +86,9 @@ class TrainController extends \yii\web\Controller
         $data['uid'] = Yii::$app->user->identity->getId();
         $data['aid'] = $train_id;
         $data['title'] = $certif_info['title'].$train_info['title'];
-        $data['start_time'] = time($stime);
+        $data['start_time'] = strtotime($stime);
         $data['num'] = $n;
-        $data['type'] = 'train';
+        $data['type'] = $train_info['is_tuan'] == 1 ? 'train_tuan' : 'train';
         $data['total'] = $n * $train_info['price'];
         $data['pay_status'] = 0;
         $data['create_time'] = time();
@@ -92,6 +100,7 @@ class TrainController extends \yii\web\Controller
         if ($model->save()) {
             $user_model = User::findIdentity(Yii::$app->user->identity->getId());
             $data['money'] = $user_model->amount;
+            $data['score'] = $user_model->score;
             Yii::$app->getSession()->setFlash('success', '订单提交成功，请尽快完成支付哦!');
             return $this->render('submit',['data'=>$data]);
         }else{
@@ -129,6 +138,12 @@ class TrainController extends \yii\web\Controller
         $model->tel = $tel;
         $model->sfz = $sfz;
         if($model->save()) {
+            $employ_score = Yii::$app->request->post('employ_score', 0);
+            $user_model = User::findIdentity(Yii::$app->user->identity->getId());
+            if($employ_score <= $user_model->score && $user_model->score>=100 && $employ_score>=100) {
+                $score_log_model = new ScoreLog();
+                $score_log_model->add($employ_score, $order_sn);
+            }
             if($pay_type == 1) {
 
             }else if($pay_type == 2) {

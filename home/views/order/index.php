@@ -68,19 +68,28 @@
                 <li>
                     <a href="#order_cen04" class="pay-type-list" data-id="3" role="tab" data-toggle="tab"><img src="/bootstrap/images/wxzf.jpg"></a>
                 </li>
+                <li>
+                    <button href="#order_cen04" class="pay-type-list" data-id="4" role="tab" data-toggle="tab">钱包</button>
+                </li>
             </ul>
+            <div class="form-group inline-pay" style="display:none;">
+                <label for="inputPassword3" class="col-sm-2 control-label">支付密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control pay_pwd" name="pay_pwd">
+                </div>
+            </div>
         </div>
-        <div class="fkfs">请选择付款方式</div>
+        <button class="btn btn-primary user-score">使用积分</button>
+        <div class="form-group row user-score" style="display:none;">
+            <label for="inputPassword3" class="col-sm-2 control-label">积分兑现</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="employ_score">
+                可用积分：<span class="real-score"><?= $price['score']?></span>
+            </div>
+            <div class="col-sm-4">100积分=1元抵付哦</div>
+        </div>
         <div class="xiayibu">
             <button type="submit" class="submit"><img src="/bootstrap/images/pay_xia.jpg"></button>
-            <p>优惠卷<p>
-            <div class="pay_select col-sm-4">
-                <select class="form-control">
-                    <option>选择优惠卷</option>
-                    <option>4446556541</option>
-                    <option>31434332</option>
-                </select>
-            </div>
         </div>
         
     </div>
@@ -140,7 +149,21 @@
 <script type="text/javascript">
     $(function () {
         $(".pay-type-list").click(function(){
+            if($(this).attr('data-id') == 4) {
+                var user_money = '<?= $price['money']?>';
+                var order_money = '<?= $price['total']?>';
+                if(parseFloat(user_money) < parseFloat(order_money)) {
+                    layer.msg('余额不足哦，请先充值!');return;
+                }
+                $(".inline-pay").show();
+            }else{
+                $(".inline-pay").hide();
+            }
             $(".pay_type").val($(this).attr('data-id'));
+        });
+        $(".user-score").click(function(){
+            $(".user-score").show();
+            return false;
         });
         $('.submit').click(function () {
             var name = $('.name').val();
@@ -160,13 +183,22 @@
                 success: function(data){
                     if(data.code == 0){
                         layer.msg(data.msg);
+                        var employ_score = $("input[name=employ_score]").val();
                         var url = '';
                         if(pay_type == 2) {
                             url = "<?= \yii\helpers\Url::to(['/pay/ali-pay'])?>";
                         }else if (pay_type == 3) {
                             url = "<?= \yii\helpers\Url::to(['/pay/wx-pay']);?>";
+                        }else if (pay_type == 4) {
+                            url = "<?= \yii\helpers\Url::to(['/pay/wallet-pay']);?>";
+                            var pay_pwd = $("input[name=pay_pwd]").val();
+                            if(!pay_pwd) {
+                                layer.msg('请输入支付密码!');return false;
+                            }
+                            window.location.href=url+'?order_sn='+data.obj+'&employ_score='+employ_score+'&pay_pwd='+pay_pwd;
+                            return false;
                         }
-                        window.location.href=url+'?order_sn='+data.obj;
+                        window.location.href=url+'?order_sn='+data.obj+'&employ_score='+employ_score;
                     } else {
                         layer.msg(data.msg);
                     }

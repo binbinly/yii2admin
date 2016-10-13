@@ -112,7 +112,7 @@ use backend\models\Category;
                     'content' => function($model){
                         return Yii::$app->params['pay_status'][$model['pay_status']];
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'pay_status', [0 => '未支付',1 => '已支付'], ['prompt'=>'全部','style' => 'width:80px']),
+                    'filter' => Html::activeDropDownList($searchModel, 'pay_status', Yii::$app->params['pay_status'], ['prompt'=>'全部','style' => 'width:80px']),
 
                 ],
                 [
@@ -141,12 +141,10 @@ use backend\models\Category;
                     'attribute' => 'pay_type',
                     'options' => ['width' => '80px;'],
                     'content' => function($model){
-                        if($model['pay_type']<1){
-                            return '未知类型';
-                        }
+                        if($model['pay_type'] == 0) return '-';
                         return Yii::$app->params['pay_type'][$model['pay_type']];
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'pay_type', [1 => '微信',2 => '支付宝',3 => '银联'], ['prompt'=>'全部','style' => 'width:80px']),
+                    'filter' => Html::activeDropDownList($searchModel, 'pay_type', Yii::$app->params['pay_type'], ['prompt'=>'全部','style' => 'width:80px']),
                 ],
                 [
                     'label' => '订单类型',
@@ -155,7 +153,7 @@ use backend\models\Category;
                     'content' => function($model){
                         return Yii::$app->params['order_type'][$model['type']];
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'type', ['shop' => '产品','train' => '培训'],['prompt'=>'全部','style' => 'width:80px']),
+                    'filter' => Html::activeDropDownList($searchModel, 'type', Yii::$app->params['order_type'],['prompt'=>'全部','style' => 'width:80px']),
                 ],
                 [
                     'label' => '状态',
@@ -167,7 +165,7 @@ use backend\models\Category;
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'header' => '操作',
-                    'template' => '{edit} {delete}',
+                    'template' => '{edit} {delete} {refund}',
                     'options' => ['width' => '200px;'],
                     'buttons' => [
                         'edit' => function ($url, $model, $key) {
@@ -180,6 +178,12 @@ use backend\models\Category;
                             return Html::a('<i class="icon-remove icon-white"></i>', $url, [
                                 'title' => Yii::t('app', '删除'),
                                 'class' => 'btn mini red ajax-get confirm'
+                            ]);
+                        },
+                        'refund' => function ($url, $model, $key) {
+                            return Html::a('<i class="icon-edit icon-red"></i>', $url, [
+                                'title' => Yii::t('app', '退款'),
+                                'class' => 'btn mini purple'
                             ]);
                         },
                     ],
