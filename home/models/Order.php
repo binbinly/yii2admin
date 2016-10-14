@@ -80,6 +80,50 @@ class Order extends \common\models\Order
         return false;
     }
 
+    public static function orderAfterRefund($refund_info) {
+        $info = static::findOne(['order_sn'=>$refund_info['order_sn'], 'pay_status'=>1]);
+        if($info) {
+            //修改订单状态为已退款
+            $info->pay_status = 3;
+            $info->save();
+
+            if($refund_info['pay_type'] == 4) {
+                $is_succ = User::updateUserAmount($info->uid, -$refund_info['out_refund_money']);
+                if(!$is_succ) {
+                    return false;
+                }
+            }
+
+            //添加交易记录
+            $trade = new TradeRecord();
+            $trade->uid = $info->uid;
+            $trade->trade_type = 2;
+            $trade->third_trade_num = $refund_info['out_refund_id'];
+            $trade->order_sn = $info->order_sn;
+            $trade->pay_type = $refund_info['pay_type'];
+            $trade->amount = -$refund_info['out_refund_money'];
+            $trade->add_time = time();
+            $trade->remark = '退款';
+            $trade->save();
+
+            //用户积分修改
+            User::updateUserScore($info->uid, intval($refund_info['out_refund_money']), -1);
+
+            //积分记录
+            $score['order_sn'] = $info->order_sn;
+            $score['score'] = intval(-$refund_info['out_refund_money']);
+            $score['create_time'] = time();
+            $score['uid'] = $info->uid;
+            $score['status'] = 1;
+            $score_model = new ScoreLog();
+            $score_model->setAttributes($score);
+            $score_model->save();
+
+        }else{
+            return false;
+        }
+    }
+
     public static function onlinePay($order_sn, $pay_pwd){
         if(!$pay_pwd) {
             return ['code'=>-1, 'msg'=>'请输入支付密码'];

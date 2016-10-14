@@ -205,7 +205,11 @@ class OrderController extends BaseController
     public function actionRefund($id) {
         $order_info = Order::findOne($id);
         if($order_info->pay_type == 1) {
-            $this->_refundWx($order_info);
+            //$this->_refundWx($order_info);
+        }else if ($order_info->pay_type == 2) {
+
+        }else if ($order_info->pay_type == 4) {
+
         }
     }
 
@@ -267,8 +271,10 @@ class OrderController extends BaseController
             }
             $refund_info['out_refund_id'] = $rs_arr['refund_id'];
             $refund_info['out_refund_money'] = $rs_arr['refund_fee']/100;
-            $refund_info['trade_type'] = 11;
-            $rs = $this->order_model->orderAfterRefund($refund_info);
+            $refund_info['trade_type'] = 2;
+            $refund_info['order_sn'] = $rs_arr['out_refund_no'];
+            $refund_info['pay_type'] = 1;
+            $rs = \home\models\Order::orderAfterRefund($refund_info);
             if($rs) {
                 $this->success('退款成功!');
             }else{

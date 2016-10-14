@@ -193,11 +193,11 @@ class User extends \common\models\User implements IdentityInterface
     /**
      * 修改用户积分
      */
-    public static function updateUserScore($uid, $score) {
+    public static function updateUserScore($uid, $score, $type = 1) {
         if(!$uid) return false;
         $user = static::findIdentity($uid);
         $user->score += $score;
-        $user->score_all += abs($score);
+        $type ? $user->score_all += abs($score) : $user->score_all -= abs($score);
         return $user->save();
     }
 
