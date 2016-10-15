@@ -64,7 +64,8 @@ use yii\helpers\Url;
         
         <?=$form->field($model, 'num')->textInput(['class'=>'span1 m-wrap'])->label('商品总数')->hint('商品的总数量，出售数达到这个数后将停止出售')?>
         
-        <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('价格')->hint('价格保留两位小数，例如420.12')?>
+        <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('平日价格')->hint('价格保留两位小数，例如420.12')?>
+        <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('周末价格')->hint('价格保留两位小数，例如420.12')?>
 
         <div class="control-group field-shop-price-list">
             <label for="shop-price" class="control-label">节日价</label>
@@ -87,8 +88,14 @@ use yii\helpers\Url;
         
         <?=$form->field($model, 'extend')->textarea(['class'=>'span4', 'rows'=>5])->label('扩展参数')->hint('一维数组配置格式“项:值”每项之间用换行或逗号隔开，其值转化为array后serialize()存储到数据库', ['style'=>'display:block;']) ?>
 
-        <?= $form->field($model, 'info')->label('产品简介')->widget(\yii\redactor\widgets\Redactor::className()) ?>
 
+        <?=$form->field($model, 'info')->widget(\crazydb\ueditor\UEditor::className(),[
+            'config' => [
+                'serverUrl' => ['/ueditor/index'],//确保serverUrl正确指向后端地址
+                'lang' => 'zh-cn',
+            ]
+        ])->label('产品简介')?>
+        
         <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
         
         <?=$form->field($model, 'status')->radioList(['1'=>'正常','0'=>'隐藏'])->label('状态') ?>
