@@ -107,7 +107,7 @@ i,em{font-style:normal}
 .table-condensed .icon-arrow-left{background-position: -240px -96px;}
 .table-condensed .icon-arrow-right{background-position:-264px -96px;}
 [class^="icon-"], [class*=" icon-"] {
-    background-image: url("../images/glyphicons-halflings.png");
+    /*background-image: url("../images/glyphicons-halflings.png");*/
 /*    background-position: 14px 14px;*/
     background-repeat: no-repeat;
     display: inline-block;
@@ -393,7 +393,7 @@ i,em{font-style:normal}
 .order_li_top input{width:10px; height:10px;}
 .order_li_cen .col-md-2{text-align: center}
 .order_li_cen .col-md-1{padding:0px; text-align: right;}
-.order_li_cen { overflow: hidden; padding:20px 0 10px;}
+.order_li_cen { overflow: hidden; padding:10px;}
 .member_cen_r nav{margin: 25px 0; overflow: hidden;}
 .posin{position: absolute; bottom: -60px; right:10px;}
 

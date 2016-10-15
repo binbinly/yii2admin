@@ -99,7 +99,7 @@
 </style>
 <!--banner-->
 <?php include('public_head.php'); ?>
-<?
+<?php
 use yii\widgets\LinkPager;
 ?>
 
@@ -109,10 +109,9 @@ use yii\widgets\LinkPager;
                     <div class="order_cen">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#order_cen01" aria-controls="home" role="tab" data-toggle="tab">全部订单</a></li>
-                            <li role="presentation"><a href="#order_cen02" aria-controls="profile" role="tab" data-toggle="tab">已付款</a></li>
-                            <li role="presentation"><a href="#order_cen03" aria-controls="messages" role="tab" data-toggle="tab">待付款</a></li>
-                            <li role="presentation"><a href="#order_cen04" aria-controls="settings" role="tab" data-toggle="tab">历史订单</a></li>
+                            <li role="presentation" class="active"><a href="#order_cen01" aria-controls="home" role="tab" data-toggle="tab" id='all_btn'>全部订单</a></li>
+                            <li role="presentation"><a href="#order_cen02" aria-controls="profile" role="tab" data-toggle="tab" id='payed_btn'>已付款</a></li>
+                            <li role="presentation"><a href="#order_cen03" aria-controls="messages" role="tab" data-toggle="tab" id='not_payed_btn'>待付款</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
@@ -121,23 +120,23 @@ use yii\widgets\LinkPager;
                                     <form class="form-inline">
                                         <div class="form-group">
                                             <label for="exampleInputName2">订单号</label>
-                                            <input type="text" class="form-control" id="exampleInputName2" placeholder="输入订单号">
+                                            <input type="text" class="form-control"  name='order_sn' id="exampleInputName2" placeholder="输入订单号">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail2">用户</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="中文名/英文名">
+                                            <input type="text" class="form-control" name='name' id="exampleInputEmail2" placeholder="中文名/英文名">
                                         </div>
                                         <div class="store_shop_text05">
                                             <span>预订日期</span>
                                             <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                                 <div class="border">
-                                                    <input type="text" readonly="readonly" size="16">
+                                                    <input type="text" readonly="readonly" name='start_time' size="16">
                                                     <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                                 </div>
                                             </div>&nbsp;&nbsp;~&nbsp;&nbsp;
                                             <div data-picker-position="bottom-left" class="input-append date form_datetime5 w_120">
                                                 <div class="border">
-                                                    <input type="text" readonly="readonly" size="16">
+                                                    <input type="text" readonly="readonly" name="end_time" size="16">
                                                     <span class="add-on"><i class="icon-th glyphicon glyphicon-calendar"></i></span>
                                                 </div>
                                             </div>
@@ -163,8 +162,11 @@ use yii\widgets\LinkPager;
                                 <div class="order_li">
                                     <div class="order_li_top">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：<i><?= $order->order_sn?></i>
-                                        </label>   预订日期：<?= date("Y-m-d", $order->start_time)?>     <a>删除订单</a>
+                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：
+                                            <i><?= $order->order_sn?></i>
+                                        </label>
+                                        预订日期：<?= date("Y-m-d", $order->start_time)?>
+                                        <a href="javascript:void(0)" class="del_btn" target_id='<?= $order->order_id?>'>删除订单</a>
                                     </div>
                                     <div class="order_li_cen">
                                         <div class="col-md-1"><?= $order->title?></div>
@@ -172,16 +174,24 @@ use yii\widgets\LinkPager;
                                         <div class="col-md-2"><?= $order->name?></div>
                                         <div class="col-md-2"><?= date("Y-m-d", $order->create_time)?></div>
                                         <div class="col-md-2">￥<?= $order->total?></div>
-                                        <div class="col-md-3"><p><?= $order->pay_status?></p><span></span></div>
+                                        <div class="col-md-3" pay_status="<?= $order->pay_status?>">
+                                            <p>
+                                            <?php if($order->pay_status==1): ?>
+                                                已付款
+                                            <?php else: ?>
+                                                未付款
+                                            <?php endif; ?>
+                                            </p>
+                                        <span></span></div>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
                             <div class="page text-center">
-                            <?
-                            echo LinkPager::widget([
-                                'pagination' => $page,
-                            ]);
+                            <?php
+                                echo LinkPager::widget([
+                                    'pagination' => $page,
+                                ]);
                             ?>
                             </div>
                         </div>
@@ -190,3 +200,47 @@ use yii\widgets\LinkPager;
                 </div>
             </div>
 <?php include('public_footer.php'); ?>
+
+<script type="text/javascript">
+var delCgi = '/user/order/del'
+$(function(){
+
+$('.del_btn').click(function(){
+    if(confirm('确定删除订单 ?')){
+        var target_id = $(this).attr('target_id');
+        var that = this;
+        $.post(delCgi, {order_id:target_id},function(ret){
+            $(that).parents('.order_li').slideUp('fast');
+        }, 'json')
+    }
+})
+
+// 已付款
+$('#payed_btn').click(function(){
+    $('.order_li').show();
+    $('.order_li').each(function(index,dom){
+        if($(dom).find('[pay_status]').attr('pay_status') == 0){
+            $(dom).hide();
+        }
+    })
+})
+
+
+// 未付款
+$('#not_payed_btn').click(function(){
+    $('.order_li').show();
+    $('.order_li').each(function(index,dom){
+        if($(dom).find('[pay_status]').attr('pay_status') == 1){
+            $(dom).hide();
+        }
+    })
+})
+
+// 全部
+$('#all_btn').click(function(){
+    $('.order_li').show();
+})
+
+})
+</script>
+

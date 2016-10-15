@@ -19,7 +19,17 @@ class IndexController extends BaseController
 {
     public function actionIndex()
     {
-        $query = Order::find()->where(['uid'=>$this->uid, 'status'=>1]);
+        $order_sn = Yii::$app->request->get('order_sn');
+        $name = Yii::$app->request->get('name');
+        $condition = ['uid'=>$this->uid, 'status'=>1];
+        if($order_sn){
+            $condition['order_sn'] = $order_sn;
+        }
+        if($name){
+            $condition['name'] = $name;
+        }
+
+        $query = Order::find()->where($condition);
 
         $count = $query->count();
 
