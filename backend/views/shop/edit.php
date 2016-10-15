@@ -63,9 +63,7 @@ use yii\helpers\Url;
         ])?>
         
         <?=$form->field($model, 'num')->textInput(['class'=>'span1 m-wrap'])->label('商品总数')->hint('商品的总数量，出售数达到这个数后将停止出售')?>
-        
         <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('平日价格')->hint('价格保留两位小数，例如420.12')?>
-        <?=$form->field($model, 'price')->textInput(['class'=>'span1 m-wrap'])->label('周末价格')->hint('价格保留两位小数，例如420.12')?>
 
         <div class="control-group field-shop-price-list">
             <label for="shop-price" class="control-label">节日价</label>
