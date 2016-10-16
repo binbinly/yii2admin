@@ -1,6 +1,10 @@
 
 <style type="text/css">
-#carousel-example-captions img{
+#carousel-example-generic .carousel-inner img{
+    width: 1200px;
+    height: 400px;
+}
+#carousel-example-captions .carousel-inner img{
     width: 740px;
     height: 290px;
 }
@@ -8,26 +12,44 @@
     width: 385px;
     height: 253px;
 }
+#carousel-example-generic01  .pre_next{
+    position: absolute;
+    right: 60px;
+    top: -55px;
+    font-size: 30px;
 
+}
+#carousel-example-generic01  .pre_next a{
+    color: #000;
+}
+#carousel-example-generic01  .pre_next a:hover{
+    color: #ccc;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
 </style>
 <!--banner-->
+<?php if($ad_list):?>
 <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <?php foreach ($ad_list as $k => $g) :?>
+            <li data-target="#carousel-example-generic" data-slide-to="<?=$k?>" class="<?=$k==0?'active':''?>"></li>
+            <?php endforeach;?>
     </ol>
     <div role="listbox" class="carousel-inner">
-        <div class="item active">
-            <img src="/bootstrap/images/banner.jpg" alt="First slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Third slide">
-        </div>
+        <?php foreach ($ad_list as $k => $g) :?>
+            <div class="item <?=$k==0?'active':''?>">
+                <a href="<?=$g['url']?>" target='_blank'>
+                    <img src="<?=$g['image']?>">
+                </a>
+            </div>
+        <?php endforeach;?>
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -39,7 +61,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+<?php endif;?>
 <!--房间选择与滑动-->
 
 <div class="switch_slide">
@@ -209,31 +231,26 @@
     <!--滑动-->
 
     <div id="carousel-example-captions" class="carousel slide bann_switch" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-            <?php if($group_ppt):?>
-            <?php foreach ($group_ppt as $k => $g) :?>
-            <li data-target="#carousel-example-captions" data-slide-to="<?=$k?>" class="<?=$k==0?'active':''?>"></li>
-            <?php endforeach;?>
-            <?php endif;?>
-        </ol>
-
-
         <div class="carousel-inner" role="listbox">
-            <?php if($group_ppt):?>
-            <?php foreach ($group_ppt as $k => $g) :?>
+            <?php if($ad2_list):?>
+            <?php foreach ($ad2_list as $k => $g) :?>
             <div class="item <?=$k==0?'active':''?>">
-                <a href="">
-                    <img src="<?=$g['cover']?>" data-holder-rendered="true" class="bann_switch_img">
-                    <div class="carousel-caption">
-                    <h3><?=$g['title']?></h3>
-                    <p><?=$g['description']?></p>
+                <a href="<?=$g['url']?>" target='_blank'>
+                    <img src="<?=$g['image']?>" data-holder-rendered="true" class="bann_switch_img">
                 </a>
-              </div>
             </div>
             <?php endforeach;?>
             <?php endif;?>
         </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+            <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left.png"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+            <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/bootstrap/images/right.png"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
     <!--滑动结束-->
 </div>
@@ -255,127 +272,19 @@
         </select>
     </div>
 </div>
-<div id="carousel-example-generic01" class="carousel slide recommended" data-ride="carousel">
+<div id="carousel-example-generic01" class="carousel slide recommended" data-ride="carousel" style="position:relative;overflow: initial;">
     <div class="carousel-inner" role="listbox">
-        <!-- <div class="item active">
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true" >
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-             <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true" >
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-            <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true">
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-             <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true" >
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-             <div class="w_385">
-                <a href="">
-                    <img src="/bootstrap/images/zx01.jpg" data-holder-rendered="true" >
-                    <div class="carousel-caption">
-                    <h3>悠长假期住宿优惠</h3>
-                    <p>内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明内容说明</p>
-                    </div>
-                </a>
-            </div>
-        </div> -->
     </div>
-    <a class="left carousel-control" href="#carousel-example-generic01" role="button" data-slide="prev">
-        <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left01.png"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic01" role="button" data-slide="next">
-        <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/bootstrap/images/right01.png"></span>
-    </a>
+    <div class="pre_next">
+        <a class="" href="#carousel-example-generic01" role="button" data-slide="prev">
+            <!-- <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/bootstrap/images/left01.png"></span> -->
+            <span class="glyphicon-chevron-left" aria-hidden="true"> < </span>
+        </a>
+        <a class="" href="#carousel-example-generic01" role="button" data-slide="next">
+            <!-- <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/bootstrap/images/right01.png"></span> -->
+            <span class="glyphicon-chevron-right" aria-hidden="true"> > </span>
+        </a>
+    </div>
 </div>
 <div class="xian"></div>
 <!--爱正能量-->

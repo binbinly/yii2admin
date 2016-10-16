@@ -39,7 +39,7 @@ class ShopGroup extends \common\core\BaseActiveRecord
             [['price', 'total'], 'number'],
             [['sort', 'status'], 'integer'],
             [['title'], 'string', 'max' => 50],
-            [['description', 'cover'], 'string', 'max' => 255]
+            [['description', 'cover', 'detail_cover'], 'string', 'max' => 255]
         ];
     }
 

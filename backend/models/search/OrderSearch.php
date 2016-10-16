@@ -64,7 +64,6 @@ class OrderSearch extends Order
             // $query->where('0=1');
             return $dataProvider;
         }
-
         /* 基本搜索 */
         $query->andFilterWhere([
             'pay_status' => $this->pay_status,
@@ -94,7 +93,13 @@ class OrderSearch extends Order
         if($this->from_date !='' && $this->to_date != '') {
             $query->andFilterWhere(['between', 'create_time', strtotime($this->from_date), strtotime($this->to_date)]);
         }
+        if(isset($params['OrderSearch']['start_date']) && $params['OrderSearch']['start_date']){
+            $query->andFilterWhere(['=', 'start_time', strtotime($params['OrderSearch']['start_date'])]);
+        }
 
+        if(isset($params['OrderSearch']['end_date']) && $params['OrderSearch']['end_date'] ){
+            $query->andFilterWhere(['=', 'end_time', strtotime($params['OrderSearch']['end_date'])]);
+        }
         return $dataProvider;
     }
 }

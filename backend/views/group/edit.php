@@ -34,8 +34,9 @@ use backend\models\Shop;
 
         <?=$form->field($model, 'description')->textarea(['class'=>'span4', 'rows'=>3])->label('商品描述')->hint(' ', ['style'=>'display:block;']) ?>
 
+        <!-- 首页封面 -->
         <div class="control-group">
-            <label class="control-label">封面图片</label>
+            <label class="control-label">首页封面图片</label>
             <div class="controls">
                 <div class="fileupload fileupload-new" data-provides="fileupload">
                     <div class="input-append">
@@ -57,11 +58,37 @@ use backend\models\Shop;
                 </div>
             </div>
         </div>
+        <!-- 内页封面 -->
+        <div class="control-group">
+            <label class="control-label">内页封面图片</label>
+            <div class="controls">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="icon-file fileupload-exists"></i>
+                            <span class="fileupload-preview">
+                                <?=$model->detail_cover?>
+                            </span>
+                        </div>
+                        <span class="btn btn-file">
+                            <span class="fileupload-new">选择文件</span>
+                            <span class="fileupload-exists">更改</span>
+                            <input type="file" name="detail_cover" class="default" id="file_but2">
+                            <input type="hidden" name="ShopGroup[detail_cover]" id="file_ipt2" value="<?=$model->detail_cover?>">
+                        </span>
+                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+                    </div>
+                    <div><img id="file_img2" src="<?=$model->detail_cover?>" class="img-circle"  width="100px" height="100px" style="margin:10px 0 -10px 0;<?= !empty($model->cover) ? 'display:block' : 'display:none'; ?>"></div>
+                </div>
+            </div>
+        </div>
 
         <?=$this->renderFile('@app/views/public/_image.php',[
             'data'=>$model->images,
             'field'=>'ShopGroup[images]'
         ])?>
+
+        
 
         <div class="control-group">
             <label class="control-label">套餐【酒店】</label>
@@ -116,21 +143,21 @@ use backend\models\Shop;
 
         <div class="control-group field-shop-price-list">
             <label for="shop-price" class="control-label">节日价</label>
-            <? if(isset($price_list) && !empty($price_list)):?>
-                <? foreach($price_list as $price): ?>
+            <?php if(isset($price_list) && !empty($price_list)):?>
+                <?php foreach($price_list as $price): ?>
                     <div class="controls price_list">
                         日期：<input type="text" name="ShopGroup[shop_day][]" class="span2 m-wrap" value="<?= $price->day; ?>" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
                         价格：<input type="text" name="ShopGroup[shop_price][]" class="span2 m-wrap" id="shop-price_list" value="<?= $price->price?>"/>
                         <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
                     </div>
-                <? endforeach; ?>
-            <? else: ?>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <div class="controls price_list">
                     日期：<input type="text" name="ShopGroup[shop_day][]" class="span2 m-wrap" id="shop-day_list"/>&nbsp;&nbsp;&nbsp;
                     价格：<input type="text" name="ShopGroup[shop_price][]" class="span2 m-wrap" id="shop-price_list"/>
                     <span style="font-size:20px;font-weight: 700;cursor: pointer;" class="add_price">+</span>
                 </div>
-            <? endif; ?>
+            <?php endif; ?>
         </div>
 
         <?=$form->field($model, 'sort')->textInput(['class'=>'span1 m-wrap'])->label('排序值')->hint('排序值越小越前')?>
@@ -285,6 +312,37 @@ $(function() {
                         if(json.boo){
                             $('#file_img').attr('src',json.data);
                             $('#file_ipt').val(json.data);
+                        } else {
+                            alert(json.msg);
+                        }
+                    },
+                    error: function(xhr, type){
+                        alert('服务器错误')
+                    }
+                });
+            }
+        }
+    });
+
+    $("#file_but2").on("change", function(){
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return;
+        if (/^image/.test( files[0].type)){
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function(){
+                $.ajax({
+                    type: 'post',
+                    url: '<?=Url::to(["upload/image"])?>',
+                    data: {imgbase64:this.result},
+                    dataType: 'json',
+                    beforeSend: function(){
+                        
+                    },
+                    success: function(json){
+                        if(json.boo){
+                            $('#file_img2').attr('src',json.data);
+                            $('#file_ipt2').val(json.data);
                         } else {
                             alert(json.msg);
                         }

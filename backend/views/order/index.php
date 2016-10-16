@@ -86,12 +86,32 @@ use backend\models\Category;
                     'value' => 'start_time',
                     'format' => ['date', 'php:Y-m-d'],
                     'options' => ['width' => '100px;'],
+                    'filter' => \kartik\widgets\DatePicker::widget([
+                        'language' => 'zh-CN',
+                        'name' => 'OrderSearch[start_date]',
+                        'value' => $searchModel->start_time,
+                        'options' =>  ['style' => 'width:100px','placeholder' => '退租时间'],
+                        'pluginOptions' => [
+                            'autoclose'=>true,
+                            'format' => 'yyyy-mm-dd'
+                        ]
+                    ])
                 ],
                 [
                     'header' => '退租时间',
                     'value' => 'end_time',
                     'format' => ['date', 'php:Y-m-d'],
                     'options' => ['width' => '100px;'],
+                    'filter' => \kartik\widgets\DatePicker::widget([
+                        'language' => 'zh-CN',
+                        'name' => 'OrderSearch[end_date]',
+                        'value' => $searchModel->end_time,
+                        'options' =>  ['style' => 'width:100px','placeholder' => '退租时间'],
+                        'pluginOptions' => [
+                            'autoclose'=>true,
+                            'format' => 'yyyy-mm-dd'
+                        ]
+                    ])
                 ],
                 [
                     'label' => '数量',

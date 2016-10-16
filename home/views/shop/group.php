@@ -30,7 +30,7 @@ use yii\helpers\Url;
                     <span><?=$v['title']?></span>
                     <p><?=$v['description']?></p>
                 </div>-->
-                <img src="<?=$v['cover']?>" class="store_cen_img" width="1200" height="495">
+                <img src="<?=$v['detail_cover']?>" class="store_cen_img" width="1200" height="495">
                 <div class="store_cen_text01">
                     <span><i><?=$v['title']?></i></span>
                 </div>

@@ -44,7 +44,7 @@ class Article extends \common\core\BaseActiveRecord
             [['content', 'extend'], 'string'],
             [['name'], 'string', 'max' => 40],
             [['title'], 'string', 'max' => 80],
-            [['cover', 'link'], 'string', 'max' => 255],
+            [['cover', 'detail_cover', 'link'], 'string', 'max' => 255],
             [['video', 'link'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 140]
         ];

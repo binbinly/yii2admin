@@ -59,8 +59,8 @@ use yii\helpers\Url;
                 <span><?=$v['title']?></span>
                 <p><?=$v['description']?></p>
             </div> -->
-            <?php if(!empty($v['cover'])): ?>
-                <img src="<?=$v['cover']?>" class="store_cen_img">
+            <?php if(!empty($v['detail_cover'])): ?>
+                <img src="<?=$v['detail_cover']?>" class="store_cen_img">
             <?php endif; ?>
             <div class="store_cen_text01">            
                 <span><i><?=$v['title']?></i></span>

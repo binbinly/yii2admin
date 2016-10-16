@@ -39,7 +39,7 @@ use yii\helpers\Url;
         <?=$form->field($model, 'title')->textInput(['class'=>'span6 m-wrap'])->label('文章标题')->hint(' ')?>
         
         <div class="control-group">
-            <label class="control-label">封面图片</label>
+            <label class="control-label">首页封面图片</label>
             <div class="controls">
                 <div class="fileupload fileupload-new" data-provides="fileupload">
                     <div class="input-append">
@@ -62,6 +62,30 @@ use yii\helpers\Url;
             </div>
         </div>
         
+        <div class="control-group">
+            <label class="control-label">内页封面图片</label>
+            <div class="controls">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="icon-file fileupload-exists"></i> 
+                            <span class="fileupload-preview">
+                                <?=$model->detail_cover?>
+                            </span>
+                        </div>
+                        <span class="btn btn-file">
+                            <span class="fileupload-new">选择文件</span>
+                            <span class="fileupload-exists">更改</span>
+                            <input type="file" name="detail_cover" class="default" id="file_but3">
+                            <input type="hidden" name="Article[detail_cover]" id="file_ipt3" value="<?=$model->detail_cover?>">
+                        </span>
+                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+                        <img id="file_img3" src="<?= !empty($model->detail_cover) ? $model->detail_cover : '/static/no_pic.jpg'; ?>" class="img-circle"  width="100px" height="100px" style="margin-left: 40px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="control-group">
             <label class="control-label">视频</label>
             <div class="controls">
@@ -219,6 +243,37 @@ $(function() {
         }
     });
     
+    $("#file_but3").on("change", function(){
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return;
+        if (/^image/.test( files[0].type) || /^video/.test( files[0].type)){
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onloadend = function(){
+                $.ajax({
+                    type: 'post',
+                    url: '<?=Url::to(["upload/image"])?>',
+                    data: {imgbase64:this.result},
+                    dataType: 'json',
+                    beforeSend: function(){
+                        
+                    },
+                    success: function(json){
+                        if(json.boo){
+                            $('#file_img3').attr('src',json.data);
+                            $('#file_ipt3').val(json.data);
+                        } else {
+                            alert(json.msg);
+                        }
+                    },
+                    error: function(xhr, type){
+                        alert('服务器错误')
+                    }
+                });
+            }
+        }
+    });
+
     $("#file_but2").on("change", function(){
         var files = !!this.files ? this.files : [];
         if (!files.length || !window.FileReader) return;
