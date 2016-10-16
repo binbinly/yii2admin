@@ -140,14 +140,14 @@ i,em{font-style:normal}
 .recommended_top_span{font-size: 22px;margin-right: 15px;float: left;}
 .recommended_top .input-append{width:200px;float: left;}
 .recommended_top_right{float: right;font-size: 22px;}
-.recommended{width:1290px; height: 535px; overflow: hidden; margin:0 auto; }
+.recommended{width:1200px; height: 535px; overflow: hidden; margin:0 auto; }
 .recommended .carousel-caption{ position:absolute; bottom: 0px; width:100%; background-color:rgba(0,0,0,0.6); height: 64px;  line-height: 180%;left:0px;padding:15px 0 0 0;  text-align: left; padding-left: 20px;}
 .recommended .carousel-caption h3{color:#c4a76f; font-size:16px;margin:0px;}
 .recommended .carousel-caption p{ font-size:14px;margin:0px;overflow: hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis; width:355px;}
 .recommended .carousel-caption a{color:#fff;}
 .recommended .item{width:1300px;}
 .recommended .glyphicon-chevron-left,.recommended .glyphicon-chevron-right{margin-top:-35px;}
-.recommended .carousel-inner{width:1200px; overflow: hidden; left:52px;}
+.recommended .carousel-inner{width:1200px; overflow: hidden;}
 .recommended .carousel-control{width:40px;}
 .w_385{width: 385px; float: left; margin: 0 20px 22px 0; position: relative;}
 
