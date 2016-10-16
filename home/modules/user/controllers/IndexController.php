@@ -219,23 +219,24 @@ class IndexController extends BaseController
         if(!$old_password || !$new_password || !$new_password2 || ($new_password!=$new_password2)){
             FuncHelper::ajaxReturn(-1, '参数错误');
         }
-
-        $old_password = Yii::$app->security->generatePasswordHash($old_password);
-        $new_password = Yii::$app->security->generatePasswordHash($new_password);
-        $user = new User();
-        $user_info = User::find("uid=$uid and password='$old_password'");
-        if($user_info){
-            $attributes = array(
-                'password'=>$new_password,
-            );
-            $condition = 'uid=:uid';
-            $params = array(
-                ':uid'=>$_SESSION['__id'],
-            );
-            User::updateAll($attributes,$condition,$params);
-        }else{
+        $user = User::findIdentity($uid);//var_dump($username);
+        if (!$user) {
             FuncHelper::ajaxReturn(-1, '参数错误');
         }
+        if (!$user->validatePassword((string)$old_password)) {
+            FuncHelper::ajaxReturn(-1, '密码错误');
+        }
+
+        $new_password = Yii::$app->security->generatePasswordHash($new_password);
+        $user = new User();
+        $attributes = array(
+            'password'=>$new_password,
+        );
+        $condition = 'uid=:uid';
+        $params = array(
+            ':uid'=>$_SESSION['__id'],
+        );
+        User::updateAll($attributes,$condition,$params);
         FuncHelper::ajaxReturn(0, 'success');
     }
 
