@@ -110,7 +110,7 @@ if(Yii::$app->request->get('type') != 1){
                         <!--<a href=""><img src="/bootstrap/images/jiaru.png"></a>-->
                         <?php endif; ?>
                     </div>
-                    <div class="w_215"><?=$v['description']?></div>
+                    <div class="w_215" style="font-size: 14px;"><?=$v['description']?></div>
                     <div class="w_295">
                         <div class="store_shop_text05">
                             <div class="w_295_bott">

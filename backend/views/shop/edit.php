@@ -176,11 +176,11 @@ $(function() {
     
     /* ======================图集js========================= */
     $('.fileupload-item').live('mouseover mouseout',function(e){
-        if (event.type == 'mouseover') {
-            $(this).find('span').css('display','block');
-        } else {
-            $(this).find('span').css('display','none');
-        }
+        //if (event.type == 'mouseover') {
+        //   $(this).find('span').css('display','block');
+        //} else {
+        //    $(this).find('span').css('display','none');
+        //}
     });
     $('.fileupload-del').live('click',function(e){
         $(this).parent().remove();
@@ -205,7 +205,7 @@ $(function() {
                             var html  = '';
                                 html += '<div class="fileupload-item thumbnail">';
                                 html += '    <img src="'+ json.data +'" />';
-                                html += '    <span class="fileupload-del">删除</span>';
+                                html += '    <p style="display: block;" class="fileupload-del">删除</p>';
                                 html += '    <input type="hidden" name="Shop[images][]" value="'+json.data+'" />';
                                 html += '</div>';
                             $('.fileupload-list').append(html);

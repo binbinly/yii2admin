@@ -25,6 +25,11 @@
 #carousel-example-generic01  .pre_next a:hover{
     color: #ccc;
 }
+#carousel-example-generic01 .price{
+    position: absolute;
+    right: 7px;
+    top: 14px;
+}
 
 .carousel-inner {
     position: relative;
@@ -411,7 +416,11 @@
             }else{
                 var url = "/shop/detail?id="+item_data[i]['id'];
             }
-            html += '<div class="w_385"><a href="'+url+'"><img src="'+item_data[i]['cover']+'" data-holder-rendered="true"><div class="carousel-caption"><h3>'+item_data[i]['title']+'</h3><p>'+item_data[i]['description']+'</p></div></a></div>';
+            var price_html='';
+            if(item_data[i]['price']){
+                price_html = '<span class="price">￥'+item_data[i]['price']+'</span>';
+            }
+            html += '<div class="w_385"><a href="'+url+'"><img src="'+item_data[i]['cover']+'" data-holder-rendered="true"><div class="carousel-caption"><h3>'+item_data[i]['title']+price_html+'</h3><p>'+item_data[i]['description']+'</p></div></a></div>';
             if((i+1)%6==0 && i<item_data.length-1){
                 html += '</item>';
                 html += '<item class="item">';

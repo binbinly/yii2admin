@@ -8,7 +8,7 @@ if (!empty($data)) {
 ?>
 <style>
 .fileupload-item {width: 100px; height: 100px;position: relative;margin-right:5px;}
-.fileupload-del {position: absolute;bottom:5px;left:40%;display:none;}
+.fileupload-del {position: absolute;bottom:5px;left:40%;cursor: pointer;}
 .fileupload-text {color: #f00;}
 </style>
 <div class="control-group">

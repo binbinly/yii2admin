@@ -23,6 +23,6 @@ class Shop extends \common\models\Shop
      * ---------------------------------------
      */
     public static function lists($type){
-        return static::find()->where(['type'=>$type])->orderBy('id ASC')->asArray()->all();
+        return static::find()->where(['type'=>$type])->orderBy('sort ASC')->asArray()->all();
     }
 }
