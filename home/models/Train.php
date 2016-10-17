@@ -53,7 +53,7 @@ class Train extends \common\models\Train
         {
             $date = $year."-".$month."-".$j;
             $datetime = '';
-            if(strtotime($date.' +1 days') > time()) {
+            if(strtotime($date.' -1 days') > time()) {
                 $datetime = $date;
             }
             if($tuan_list) {
@@ -62,9 +62,10 @@ class Train extends \common\models\Train
                     if ($val['s'] == $date) {
                         $is_yes = 1;
                         if($val['c']>=$train_max){
-                            $datetime = 'ok';
+                            $html .= "<td data-time='ok'><span class='day on'>$j</span><span class='booking notfull'>" . $val['c'] . '/' . $train_max . "</span></td>";
+                        }else {
+                            $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span><span class='booking full'>" . $val['c'] . '/' . $train_max . "</span></td>";
                         }
-                        $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span><span class='booking notfull'>".$val['c'].'/'.$train_max."</span></td>";
                         break;
                     }
                 }

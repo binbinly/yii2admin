@@ -249,6 +249,8 @@ class OrderController extends \yii\web\Controller
                 //var_dump($model->getErrors());
                 FuncHelper::ajaxReturn(1, '下单失败');
             }
+            //清空购物车
+            Yii::$app->session->get('cart',[]);
             FuncHelper::ajaxReturn(0, '下单成功', $model->order_sn);
         } else {
             FuncHelper::ajaxReturn(1, '订单数据为空');

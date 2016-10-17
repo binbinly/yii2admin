@@ -48,8 +48,15 @@ return [
     /* 订单类型 */
     'order_type' => [
         'shop' => '产品',
-        'train' => '培训',
-        'train_tuan' => '培训团购'
+        'train' => '培训一对一',
+        'train_free' => '自主团',
+        'train_tuan' => '培训团购',
+    ],
+
+    //广告位置
+    'ad_position' => [
+        1 => 'banner广告',
+        2 => '团购广告'
     ]
     
 ];

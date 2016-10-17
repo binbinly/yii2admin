@@ -30,7 +30,7 @@ use yii\helpers\Url;
             ]
         ]); ?>
         <?=$form->field($model, 'type')->selectList(
-            ['1'=>'广告1','2'=>'广告2','3'=>'广告3'],
+            Yii::$app->params['ad_position'],
             ['class'=>'span3 chosen'])->label('类型') ?>
         
         <?=$form->field($model, 'title')->textInput(['class'=>'span6 m-wrap'])->label('文章标题')->hint(' ')?>

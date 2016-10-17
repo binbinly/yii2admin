@@ -50667,3 +50667,1603 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1476327526.61
     'REQUEST_TIME' => 1476327526
 ]
+2016-10-17 08:54:07 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:07 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '4e9d9a5f67cb738e37c0bb2bbdb7b3cdb29cb2953fe5e98c36962ea63549783ca:2:{i:0;s:11:\"__forward__\";i:1;s:29:\"/admin.php/order/index?page=2\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=4e9d9a5f67cb738e37c0bb2bbdb7b3cdb29cb2953fe5e98c36962ea63549783ca%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A29%3A%22%2Fadmin.php%2Forder%2Findex%3Fpage%3D2%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51983'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665647.532
+    'REQUEST_TIME' => 1476665647
+]
+2016-10-17 08:54:13 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:13 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => 'f0119ef93ac05439e0e15735378b6a7aa636bd7f6e5a643eaf3d3966712168a3a:2:{i:0;s:11:\"__forward__\";i:1;s:23:\"/admin.php/config/group\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=f0119ef93ac05439e0e15735378b6a7aa636bd7f6e5a643eaf3d3966712168a3a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A23%3A%22%2Fadmin.php%2Fconfig%2Fgroup%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51981'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665653.306
+    'REQUEST_TIME' => 1476665653
+]
+2016-10-17 08:54:22 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '92bafd7bbc6b145be74400c25e2c4950e3c850f51775f80ded04bd248c217a39a:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/admin/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=92bafd7bbc6b145be74400c25e2c4950e3c850f51775f80ded04bd248c217a39a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Fadmin%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51991'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665661.94
+    'REQUEST_TIME' => 1476665661
+]
+2016-10-17 08:54:25 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:25 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '70f7ecc27be6c96c29338fd867d53a7ae2daf2b6612d48cdc89929ca615cbf41a:2:{i:0;s:11:\"__forward__\";i:1;s:24:\"/admin.php/article/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=70f7ecc27be6c96c29338fd867d53a7ae2daf2b6612d48cdc89929ca615cbf41a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A24%3A%22%2Fadmin.php%2Farticle%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51991'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665665.114
+    'REQUEST_TIME' => 1476665665
+]
+2016-10-17 08:54:31 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:31 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51991'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665671.839
+    'REQUEST_TIME' => 1476665671
+]
+2016-10-17 08:54:45 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:54:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '51997'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665684.983
+    'REQUEST_TIME' => 1476665684
+]
+2016-10-17 08:57:53 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:57:53 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52017'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665873.523
+    'REQUEST_TIME' => 1476665873
+]
+2016-10-17 08:58:08 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:58:08 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52024'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665888.05
+    'REQUEST_TIME' => 1476665888
+]
+2016-10-17 08:58:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:58:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52028'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665904.355
+    'REQUEST_TIME' => 1476665904
+]
+2016-10-17 08:58:34 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:58:34 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52035'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665914.112
+    'REQUEST_TIME' => 1476665914
+]
+2016-10-17 08:58:38 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:58:38 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52035'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665918.486
+    'REQUEST_TIME' => 1476665918
+]
+2016-10-17 08:59:02 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 08:59:02 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba:2:{i:0;s:11:\"__forward__\";i:1;s:19:\"/admin.php/ad/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=3d54bca39a59e41a16e511d83a69f12ea3f45f700780ad1aa733ae2777633b1ba%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A19%3A%22%2Fadmin.php%2Fad%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52043'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476665942.31
+    'REQUEST_TIME' => 1476665942
+]
+2016-10-17 09:03:48 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:03:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52068'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476666228.11
+    'REQUEST_TIME' => 1476666228
+]
+2016-10-17 09:07:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:07:15 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52085'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476666435.476
+    'REQUEST_TIME' => 1476666435
+]
+2016-10-17 09:07:27 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:07:27 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52088'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476666447.228
+    'REQUEST_TIME' => 1476666447
+]
+2016-10-17 09:07:33 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:07:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kdioov7a61pnc6vbomk8vuqj45'
+    '_csrf' => '5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=kdioov7a61pnc6vbomk8vuqj45; _csrf=5d2aeb72488c8671e603eaeb524c79cc5a3a9a8b0dc2f16427cc97095746ae79a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iroNsXshLIUVaXyhr7K5fSHl_QSpQQA4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52088'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476666453.074
+    'REQUEST_TIME' => 1476666453
+]
+2016-10-17 09:46:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:46:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => '1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52454'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668777.018
+    'REQUEST_TIME' => 1476668777
+]
+2016-10-17 09:47:09 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:47:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => '1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4\";}'
+    '__forward__' => 'f6447a1ccc42cc2e17c364548ac2b35bd92d10206a2c0c6ca44ed22798796e33a:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/order/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4%22%3B%7D; __forward__=f6447a1ccc42cc2e17c364548ac2b35bd92d10206a2c0c6ca44ed22798796e33a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Forder%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52470'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668829.316
+    'REQUEST_TIME' => 1476668829
+]
+2016-10-17 09:48:09 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:48:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => '1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4\";}'
+    '__forward__' => '70f7ecc27be6c96c29338fd867d53a7ae2daf2b6612d48cdc89929ca615cbf41a:2:{i:0;s:11:\"__forward__\";i:1;s:24:\"/admin.php/article/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4%22%3B%7D; __forward__=70f7ecc27be6c96c29338fd867d53a7ae2daf2b6612d48cdc89929ca615cbf41a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A24%3A%22%2Fadmin.php%2Farticle%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52474'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668889.566
+    'REQUEST_TIME' => 1476668889
+]
+2016-10-17 09:48:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:48:14 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => '1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=1a7f04975caef6d4a7f4c79803f549686cc8641a16f9ef1fdcc4645cd0d14cb0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rSjWg8j9f2fPFlQH8u7aqD5zkk1IplL4%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52474'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668894.966
+    'REQUEST_TIME' => 1476668894
+]
+2016-10-17 09:48:20 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:48:20 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => 'f0d9b7428920efcaefb78a6838dbbc8d7c74779cc8e549d9d9390cace68cb0d3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3il83uxVp2wClzyRe9NFd3uFHF57N52L\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=f0d9b7428920efcaefb78a6838dbbc8d7c74779cc8e549d9d9390cace68cb0d3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223il83uxVp2wClzyRe9NFd3uFHF57N52L%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52474'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668900.792
+    'REQUEST_TIME' => 1476668900
+]
+2016-10-17 09:48:40 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:48:40 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ojps80a6m4idfnl3cdpdl8cs74'
+    '_csrf' => 'f0d9b7428920efcaefb78a6838dbbc8d7c74779cc8e549d9d9390cace68cb0d3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3il83uxVp2wClzyRe9NFd3uFHF57N52L\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ojps80a6m4idfnl3cdpdl8cs74; _csrf=f0d9b7428920efcaefb78a6838dbbc8d7c74779cc8e549d9d9390cace68cb0d3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223il83uxVp2wClzyRe9NFd3uFHF57N52L%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52486'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476668920.497
+    'REQUEST_TIME' => 1476668920
+]
+2016-10-17 09:53:10 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:53:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'm23d3026isuni5pn32sk0bhnf1'
+    '_csrf' => '18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh\";}'
+    '__forward__' => '57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/train/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=m23d3026isuni5pn32sk0bhnf1; _csrf=18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh%22%3B%7D; __forward__=57cbe1b407a751d29484732e6d57659625959a280b045313b45b7231f18c746fa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Ftrain%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52533'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476669190.364
+    'REQUEST_TIME' => 1476669190
+]
+2016-10-17 09:53:16 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:53:16 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'm23d3026isuni5pn32sk0bhnf1'
+    '_csrf' => '18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh\";}'
+    '__forward__' => 'f6447a1ccc42cc2e17c364548ac2b35bd92d10206a2c0c6ca44ed22798796e33a:2:{i:0;s:11:\"__forward__\";i:1;s:22:\"/admin.php/order/index\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=m23d3026isuni5pn32sk0bhnf1; _csrf=18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh%22%3B%7D; __forward__=f6447a1ccc42cc2e17c364548ac2b35bd92d10206a2c0c6ca44ed22798796e33a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A22%3A%22%2Fadmin.php%2Forder%2Findex%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52533'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476669196.495
+    'REQUEST_TIME' => 1476669196
+]
+2016-10-17 09:53:22 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "static/common/js/jquery-1.10.1.min.map".' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('static/common/j...', Array)
+#1 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 E:\phpStudy\WWW\yii2admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\phpStudy\WWW\yii2admin\web\index.php(19): yii\base\Application->run()
+#2 {main}
+2016-10-17 09:53:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'static/common/js/jquery-1.10.1.min.map'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'm23d3026isuni5pn32sk0bhnf1'
+    '_csrf' => '18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh\";}'
+    '__forward__' => '60694b13efde9632354e33d0a8bf4f27ce98d5117a34cc1119c3876478914ea1a:2:{i:0;s:11:\"__forward__\";i:1;s:267:\"/admin.php/order/index?OrderSearch%5Buid%5D=&OrderSearch%5Btitle%5D=&OrderSearch%5Bstart_date%5D=&OrderSearch%5Bend_date%5D=&OrderSearch%5Bpay_status%5D=&OrderSearch%5Bfrom_date%5D=&OrderSearch%5Bto_date%5D=&OrderSearch%5Bpay_type%5D=&OrderSearch%5Btype%5D=train_free\";}'
+    '_identity' => '88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a:2:{i:0;s:9:\"_identity\";i:1;s:48:\"[\"2\",\"tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.test.lo'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=m23d3026isuni5pn32sk0bhnf1; _csrf=18c8b2c6b3dbfc3be91dd08f141dd5f28505f9b19973a769815ab49e1eb5b149a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WxbSF_EDVwW6HCjtv_BN4n0wy--Pclzh%22%3B%7D; __forward__=60694b13efde9632354e33d0a8bf4f27ce98d5117a34cc1119c3876478914ea1a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22__forward__%22%3Bi%3A1%3Bs%3A267%3A%22%2Fadmin.php%2Forder%2Findex%3FOrderSearch%255Buid%255D%3D%26OrderSearch%255Btitle%255D%3D%26OrderSearch%255Bstart_date%255D%3D%26OrderSearch%255Bend_date%255D%3D%26OrderSearch%255Bpay_status%255D%3D%26OrderSearch%255Bfrom_date%255D%3D%26OrderSearch%255Bto_date%255D%3D%26OrderSearch%255Bpay_type%255D%3D%26OrderSearch%255Btype%255D%3Dtrain_free%22%3B%7D; _identity=88d49d65f5109d4c1a76e39eaab08722ae2e33659eaae533f4c933230e991913a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A48%3A%22%5B%222%22%2C%22tzDsmCSLbtktnvbgn1YeEqslYOBo1Cn9%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;F:\\wamp\\bin\\ImageMagick-6.9.2-Q16-HDRI;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;E:\\phpStudy\\php55;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell;C:\\Users\\tanbin2\\AppData\\Roaming\\Composer\\vendor\\bin;E:\\java\\jdk1.8.0_101\\bin;E:\\java\\jdk1.8.0_101\\jre\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.test.lo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/yii2admin/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/yii2admin/web/index.php'
+    'REMOTE_PORT' => '52533'
+    'REDIRECT_URL' => '/static/common/js/jquery-1.10.1.min.map'
+    'REDIRECT_QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=static/common/js/jquery-1.10.1.min.map'
+    'REQUEST_URI' => '/static/common/js/jquery-1.10.1.min.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1476669202.1
+    'REQUEST_TIME' => 1476669202
+]

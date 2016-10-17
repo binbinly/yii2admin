@@ -27,8 +27,7 @@ class TrainController extends \yii\web\Controller
         return $this->render('index',$param);
     }
     
-    public function actionShow()
-    {
+    public function actionShow(){
         $id = Yii::$app->request->get('id', 1);
         $cid = Yii::$app->request->get('cid', 1);
         $data = Train::info($id);
@@ -77,7 +76,7 @@ class TrainController extends \yii\web\Controller
             $this->redirect(Url::to(['/train/show', 'id'=>$train_id,'cid'=>$cid]));
             Yii::$app->end();
         }
-        $stime = Yii::$app->request->post('stime', date('Y-m-d'));
+        $stime = Yii::$app->request->post('stime', date('Y-m-d', strtotime('+2 days')));
         $train_info = Train::info($train_id);
         $certif_info = TrainCertificate::getInfo($cid);
         $train_info['price'] = TrainPrice::getNickPrice($train_id, $cid);
@@ -88,7 +87,12 @@ class TrainController extends \yii\web\Controller
         $data['title'] = $certif_info['title'].$train_info['title'];
         $data['start_time'] = strtotime($stime);
         $data['num'] = $n;
-        $data['type'] = $train_info['is_tuan'] == 1 ? 'train_tuan' : 'train';
+        $data['type'] = 'train';
+        if($train_info['is_tuan'] == 1){
+            $data['type'] = 'train_tuan';
+        }else if ($train_info['is_tuan'] == 2) {
+            $data['type'] = 'train_free';
+        }
         $data['total'] = $n * $train_info['price'];
         $data['pay_status'] = 0;
         $data['create_time'] = time();

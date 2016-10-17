@@ -220,15 +220,9 @@ float: left;
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     </ol>
     <div role="listbox" class="carousel-inner">
-        <div class="item active">
-            <img src="/bootstrap/images/banner.jpg" alt="First slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="/bootstrap/images/banner.jpg" alt="Third slide">
-        </div>
+
+
+
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -271,18 +265,16 @@ float: left;
                                             <div class="next"></div>
                                             <a class="mark_left" href="javascript:;"></a>
                                             <a class="mark_right" href="javascript:;"></a>
-                                            
-                                            <li style="z-index:1;"><img src="/bootstrap/images/1.jpg" /></li>
-                                            <li><img src="/bootstrap/images/2.jpg" /></li>
-                                            <li><img src="/bootstrap/images/3.jpg" /></li>
-                                            <li><img src="/bootstrap/images/4.jpg" /></li>
+
+                                            <? foreach(\home\models\Ad::getAdList(2) as $key=>$ad): ?>
+                                            <li style="<?if($key == 0):?>z-index:1;<?endif;?>"><img src="<?= $ad->image?>" alt="<?= $ad->title?>"></li>
+                                            <? endforeach; ?>
                                         </ul>
                                         <div id="small_pic" class="small_pic">
                                             <ul style="width:400px;">
-                                                <li style=" filter: alpha(opacity:100); opacity:1;"><img src="/bootstrap/images/1.jpg" /></li>
-                                                <li><img src="/bootstrap/images/2.jpg" /></li>
-                                                <li><img src="/bootstrap/images/3.jpg" /></li>
-                                                <li><img src="/bootstrap/images/4.jpg" /></li>
+                                                <? foreach(\home\models\Ad::getAdList(2) as $key=>$ad): ?>
+                                                <li style=" <?if($key == 0):?>filter: alpha(opacity:100); opacity:1;<?endif;?>"><img src="<?= $ad->image?>" /></li>
+                                                <? endforeach; ?>
                                             </ul>       
                                         </div>
                                     </div>
@@ -380,14 +372,14 @@ float: left;
     </div>
 </div>
 <div class="member_cen">
-    <input type="hidden" name="stime" class="start-time" value="<?=date('Y-m-d', strtotime("+1 days"))?>">
+    <input type="hidden" name="stime" class="start-time" value="<?=date('Y-m-d', strtotime("+2 days"))?>">
     <input type="hidden" name="cid" value="<?= $cid ?>">
     <input type="hidden" name="id" value="<?= $data['id'] ?>">
     <input type="hidden" value="<?php echo Yii::$app->getRequest()->getCsrfToken(); ?>" name="_csrf" />
     <p class="train_title">培训详情 <button class="enter_btn btn btn-info submit">立即报名</button></p>
     <div class="member_cen_r">
         <div class="tab-content">
-           
+           <?= $data['remark']?>
         </div><!-- tab-content -->
     </div>
 </div>

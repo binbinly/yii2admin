@@ -76,6 +76,8 @@ use backend\models\Category;
                     'content' => function($model){
                         if ($model['taocan'] > 0) {
                             return '<span style="color:#f00;">'.$model['title'].'</span>';
+                        }else if (substr($model['order_sn'], 0, 1) == 'T') {
+                            return '<span style="color:green;">'.$model['title'].'</span>';
                         }
                         return $model['title'];
                     },
