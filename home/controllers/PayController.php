@@ -37,7 +37,7 @@ class PayController extends Controller{
         $order_info = $this->checkOrder($order_sn);
         $show_url = 'http://ddd.huanglongfei.cn';
         $alipay = new \AlipayPay();
-        $html = $alipay->requestPay($order_sn, $order_info->title, 0.01, $order_sn, $show_url);
+        $html = $alipay->requestPay($order_sn, $order_info->title, $order_sn->total, $order_sn, $show_url);
         echo $html;
     }
 
@@ -52,12 +52,13 @@ class PayController extends Controller{
          * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
          */
         $order_info = $this->checkOrder($order_sn);
+        $total = $order_info->total * 100;
         $notify = new \NativePay();
         $input = new \WxPayUnifiedOrder();
         $input->SetBody($order_info->title);
         $input->SetAttach($order_sn);
         $input->SetOut_trade_no($order_sn);
-        $input->SetTotal_fee("1");
+        $input->SetTotal_fee($total);
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 600));
         $input->SetGoods_tag($order_info->title);
