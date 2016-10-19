@@ -48,6 +48,11 @@ class TrainController extends BaseController
             
             $data = Yii::$app->request->post('Train');
             $data['create_time'] = time();
+
+            /* 将图组转化为字符串 */
+            if ($data['images'] && is_array($data['images'])) {
+                $data['images'] = trim(implode ( ",", $data['images']),',');
+            }
             /* 表单数据加载、验证、数据库操作 */
             if ($id = $this->addRow('\backend\models\Train', $data)) {
                 $train_price = Yii::$app->request->post('TrainPrice');
@@ -83,6 +88,11 @@ class TrainController extends BaseController
             $data = Yii::$app->request->post('Train');
             $data['update_time'] = time();
             $data['id'] = $id;
+
+            /* 将图组转化为字符串 */
+            if ($data['images'] && is_array($data['images'])) {
+                $data['images'] = trim(implode ( ",", $data['images']),',');
+            }
             /* 表单数据加载、验证、数据库操作 */
             if ($this->editRow('\backend\models\Train', 'id', $data)) {
                 $train_price = Yii::$app->request->post('TrainPrice');
@@ -97,7 +107,7 @@ class TrainController extends BaseController
 
         //当前类型下的证书列表
         $certif_ids = TrainType::getCertifIdsById($model->type);
-        $certif_list = TrainCertificate::getAllPriceByIds($certif_ids);
+        $certif_list = TrainCertificate::getAllPriceByIds($certif_ids, $id);
         
         /* 渲染模板 */
         return $this->render('edit', [

@@ -95,8 +95,8 @@ class NoticeController extends Controller{
     public function actionAliReturn(){
         $alipay = new \AlipayPay();
         $verify_result = $alipay->verifyReturn();
-        var_dump($verify_result);
-        file_put_contents('./log.txt', 'start->>'.json_encode($_POST), FILE_APPEND);
+        //var_dump($verify_result);
+        //file_put_contents('./log.txt', 'start->>'.json_encode($_POST), FILE_APPEND);
 
         if($verify_result) {//验证成功
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

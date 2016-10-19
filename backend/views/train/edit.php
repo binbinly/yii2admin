@@ -62,7 +62,12 @@ use yii\helpers\Url;
 
         <?=$form->field($model, 'is_tuan')->radioList(['2'=>'自组团', '1'=>'团购','0'=>'一对一'])->label('课程类型') ?>
 
-        <?=$form->field($model, 'remark')->textarea(['class'=>'span4', 'rows'=>3])->label('团购介绍') ?>
+        <?=$form->field($model, 'remark')->widget(\crazydb\ueditor\UEditor::className(),[
+            'config' => [
+                'serverUrl' => ['/ueditor/index'],//确保serverUrl正确指向后端地址
+                'lang' => 'zh-cn',
+            ]
+        ])->label('团购介绍')?>
 
         <div class="control-group">
             <label class="control-label">类型封面</label>
@@ -87,6 +92,11 @@ use yii\helpers\Url;
                 </div>
             </div>
         </div>
+
+        <?=$this->renderFile('@app/views/public/_image.php',[
+            'data'=>$model->images,
+            'field'=>'Train[images]'
+        ])?>
         
         <div class="form-actions">
             <?= Html::submitButton('<i class="icon-ok"></i> 确定', ['class' => 'btn blue ajax-post','target-form'=>'form-aaa']) ?>
@@ -183,6 +193,54 @@ App.init();
 FormComponents.init();
 /* 子导航高亮 */
 highlight_subnav('train/index');
+
+    /* ======================图集js========================= */
+    $('.fileupload-item').live('mouseover mouseout',function(e){
+    //if (event.type == 'mouseover') {
+    //   $(this).find('span').css('display','block');
+    //} else {
+    //    $(this).find('span').css('display','none');
+    //}
+    });
+    $('.fileupload-del').live('click',function(e){
+    $(this).parent().remove();
+    });
+    $("#uploadImages").on("change", function(){
+    var files = !!this.files ? this.files : [];
+    if (!files.length || !window.FileReader) return;
+    if (/^image/.test( files[0].type)){
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onloadend = function(){
+    $.ajax({
+    type: 'post',
+    url: '<?=Url::to(["upload/image"])?>',
+    data: {imgbase64:this.result},
+    dataType: 'json',
+    beforeSend: function(){
+    $('.fileupload-text').html('上传中...');
+    },
+    success: function(json){
+    if(json.boo){
+    var html  = '';
+    html += '<div class="fileupload-item thumbnail">';
+    html += '    <img src="'+ json.data +'" />';
+    html += '    <p style="display: block;" class="fileupload-del">删除</p>';
+    html += '    <input type="hidden" name="Train[images][]" value="'+json.data+'" />';
+    html += '</div>';
+    $('.fileupload-list').append(html);
+    $('.fileupload-text').html('上传成功');
+    } else {
+    alert(json.msg);
+    }
+    },
+    error: function(xhr, type){
+    alert('服务器错误')
+    }
+    });
+    }
+    }
+    });
 
 /* 上传单图 */
 $("#file_but").on("change", function(){

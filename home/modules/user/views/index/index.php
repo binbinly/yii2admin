@@ -174,15 +174,7 @@ use yii\widgets\LinkPager;
                                         <div class="col-md-2"><?= $order->name?></div>
                                         <div class="col-md-2"><?= date("Y-m-d", $order->create_time)?></div>
                                         <div class="col-md-2">￥<?= $order->total?></div>
-                                        <div class="col-md-3" pay_status="<?= $order->pay_status?>">
-                                            <p>
-                                            <?php if($order->pay_status==1): ?>
-                                                已付款
-                                            <?php else: ?>
-                                                未付款
-                                            <?php endif; ?>
-                                            </p>
-                                        <span></span></div>
+                                        <div class="col-md-3"><p><?= Yii::$app->params['pay_status'][$order->pay_status]?></p></div>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>

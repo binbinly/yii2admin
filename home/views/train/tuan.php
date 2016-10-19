@@ -265,16 +265,19 @@ float: left;
                                             <div class="next"></div>
                                             <a class="mark_left" href="javascript:;"></a>
                                             <a class="mark_right" href="javascript:;"></a>
-
-                                            <? foreach(\home\models\Ad::getAdList(2) as $key=>$ad): ?>
-                                            <li style="<?if($key == 0):?>z-index:1;<?endif;?>"><img src="<?= $ad->image?>" alt="<?= $ad->title?>"></li>
+                                            <? if(isset($data['images']) && $data['images']):?>
+                                            <? foreach(explode(',', $data['images']) as $key=>$val): ?>
+                                            <li style="<?if($key == 0):?>z-index:1;<?endif;?>"><img src="<?= $val?>" width="100%"></li>
                                             <? endforeach; ?>
+                                            <? endif; ?>
                                         </ul>
                                         <div id="small_pic" class="small_pic">
                                             <ul style="width:400px;">
-                                                <? foreach(\home\models\Ad::getAdList(2) as $key=>$ad): ?>
-                                                <li style=" <?if($key == 0):?>filter: alpha(opacity:100); opacity:1;<?endif;?>"><img src="<?= $ad->image?>" /></li>
-                                                <? endforeach; ?>
+                                                <? if(isset($data['images']) && $data['images']):?>
+                                                <? foreach(explode(',', $data['images']) as $key=>$val): ?>
+                                                <li style=" <?if($key == 0):?>filter: alpha(opacity:100); opacity:1;<?endif;?>"><img src="<?= $val?>" /></li>
+                                                    <? endforeach; ?>
+                                                <? endif; ?>
                                             </ul>       
                                         </div>
                                     </div>
@@ -311,7 +314,7 @@ float: left;
                                             <tbody>
                                                 <tr>
                                                     <?
-                                                    echo \home\models\Train::calendar($data['id'], $p);
+                                                    echo \home\models\Train::calendar($data['id'], $cid, $p);
                                                     ?>
                                                 </tr>
                                             </tbody>
@@ -337,7 +340,7 @@ float: left;
                                             <tbody>
                                                 <tr>
                                                     <?
-                                                    echo \home\models\Train::calendar($data['id'], $p+1);
+                                                    echo \home\models\Train::calendar($data['id'], $cid, $p+1);
                                                     ?>
                                                 </tr>
                                             </tbody>
@@ -365,7 +368,7 @@ float: left;
     <div class="w_240">
         <div class="amount">
             <span>人数</span>
-            <input name="num" value="<?= $data['num']?>">
+            <input name="num" value="1">
             <img class="jian" src="/bootstrap/images/jian.png">
             <img class="jia" src="/bootstrap/images/jia.png">
         </div>
@@ -395,7 +398,7 @@ float: left;
             var ipt = $(this).siblings('input');
             var num = parseInt(ipt.val());
             if(num+1 > max) {
-                layer.msg('人数已满');return ;
+                //layer.msg('人数已满');return ;
             }
             ipt.val(num+1);
             total();//更新总价格
@@ -403,7 +406,7 @@ float: left;
         $('.amount').on('click','.jian',function(){
             var ipt = $(this).siblings('input');
             var num = parseInt(ipt.val());
-            if(num-1 < min) {
+            if(num-1 < 1) {
                 layer.msg('人数不得小于最小值');return ;
             }
             if(num<1){

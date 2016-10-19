@@ -38,7 +38,7 @@ class Train extends \common\core\BaseActiveRecord
             [['type', 'num', 'max', 'days', 'sort', 'is_tuan', 'create_time', 'update_time', 'status'], 'integer'],
             [['price'], 'number'],
             [['title','cover'], 'string', 'max' => 100],
-            [['description','remark'], 'string', 'max' => 2000]
+            [['description','remark','images'], 'string', 'max' => 2000]
         ];
     }
 

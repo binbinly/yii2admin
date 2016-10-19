@@ -21,6 +21,8 @@ class IndexController extends BaseController
     {
         $order_sn = Yii::$app->request->get('order_sn');
         $name = Yii::$app->request->get('name');
+        $start_time = Yii::$app->request->get('start_time');
+        $end_time = Yii::$app->request->get('end_time');
         $condition = ['uid'=>$this->uid, 'status'=>1];
         if($order_sn){
             $condition['order_sn'] = $order_sn;
@@ -30,6 +32,12 @@ class IndexController extends BaseController
         }
 
         $query = Order::find()->where($condition);
+        if($start_time) {
+            $query->andWhere(['>', 'create_time', strtotime($start_time)]);
+        }
+        if($end_time) {
+            $query->andWhere(['<', 'create_time', strtotime($end_time)]);
+        }
 
         $count = $query->count();
 

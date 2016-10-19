@@ -88,6 +88,7 @@ class TrainController extends \yii\web\Controller
         $data['start_time'] = strtotime($stime);
         $data['num'] = $n;
         $data['type'] = 'train';
+        $data['cid'] = $cid;
         if($train_info['is_tuan'] == 1){
             $data['type'] = 'train_tuan';
         }else if ($train_info['is_tuan'] == 2) {

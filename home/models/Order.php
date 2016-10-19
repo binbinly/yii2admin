@@ -141,11 +141,11 @@ class Order extends \common\models\Order
         return ['code'=>0, 'msg'=>'支付失败'];
     }
 
-    public static function getTrainTuanList($date){
+    public static function getTrainTuanList($date, $id, $cid){
         $stime = strtotime($date.'-01');
         $etime = strtotime($date.'-01 +1 month');
         $list = static::find()->select(['FROM_UNIXTIME(start_time,"%Y-%m-%d") AS s', 'sum(num) AS c'])
-            ->where(['type'=>'train_tuan', 'pay_status'=>1])
+            ->where(['type'=>'train_tuan', 'pay_status'=>1, 'cid'=>$cid, 'aid'=>$id])
             ->andWhere(['between', 'start_time', $stime, $etime])->groupBy('s')->asArray()->all();
         return $list;
     }

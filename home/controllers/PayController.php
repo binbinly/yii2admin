@@ -37,7 +37,7 @@ class PayController extends Controller{
         $order_info = $this->checkOrder($order_sn);
         $show_url = 'http://ddd.huanglongfei.cn';
         $alipay = new \AlipayPay();
-        $html = $alipay->requestPay($order_sn, $order_info->title, $order_sn->total, $order_sn, $show_url);
+        $html = $alipay->requestPay($order_sn, $order_info->title, $order_info->total, $order_sn, $show_url);
         echo $html;
     }
 
@@ -69,7 +69,15 @@ class PayController extends Controller{
         $result = $notify->GetPayUrl($input);
 
         $pay_code_url = $result["code_url"];
-        return $this->render('wx-pay', ['pay_code_url'=>$pay_code_url]);
+        return $this->render('wx-pay', ['pay_code_url'=>$pay_code_url, 'order_sn'=>$order_sn]);
+    }
+
+    public function actionAjaxPayStatus($order_sn){
+        $info = Order::findOne(['order_sn' => $order_sn, 'pay_status'=>1]);
+        if($info) {
+            echo json_encode(['stat'=>1]);exit;
+        }
+        echo json_encode(['stat'=>0]);
     }
 
     /**

@@ -20,7 +20,7 @@ class Train extends \common\models\Train
     public static function getMax($id)
     {
         $info = static::findOne($id);
-        return $info->max;
+        return $info->num;
     }
 
     /*
@@ -32,13 +32,13 @@ class Train extends \common\models\Train
         return static::find()->where(['type'=>$type])->orderBy('id ASC')->asArray()->all();
     }
 
-    public static function calendar($id, $p=0){
+    public static function calendar($id, $cid, $p=0){
         $train_max = static::getMax($id);
         $html = '';
         $month = $p ? date('m', strtotime('+'.$p.' month')) : date('m');
         $year = $p ? date('Y', strtotime('Y'.$p.' month')) : date('Y');
 
-        $tuan_list = Order::getTrainTuanList($year.'-'.$month);
+        $tuan_list = Order::getTrainTuanList($year.'-'.$month, $id, $cid);
 
         $start_week = date('w',mktime(0,0,0,$month,1,$year));
         $day_num = date('t',mktime(0,0,0,$month,1,$year));
@@ -59,10 +59,10 @@ class Train extends \common\models\Train
             if($tuan_list) {
                 $is_yes = 0;
                 foreach ($tuan_list as $val) {
-                    if ($val['s'] == $date) {
+                    if ($val['s'] == $date || $val['s'] == $year."-".$month."-0".$j) {
                         $is_yes = 1;
                         if($val['c']>=$train_max){
-                            $html .= "<td data-time='ok'><span class='day on'>$j</span><span class='booking notfull'>" . $val['c'] . '/' . $train_max . "</span></td>";
+                            $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span><span class='booking notfull'>" . $val['c'] . '/' . $train_max . "</span></td>";
                         }else {
                             $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span><span class='booking full'>" . $val['c'] . '/' . $train_max . "</span></td>";
                         }

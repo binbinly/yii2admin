@@ -86,10 +86,10 @@ class TrainCertificate extends \common\core\BaseActiveRecord
         return null;
     }
 
-    public static function getAllPriceByIds($ids) {
+    public static function getAllPriceByIds($ids, $tid) {
         if(!$ids) return '';
         $list = static::find()->from('yii2_train_certificate as c')->leftJoin('yii2_train_price as p', 'c.id=p.certif_id')
-            ->select(['c.*', 'p.price'])->where(['c.id' => explode(',', $ids)])->asArray()->all();
+            ->select(['c.*', 'p.price'])->where(['c.id' => explode(',', $ids), 'p.train_id'=>$tid])->asArray()->all();
         return $list;
     }
 
