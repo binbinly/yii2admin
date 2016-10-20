@@ -56,6 +56,8 @@ class Train extends \common\models\Train
             if(strtotime($date.' -1 days') > time()) {
                 $datetime = $date;
             }
+            $class = 'day on';
+            if(!$datetime) $class = 'day';
             if($tuan_list) {
                 $is_yes = 0;
                 foreach ($tuan_list as $val) {
@@ -71,7 +73,7 @@ class Train extends \common\models\Train
                 }
                 !$is_yes && $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span></td>";
             } else {
-                $html .= "<td data-time='" . $datetime . "'><span class='day on'>$j</span></td>";
+                $html .= "<td data-time='" . $datetime . "'><span class='". $class ."'>$j</span></td>";
             }
             $week = ($start_week+$j-1)%7;
 

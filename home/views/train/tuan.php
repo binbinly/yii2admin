@@ -169,7 +169,7 @@ float: left;
 .date_price_content tbody tr{
     height: 60px;
     border-top:  1px solid #eaeaea;
-    color: #ccc;
+    color: #aaa;
 }
 .date_price_content tbody td{
     position: relative;
@@ -181,7 +181,7 @@ float: left;
     font-size: 12px;
 }
 .date_price_content tbody td .on{
-    color: #9b9b9d;
+    color: #777;
 }
 .date_price_r .date_now{
     float: left;
