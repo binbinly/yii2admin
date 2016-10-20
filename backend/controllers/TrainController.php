@@ -50,7 +50,7 @@ class TrainController extends BaseController
             $data['create_time'] = time();
 
             /* 将图组转化为字符串 */
-            if ($data['images'] && is_array($data['images'])) {
+            if (isset($data['images']) && is_array($data['images'])) {
                 $data['images'] = trim(implode ( ",", $data['images']),',');
             }
             /* 表单数据加载、验证、数据库操作 */
@@ -90,7 +90,7 @@ class TrainController extends BaseController
             $data['id'] = $id;
 
             /* 将图组转化为字符串 */
-            if ($data['images'] && is_array($data['images'])) {
+            if (isset($data['images']) && is_array($data['images'])) {
                 $data['images'] = trim(implode ( ",", $data['images']),',');
             }
             /* 表单数据加载、验证、数据库操作 */

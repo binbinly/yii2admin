@@ -12,7 +12,7 @@ if (!empty($data)) {
 .fileupload-text {color: #f00;}
 </style>
 <div class="control-group">
-    <label class="control-label">商品图集</label>
+    <label class="control-label">图集</label>
     <div class="controls">
         <div class="fileupload fileupload-new" >
             <div style="margin-bottom:10px;">
