@@ -31,7 +31,7 @@ i,em{font-style:normal}
 
 .glyphicon-chevron-left::before{ content: none;}
 .glyphicon-chevron-right::before{ content: none;}
-.ban{width:1440px; margin:0 auto;max-width: 100%;}
+.ban{width:1200px; margin:0 auto;max-width: 100%;}
 .ban .carousel-control{ filter: alpha(opacity=60); opacity: .6;}
 .carousel-control:hover,
 .carousel-control:focus {
@@ -153,8 +153,9 @@ i,em{font-style:normal}
 
 /*爱正能量*/
 .w_1440{width:1440px; height:408px; margin:30px auto 0;max-width: 100%;overflow: hidden;}
-.exercise_bg{height:408px; width:1440px; position: relative; z-index: 99;}
-.exercise_bg01{float: left; width:653px;height:408px ;background: #9e9f9f; color:#fff; line-height: 180%; padding:70px 15px 0 200px;}
+/*.w_1200{width:1200; height:408px; margin:30px auto 0;max-width: 100%;overflow: hidden;}*/
+.exercise_bg{height:408px; width:1200px; position: relative; z-index: 99;}
+.exercise_bg01{float: left; width:540px;height:408px ;background: #9e9f9f; color:#fff; line-height: 180%; padding:70px 15px 0 50px;}
 .exercise_bg01 a{position: absolute; bottom: 20px; color:#fff; background:#c4a76f; padding:5px 18px;}
 .exercise_bg02{float: left; width:162px; height:408px;background: url("../images/bg01.png") no-repeat left center;}
 
@@ -385,15 +386,15 @@ i,em{font-style:normal}
 .order_type .input-append .form-control{padding:2px 10px; height:25px; line-height: 25px;font-size: 12px;}
 
 .order_li{border:1px solid #dbc9a6; overflow: hidden; margin-top:5px;}
-.order_li_top{padding:6px 0 6px 15px ; background: #e1d3b7;}
+.order_li_top{padding:6px 0 6px 0px ; background: #e1d3b7;}
 .order_li_top .checkbox-inline{margin-right:25px; margin-bottom: 2px;}
 .order_li_top .checkbox-inline input{margin-top:4px; margin-bottom: 2px;}
 .order_li_top i{color:#e50012; margin-right:25px;}
 .order_li_top a{color:#e50012; margin-left:35px; }
 .order_li_top input{width:10px; height:10px;}
-.order_li_cen .col-md-2{text-align: center}
-.order_li_cen .col-md-1{padding:0px; text-align: right;}
-.order_li_cen { overflow: hidden; padding:10px;}
+.order_li_cen .col-md-2{text-align: left;}
+.order_li_cen .col-md-1{padding:0px; text-align: center;}
+.order_li_cen { overflow: hidden; padding:10px 0px;}
 .member_cen_r nav{margin: 25px 0; overflow: hidden;}
 .posin{position: absolute; bottom: -60px; right:10px;}
 

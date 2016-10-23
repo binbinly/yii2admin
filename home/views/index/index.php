@@ -14,7 +14,7 @@
 }
 #carousel-example-generic01  .pre_next{
     position: absolute;
-    right: 60px;
+    right: 0px;
     top: -55px;
     font-size: 30px;
 
@@ -29,6 +29,13 @@
     position: absolute;
     right: 7px;
     top: 14px;
+}
+
+#carousel-example-captions02 .carousel-control{
+    left: 170px;
+}
+#carousel-example-captions02 .item img{
+    height: 408px;
 }
 
 .carousel-inner {
@@ -299,7 +306,7 @@
 以下为各项目的入口，包括俱乐部、培训、活动</p>
 </div>
 <!--爱正能量-->
-<div class="w_1440">
+<div class="w_1200">
     <div class="exercise_bg">
         <div class="exercise_bg01">
             <h3>帆海汇俱乐部：</h3>

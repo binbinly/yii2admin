@@ -145,36 +145,37 @@ use yii\widgets\LinkPager;
                                     </form>
                                 </div>
                                 <div class="order_type">
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                            <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox1"> 全选
-                                            </label>
-                                        </div>
+                                    <div class="">
+                                        <div class="col-md-3">产品名称</div>
                                         <div class="col-md-2">类型</div>
                                         <div class="col-md-2">用户</div>
                                         <div class="col-md-2">有效日期</div>
                                         <div class="col-md-2">总金额</div>
-                                        <div class="col-md-3">订单状态</div>
+                                        <div class="col-md-1">状态</div>
                                     </div>
                                 </div>
                                 <?php foreach($order_list as $order): ?>
                                 <div class="order_li">
                                     <div class="order_li_top">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" value="option1" id="inlineCheckbox2">订单号：
-                                            <i><?= $order->order_sn?></i>
-                                        </label>
-                                        预订日期：<?= date("Y-m-d", $order->start_time)?>
+                                        <div class="col-md-3">订单号：<i><?= $order->order_sn?></i></div>
+                                        <div class="col-md-3">预订日期：<?= date("Y-m-d", $order->start_time)?></div>
                                         <a href="javascript:void(0)" class="del_btn" target_id='<?= $order->order_id?>'>删除订单</a>
                                     </div>
                                     <div class="order_li_cen">
-                                        <div class="col-md-1"><?= $order->title?></div>
+                                        <div class="col-md-3"><?= $order->title?></div>
                                         <div class="col-md-2"><?= $order->type?></div>
                                         <div class="col-md-2"><?= $order->name?></div>
                                         <div class="col-md-2"><?= date("Y-m-d", $order->create_time)?></div>
                                         <div class="col-md-2">￥<?= $order->total?></div>
-                                        <div class="col-md-3"><p><?= Yii::$app->params['pay_status'][$order->pay_status]?></p></div>
+                                        <div class="col-md-1" pay_status="<?= $order->pay_status?>">
+                                            <p>
+                                            <?php if($order->pay_status==1): ?>
+                                                已付款
+                                            <?php else: ?>
+                                                未付款
+                                            <?php endif; ?>
+                                            </p>
+                                        <span></span></div>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
